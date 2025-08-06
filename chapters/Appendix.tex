@@ -79,3 +79,10 @@ Note the numbering of various environments in the appendix.
     Starred variant \custommacro{\Cref*} results in \Cref*{eq:appendix_equation}.
     If you desire less verbose output, you can use \macro{\eqref}, which gives \eqref{eq:appendix_equation}.
 \end{example}
+
+\begin{theorem}[Example with Math at the End]
+    Theorem ending with math, with proper spacing by utilizing \custommacro{\qedhere} (can even use an optional argument to finetune the spacing)
+    \[
+        a^{2}+b^{2}=c^{2} \eqend \qedhere
+    \]
+\end{theorem}
