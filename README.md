@@ -68,6 +68,10 @@ Early predecessor of the `TeXtured` template:<br>
   Jonáš Dujava, [Counting operators in Effective Field Theories `[PDF]`](https://jdujava.github.io/CountingInEFT/CountingInEFT.pdf) — Bachelor Thesis<br>
     `arXiv`: [2211.05759 \[hep-th\]](https://arxiv.org/abs/2211.05759), `GitHub`: [jdujava/CountingInEFT](https://github.com/jdujava/CountingInEFT)
 
+Other documents utilizing the `TeXtured` template:<br>
+  Sahil Jhawar, [Data-Driven Study of Kilonovae from Binary Neutron Star Mergers `[PDF]`](https://sahiljhawar.in/MScThesis/SahilJhawar_MSc_Thesis.pdf) — Master Thesis<br>
+    `GitHub`: [sahiljhawar/MScThesis](https://github.com/sahiljhawar/MScThesis)
+
 > [!TIP]
 > If you want to showcase your work utilizing the `TeXtured` template, feel free to open a pull request!
 
