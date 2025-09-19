@@ -1,7 +1,6 @@
 # Digifiz Replica User Manuals
 
-[![Build Digifiz Next](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_main.yml/badge.svg)](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_main.yml)
-[![Build Digifiz Replica Arduino](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_legacy_arduino.yml/badge.svg)](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_legacy_arduino.yml)
+[![CI](https://github.com/Sgw32/DR_UserManuals/actions/workflows/main.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/main.yml)
 
 This repository hosts the LaTeX sources for the official documentation shipped with every Digifiz Replica dashboard.  The manuals cover both hardware generations—the classic Arduino Mega (ATmega2560) cluster and the Digifiz Next ESP32-based units—and are kept in sync with the production firmware and wiring harnesses.
 
