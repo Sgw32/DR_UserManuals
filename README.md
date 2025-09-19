@@ -1,131 +1,77 @@
-<div align="center">
-    <img alt="TeXtured Template" height="100px" src="https://raw.githubusercontent.com/jdujava/TeXtured/refs/heads/master/figures/TeXtured-logo-light-mode.svg#gh-light-mode-only">
-    <img alt="TeXtured Template" height="100px" src="https://raw.githubusercontent.com/jdujava/TeXtured/refs/heads/master/figures/TeXtured-logo-dark-mode.svg#gh-dark-mode-only">
-</div>
-<div align="center">
-  <a href="https://jdujava.github.io/TeXtured/thesis.pdf"><img alt="TeXtured Manual" src="https://img.shields.io/badge/TeXtured-Manual%E2%80%89%F0%9F%93%93-blue?color=ccfaff&style=for-the-badge"></a>
-  &nbsp;
-  <a href="https://github.com/jdujava/TeXtured/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/jdujava/textured?color=ade1ff&style=for-the-badge"></a>
-  &nbsp;
-  <a href="#-license"><img alt="GitHub License" src="https://img.shields.io/github/license/jdujava/TeXtured?color=fbe2ff&style=for-the-badge"></a>
-  &nbsp;
-  <a href="https://jdujava.github.io/TeXtured/thesis.pdf"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/jdujava/TeXtured/main.yml?color=aafaba&style=for-the-badge"></a>
-  &nbsp;
-  <a href="https://github.com/jdujava/TeXtured/stargazers"><img alt="TeXtured Stars" src="https://img.shields.io/github/stars/jdujava/TeXtured?color=ffeca4&style=for-the-badge"></a>
-</div>
+# Digifiz Replica User Manuals
 
-Do you care in the slightest about what your readers think about your document,
-and by proxy about you and your competence level? If yes, then a classy,
-typographically professional layout and structured, clear, and revealing content
-can only help. This template tries to aid you in both of these endeavors.
+[![Build Digifiz Next](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_main.yml/badge.svg)](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_main.yml)
+[![Build Digifiz Replica Arduino](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_legacy_arduino.yml/badge.svg)](https://github.com/Sgw32/DigifizReplica/actions/workflows/build_legacy_arduino.yml)
 
-Here’s what the **TeXtured** Template offers:
-- ✨ **typographically elegant layout** with various features to make your document stand out
-- 🧙 **clean code structure** with plenty of comments to help you easily customize the template to your needs
-- 🔗 **seamless GitHub integration** (via GitHub Actions) to streamline version control and collaboration
-- 📄 **PDF/A compliance** and *front matter* supporting theses at [MFF](https://www.mff.cuni.cz/en) 🎓
+This repository hosts the LaTeX sources for the official documentation shipped with every Digifiz Replica dashboard.  The manuals cover both hardware generations—the classic Arduino Mega (ATmega2560) cluster and the Digifiz Next ESP32-based units—and are kept in sync with the production firmware and wiring harnesses.
 
-To learn more about the design principles behind `TeXtured` and its capabilities, look at the
-[<img align="center" alt="TeXtured Manual" src="https://img.shields.io/badge/TeXtured-Manual%E2%80%89%F0%9F%93%93-blue?color=ccfaff">](https://jdujava.github.io/TeXtured/thesis.pdf).
-It showcases the features of `TeXtured` template and provides a guide on how to use them.
+## 📘 What is inside
 
-> [!NOTE]
-> Please note that the documentation is still a work-in-progress 🚧,
-> with more guides and explanations to come.
+- **Full installation and configuration guide** explaining wiring, calibration, firmware flashing, and safety notes for each hardware revision.
+- **Feature reference** detailing onboard diagnostics, display modes, warning logic, and localization options available in the latest firmware.
+- **Appendices for technicians** with connector pinouts, signal tables, sensor compatibility, and troubleshooting flows collected from the community.
 
-> [!TIP]
-> If you find something interesting or useful, but adopting the whole template
-> is simply too much, feel free to just copy and use relevant parts of the code.
-> Also, consider starring (⭐) the repository to help others find it!
+The compiled PDF (`thesis.pdf`) is the master document used for customer deliveries.  Each section of the manual lives in the `chapters/` directory, supporting data and macros reside in `preamble/`, while ancillary assets (figures, tables, and scripts) are stored under `figures/` and `anc/`.
 
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=jdujava/TeXtured&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=jdujava/TeXtured&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=jdujava/TeXtured&type=Date" />
-</picture>
+## 🚗 Hardware overview
 
-## 🌟 Showcase
+Digifiz Replica is a modern replacement for factory VDO clusters in second-generation Volkswagen Group vehicles and now also in classic Audi platforms.  Hundreds of units are already in the field, with active deployments in the USA, Germany, the UK, Italy, Russia, and across the EU.
 
-The main part of the `TeXtured` template development was carried out during the preparation of:<br>
-  Jonáš Dujava, [Strongly Coupled Quantum Field Theory in Anti-de Sitter Spacetime `[PDF]`](https://jdujava.github.io/ONinAdS/SCQFTinAdS.pdf) — Master Thesis<br>
-    `arXiv`: [2507.07111 \[hep-th\]](https://arxiv.org/abs/2507.07111), `GitHub`: [jdujava/ONinAdS](https://github.com/jdujava/ONinAdS)
-<details>
-    <summary>👀 Quick Preview <em>(click to see a selection of pages, above is the link to the whole <code>PDF</code>)</em></summary>
-    <img alt="thesis-dual00" src="https://github.com/user-attachments/assets/5c7608e8-4ed1-4e6b-b201-335fbe7fe7e3" />
-    <img alt="thesis-dual01" src="https://github.com/user-attachments/assets/376a5b62-5b14-483c-87ba-da0808c51a32" />
-    <img alt="thesis-dual02" src="https://github.com/user-attachments/assets/de77881b-d21e-42d6-aba4-302239bd7164" />
-    <img alt="thesis-dual03" src="https://github.com/user-attachments/assets/bf719391-f5e7-4e56-baa8-05fe330bbc86" />
-    <img alt="thesis-dual04" src="https://github.com/user-attachments/assets/b9ed8eaa-23b9-4cda-87b8-4dcc2510910b" />
-    <img alt="thesis-dual05" src="https://github.com/user-attachments/assets/50cd1894-b374-4206-9d81-78498f15c25b" />
-    <img alt="thesis-dual06" src="https://github.com/user-attachments/assets/702ce869-1f9c-4ceb-a1ce-f7ce815bfb3f" />
-    <img alt="thesis-dual07" src="https://github.com/user-attachments/assets/502eafd8-7c24-47f8-84a2-3fef5415e351" />
-    <img alt="thesis-dual08" src="https://github.com/user-attachments/assets/0bd1db62-d2a4-4ff0-b126-0c176ac76123" />
-    <img alt="thesis-dual09" src="https://github.com/user-attachments/assets/a10b0779-4fb0-444b-b360-99545077d92a" />
-    <img alt="thesis-dual10" src="https://github.com/user-attachments/assets/338c5301-bc35-47cc-ada8-b3548c160399" />
-</details>
+### Supported vehicles
 
-Early predecessor of the `TeXtured` template:<br>
-  Jonáš Dujava, [Counting operators in Effective Field Theories `[PDF]`](https://jdujava.github.io/CountingInEFT/CountingInEFT.pdf) — Bachelor Thesis<br>
-    `arXiv`: [2211.05759 \[hep-th\]](https://arxiv.org/abs/2211.05759), `GitHub`: [jdujava/CountingInEFT](https://github.com/jdujava/CountingInEFT)
+- **Volkswagen Jetta Mk2 (1984–1992)** — CE1 and CE2 fuse panels
+- **Volkswagen Golf Mk2 (1983–1992)** — CE1 and CE2 fuse panels
+- **Volkswagen Passat B2 (1984–1992)** — expected compatibility, pending customer confirmation
+- **Volkswagen Scirocco 2 (1984–1992)** — requires a contact adapter
+- **Audi 80 B2 (1978–1986)** — red and green Digifiz variants
+- **Audi 80 Coupé B2 (1980–1988)** — red and green Digifiz variants
 
-Other documents utilizing the `TeXtured` template:<br>
-  Sahil Jhawar, [Data-Driven Study of Kilonovae from Binary Neutron Star Mergers `[PDF]`](https://sahiljhawar.in/MScThesis/SahilJhawar_MSc_Thesis.pdf) — Master Thesis<br>
-    `GitHub`: [sahiljhawar/MScThesis](https://github.com/sahiljhawar/MScThesis)
+### Firmware and tooling requirements
 
-> [!TIP]
-> If you want to showcase your work utilizing the `TeXtured` template, feel free to open a pull request!
+| Hardware generation | Toolchain | Notes |
+| --- | --- | --- |
+| **Arduino Mega / ATmega2560** | Arduino IDE ≥ 1.8.13 with the board set to **Arduino Mega / ATmega2560**. Use `Ctrl + Shift + U` for USBasp uploads. | Required libraries: `RTClib` (non-Neuron version), `SparkFun EEPROM`, `Adafruit_BusIO`, `MedianFilterLib2`.  `MD_MAX72xx` is obsolete—do not install it. |
+| **Digifiz Next (ESP32)** | Espressif ESP-IDF v5.2.1 | Follow the flashing instructions in the manual for OTA and USB-C workflows. |
 
-## 🏗️ Building
+## 🛠️ Building the manual locally
 
-Be sure to have all the dependencies installed — at least the `LaTeX` build tools, see below — and run
-```sh
-latexmk thesis
-```
-in the root directory of the repository to build the document.
+1. Install a recent TeX distribution (TeX Live 2025 or newer is recommended) that includes `latexmk`, `pdflatex`/`lualatex`, and `biber`.
+2. For the automated figure pipeline, also install `inkscape`, `perl`, `sed`, `uconv`, and `ghostscript`.  These utilities enable vector export and watermark generation used in the PDF.
+3. Clone this repository and run:
 
-> [!TIP]
-> If you prefer to use 🍃 `Overleaf`, you can find the `TeXtured` template
-> [<img align="center" alt="Overleaf TeXtured Template" src="https://img.shields.io/badge/Overleaf-TeXtured-blue?color=ccffd2&logo=overleaf">](https://www.overleaf.com/latex/templates/textured/zwtzzwgddbsh)
-> there as well.
-> Note that releases `v1.3.0` and later depend on [`keytheorems`](https://github.com/mbertucci47/keytheorems) package,
-> for which you need to pick the `TeX Live` 2025 (or newer) in the `Compiler` settings.
+   ```sh
+   latexmk thesis
+   ```
 
+   The command builds `thesis.pdf` in the repository root.  Clean builds (`latexmk -C`) and alternative engines can be configured in `.latexmkrc`.
 
-## 📦 Software Dependencies
+If you prefer cloud editing, you can upload the project to Overleaf.  Select the latest TeX Live compiler and ensure shell-escape is enabled for chapters that render SVG figures.
 
-LaTeX build tools:
-- `latexmk` - LaTeX build tool
-- `pdflatex`/`lualatex` - LaTeX engine (you can choose one in `.latexmkrc`)
-- `biber` - bibliography processing tool for `biblatex`
+## 🤝 Community and support
 
-> [!WARNING]
-> To properly build the document, the template requires `TeX Live` 2025 or later (otherwise, some packages may not be available, or you may encounter some bugs).
-> Using the latest version of `TeX Live` is highly recommended, which is used in the GitHub Actions workflow to build
-> [<img align="center" alt="TeXtured Manual" src="https://img.shields.io/badge/TeXtured-Manual%E2%80%89%F0%9F%93%93-blue?color=ccfaff">](https://jdujava.github.io/TeXtured/thesis.pdf).
+- Russian-speaking community: [vk.com/digifiz](https://vk.com/digifiz)
+- News and discussions (RU): [t.me/digifiz](https://t.me/digifiz)
+- International channels are in preparation; watch the Telegram mirror for updates.
 
-> [!NOTE]
-> Some scripts assume `linux` environment. These include:
-> - generation of directory structure for `aux_dir` (dependencies are `sed`, `xargs`)
-> - vector figure generation (together with watermark)
->     + need to enable `--shell-escape` in `.latexmkrc`
->     + `inkscape` - vector graphics (and SVG to PDF conversion)
->     + `perl` - disabling `/Interpolation` in PDFs generated by `inkscape`
->     + `sed`, `uconv` - substituting placeholders in PDF watermark
->     + `ghostscript` - injecting `postscript` watermark into PDF
+For hardware sales, installation services, or manual feedback, reach out through the community channels or the official store listings.
 
-Version control (optional):
-- `git` - the preferred version control system
-- `git-lfs` - [Git Large File Storage](https://git-lfs.github.com/) - for storing PDFs, figures, etc.
+## 💖 Support the project
 
+- **PayPal:** `sgw32nc@gmail.com`
+- **Crypto (ETH / USDT ERC-20):** `0xeDc17cb23241eACe19DF3617291aa7d2d92E62DC`
+- **3D printed accessories and models:** [cgtrader.com/sgw32](https://www.cgtrader.com/sgw32)
 
-## 📜 License
+## 🧾 License
 
-Exceptions:
-- The MFF CUNI logo `MFF-logo.pdf` is property of the corresponding faculty, see [MFF Visual Identity](https://www.mff.cuni.cz/en/faculty/visual-identity).
-- Figure `parallel-plate-capacitor.svg` (with corresponding files) is property of Jonáš Dujava.
+Documentation sources in this repository are released under the [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) dedication (see `LICENSE`).
 
-[<img align="center" alt="License: CC0-1.0" src="https://licensebuttons.net/p/zero/1.0/88x31.png">](https://creativecommons.org/publicdomain/zero/1.0/)
- All other files are marked with
-[<img align="center" alt="License: CC0-1.0" src="https://img.shields.io/github/license/jdujava/TeXtured?color=fbe2ff">](https://creativecommons.org/publicdomain/zero/1.0/).
+Hardware designs and production files for Digifiz Replica remain proprietary and are distributed separately under dedicated agreements.
 
-Even though you are free to use the source code of `TeXtured` any way you like, an acknowledgement is welcome (for example by including a citation using `\autocite{TeXtured}`).
+## ™️ Trademarks
+
+VDO is a trademark of the Continental Corporation.
+The Volkswagen logo, the word “Volkswagen,” vehicle names, and advertising slogans are registered trademarks of Volkswagen AG.
+AUDI is a trademark of AUDI AG.
+AvtoVAZ is a trademark of AvtoVAZ Concern.
+
+Images or references to these marks are provided solely for identification and installation guidance.  Digifiz Replica dashboards—including Digifiz Audi variants—are aftermarket replacements corresponding to the following OEM references: 191 919 065 B / 191 919 019 B / 87001181 / 191 919 005 B / 191919065B / 191919033LR / 616.051.2001 / 6160512001 / 88481435.
