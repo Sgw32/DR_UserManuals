@@ -159,7 +159,7 @@ Using \package{fancyhdr} package --- page headers and footers --- consistent sty
 \label{sub:Page Numbering}
 \fileTeXtured{preamble/layout/numbering.tex}
 
-Placing custom \custommacro{\frontmatter}, \custommacro{\mainmatter}, and \custommacro{\backmatter} macros at appropriate places in \path{thesis.tex}, \emph{Roman numbering} is set up for \emph{front matter}, that is until the start of first numbered chapter, and then \emph{Arabic numbering} for the rest of the document.
+Placing custom \custommacro{\frontmatter}, \custommacro{\mainmatter}, and \custommacro{\backmatter} macros at appropriate places in \path{DR_DRNext_User_Manual_mk1_mk2.tex}, \emph{Roman numbering} is set up for \emph{front matter}, that is until the start of first numbered chapter, and then \emph{Arabic numbering} for the rest of the document.
 
 
 \subsection{Heading Style}%
@@ -453,7 +453,7 @@ Describe implemented \textsf{GitHub Actions}:
     \item Automatic \texttt{latexmk} build of the latest PDF version.
     \item PDF/A verification via \textsf{veraPDF}.
     \item Deploy to \texttt{gh-pages} branch.
-          One can furthermore enable (in repo settings) \textsf{GitHub Pages} for \texttt{gh-pages} branch, which will automatically upload latest PDF to \texttt{https://username.github.io/reponame/thesis.pdf}.
+          One can furthermore enable (in repo settings) \textsf{GitHub Pages} for \texttt{gh-pages} branch, which will automatically upload latest PDF to \texttt{https://username.github.io/reponame/DR_DRNext_User_Manual_mk1_mk2.pdf}.
           This enables convenient sharing of your (even continuously evolving) work without needing to commit the PDF (resulting in large repository size) or compiling the PDF on the receiving side.
           \begin{remark}[Private Repositories]
               Even for private repositories such link is publicly accessible.
@@ -480,7 +480,7 @@ Put your \texttt{Inkscape} figures into \path{figures/Inkscape/} directory, and 
     \item Automatic export after changing the \texttt{svg} (need to enable \macro{--shell-escape} for \hologo{pdfTeX} or \hologo{LuaTeX}, done via \path{.latexmkrc}).
     \item Watermark via a \texttt{PostScript} injection.
           \begin{remark}[Watermark String]
-              By default, the watermark string is composed as \enquote{\copyright \textlangle\textit{year}\textrangle{} \textlangle\textit{author's name}\textrangle}, where the author's name is extracted from \custommacro{\ThesisAuthorPlaintext}.
+              By default, the watermark string is composed as \enquote{\copyright \textlangle\textit{year}\textrangle{} \textlangle\textit{author's name}\textrangle}, where the author's name is extracted from \custommacro{\ManualAuthorPlaintext}.
               You can customize it in the shell script \path{figures/Inkscape/inkscape-export-to-latex} to your liking.
           \end{remark}
     \item Automatic fix of \macro{/Interpolation} key problem.

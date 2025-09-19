@@ -1,14 +1,13 @@
 \chapternotnumbered{Introduction} \label{ch:Introduction}
 
-Already when I started writing my bachelor thesis \autocite{Dujava2022}, I tweaked a lot the original \LaTeX{} template (which itself was slightly updated since then \autocite{MaresTemplate}) provided for students at MFF CUNI --- Faculty of Mathematics and Physics, Charles University in Prague.
+This user manual consolidates the build notes, service procedures, and release checklists gathered while shipping Digifiz Replica dashboards across two hardware generations.
+The \TeXtured{} template powering the document was iterated on for years to balance production-ready typography with a modular source layout that stays maintainable as the manual grows.
 
-Some design choices originated already during this stage, particularly the significant use of theorem-like and remark-like environments with highly interlinked structure of the text.
-
-I picked up right where I left off when I started writing my master thesis \autocite{Dujava2025}, and I have been refining the template ever since.
+Refining the template for technical documentation meant embracing theorem-like and remark-like environments for tightly connected references, and investing into automation so that metadata, figures, and indexes stay synchronized between revisions.
 Improved understanding of the coding backbone behind \LaTeX{} and its package ecosystem enabled me to customize it even further to my liking, and add even more \enquote{bells and whistles}.
 
 \begin{remark}[Template Purpose]
-    While primarily targeting theses, \TeXtured{} can be used for other document types as well.
+    While this project focuses on the Digifiz Replica user manual, \TeXtured{} can be used for other long-form technical documents as well.
 \end{remark}
 
 To make it user-friendly, I have restructured the preamble into several files, each of which is responsible for a specific aspect of the document.

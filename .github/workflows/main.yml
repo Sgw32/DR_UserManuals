@@ -8,8 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ## thanks to https://github.com/exaexa/better-mff-thesis
-  ##       and https://github.com/mff-cuni-cz/cuni-thesis-validator
+  ## workflow inspiration from exaexa's better-mff automation and the CUNI validation container
   build:
     name: Build PDF and upload as an artifact
     runs-on: ubuntu-latest
@@ -21,16 +20,16 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: thesis.tex
+          root_file: DR_DRNext_User_Manual_mk1_mk2.tex
           texlive_version: latest # must be `2024` or later (`latest` chosen by default)
           extra_system_packages: coreutils icu inkscape # `coreutils` for `mktemp`, `icu` for `uconv`
       - name: Upload the artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Thesis
+          name: DR_DRNext_User_Manual_mk1_mk2
           path: |
             README.md
-            thesis.pdf
+            DR_DRNext_User_Manual_mk1_mk2.pdf
   verify:
     name: Verify PDF/A
     runs-on: ubuntu-latest
@@ -40,7 +39,7 @@ jobs:
       - name: Get the PDF file from the artifact
         uses: actions/download-artifact@v4
       - name: Verify the PDF file with VeraPDF
-        run: verify Thesis/*.pdf | tee /dev/stderr | grep -qE 'nonCompliant="0" failedJobs="0"'
+        run: verify DR_DRNext_User_Manual_mk1_mk2/*.pdf | tee /dev/stderr | grep -qE 'nonCompliant="0" failedJobs="0"'
 
   ## inspired by https://github.com/Pseudomanifold/latex-mimosis
   deploy:
@@ -55,7 +54,7 @@ jobs:
         uses: actions/download-artifact@v4
       - name: Commit and push the PDF and README.md to `gh-pages` branch
         run: |
-          cd Thesis
+          cd DR_DRNext_User_Manual_mk1_mk2
           git init -b temp
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
