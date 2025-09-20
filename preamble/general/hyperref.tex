@@ -11,9 +11,9 @@
 }
 
 %% Fallbacks for PDF metadata commands
-\providecommand*{\ThesisAuthorPlaintext}{\ThesisAuthor}
-\providecommand*{\ThesisTitlePlaintext}{\ThesisTitle}
-\providecommand*{\KeywordsPlaintext}{\Keywords}
+\providecommand*{\ManualAuthorPlaintext}{\ManualAuthor}
+\providecommand*{\ManualTitlePlaintext}{\ManualTitle}
+\providecommand*{\ManualKeywordsPlaintext}{\ManualKeywords}
 
 \hypersetup{
     linktoc = all,         % whole entry in TOC is clickable link
@@ -24,10 +24,10 @@
     pdfdisplaydoctitle,    % https://tex.stackexchange.com/a/435434/120853
 }
 \hypersetup{ % PDF metadata
-    pdfauthor   = {\ThesisAuthorPlaintext},
-    pdftitle    = {\ThesisTitlePlaintext},
-    pdfsubject  = {\Subject},
-    pdfkeywords = {\KeywordsPlaintext},
+    pdfauthor   = {\ManualAuthorPlaintext},
+    pdftitle    = {\ManualTitlePlaintext},
+    pdfsubject  = {\ManualSubject},
+    pdfkeywords = {\ManualKeywordsPlaintext},
     pdfcreator  = {LaTeX with hyperref, and biblatex/biber},
 }
 \bookmarksetup{

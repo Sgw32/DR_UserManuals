@@ -1,63 +1,61 @@
-%% Thesis type: bachelor, master, doctoral
-\newcommand*{\ThesisType}{master}
+%% Manual variant label shown on the title page
+\newcommand*{\ManualDocumentType}{Digifiz Replica}
 
-%% Thesis title (exactly as in the formal assignment)
-\newcommand*{\ThesisTitle}{\TeXtured{} Manual}
-%% Plaintext version for PDF metadata, uncomment if needed (defauls to \ThesisTitle)
-\newcommand*{\ThesisTitlePlaintext}{TeXtured Manual \TeXturedVERSION}
-%% Thesis title (if custom formatting is needed for the title page, defauls to \ThesisTitle)
-\newcommand*{\ThesisTitleFront}{
-    \ThesisTitle\\
-    {\Huge\color{gray}\TeXturedVERSION}
+%% Manual title (as printed on the cover)
+\newcommand*{\ManualTitle}{\TeXtured{} Manual}
+%% Plaintext version for PDF metadata, uncomment if needed (defaults to \ManualTitle)
+\newcommand*{\ManualTitlePlaintext}{TeXtured Manual \TeXturedVERSION}
+%% Manual title (if custom formatting is needed for the title page, defaults to \ManualTitle)
+\newcommand*{\ManualTitleFront}{%
+    \ManualTitle\\
+    {\Huge\color{gray}\TeXturedVERSION}%
 }
 
-%% Author of the thesis
-\newcommand*{\ThesisAuthor}{\textcolor{red}{Author's Name}}
-%% Plaintext version for PDF metadata, uncomment if needed (defauls to \ThesisAuthor)
-\newcommand*{\ThesisAuthorPlaintext}{Author's Name}
+%% Author credited for the manual
+\newcommand*{\ManualAuthor}{\textcolor{red}{Author's Name}}
+%% Plaintext version for PDF metadata, uncomment if needed (defaults to \ManualAuthor)
+\newcommand*{\ManualAuthorPlaintext}{Author's Name}
 
-%% Year when the thesis is submitted
-\newcommand*{\YearSubmitted}{2025}
-%% Year of the last revision, uncomment if it is different from \YearSubmitted
-% \newcommand*{\YearRevision}{2025}
+%% Year when the manual is released
+\newcommand*{\YearReleased}{2025}
+%% Year of the last revision, uncomment if it is different from \YearReleased
+% \newcommand*{\YearRevised}{2025}
 
-%% University
-\newcommand*{\University}{Charles University}
+%% Organization publishing the manual
+\newcommand*{\Organization}{Charles University}
 
-%% Name of the department or institute, where the work was officially assigned
-%% (according to the Organizational Structure of MFF UK in English,
-%% or a full name of a department outside MFF)
-\newcommand*{\Department}{\textcolor{red}{Name of the Department/Institute}}
+%% Division or team responsible for the manual
+\newcommand*{\Division}{\textcolor{red}{Name of the Department/Institute}}
 
-%% Is it a Department (katedra), or an Institute (ústav)?
-\newcommand*{\DeptType}{Institute}
+%% Division type (department, institute, team, ...)
+\newcommand*{\DivisionType}{Institute}
 
-%% Thesis supervisor: name, surname and titles
-\newcommand*{\Supervisor}{\textcolor{red}{Name, Surname, and Titles}}
-%% Thesis co-supervisor: name, surname and titles (uncomment if applicable)
-% \newcommand*{\CoSupervisor}{Name, Surname, and Titles}
+%% Primary maintainer of the manual
+\newcommand*{\Maintainer}{\textcolor{red}{Name, Surname, and Titles}}
+%% Co-maintainer of the manual (uncomment if applicable)
+% \newcommand*{\CoMaintainer}{Name, Surname, and Titles}
 
-%% Supervisor's department/institute (again according to Organizational structure of MFF)
-\newcommand*{\SupervisorsDepartment}{\textcolor{red}{Supervisor's Department/Institute}}
+%% Maintainer's division/team information
+\newcommand*{\MaintainersDivision}{\textcolor{red}{Maintainer's Department/Institute}}
 
-%% Study programme and specialization
-\newcommand*{\StudyProgramme}{\textcolor{red}{Study Programme}}
+%% Product line or program this manual covers
+\newcommand*{\ProductLine}{\textcolor{red}{Product Line}}
 
-%% Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
-\newcommand*{\Abstract}{%
-    \textcolor{red}{Write abstract here.}
+%% Abstract (recommended length around 80-200 words)
+\newcommand*{\ManualAbstract}{%
+    \textcolor{red}{Write abstract here.}%
 }
 
 %% Subject (short description for PDF metadata)
-\newcommand*{\Subject}{%
-    Write subject here.
+\newcommand*{\ManualSubject}{%
+    Write subject here.%
 }
 
 %% Keywords (about 3-7)
-\newcommand*{\Keywords}{%
-    \textcolor{red}{Manual, Demo, Draft, WIP}
+\newcommand*{\ManualKeywords}{%
+    \textcolor{red}{Manual, Demo, Draft, WIP}%
 }
-%% Plaintext version for PDF metadata, uncomment if needed (defauls to \Keywords)
-\newcommand*{\KeywordsPlaintext}{%
-    Manual, Demo, Draft, WIP
+%% Plaintext version for PDF metadata, uncomment if needed (defaults to \ManualKeywords)
+\newcommand*{\ManualKeywordsPlaintext}{%
+    Manual, Demo, Draft, WIP%
 }

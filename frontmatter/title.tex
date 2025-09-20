@@ -11,24 +11,24 @@
     \vfill
 
     {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
-        \MakeUppercase{\ThesisType} THESIS}
+        \MakeUppercase{\ManualDocumentType} USER MANUAL}
 
     \vfill
 
     {\Huge
-        \ThesisAuthor}
+        \ManualAuthor}
 
     \vspace{1em}
 
-    %% if `\ThesisTitleFront` is not defined, use `\ThesisTitle`
-    \providecommand*{\ThesisTitleFront}{\ThesisTitle}
-    % {\Huge \bfseries \ThesisTitleFront \par}
+    %% if `\ManualTitleFront` is not defined, use `\ManualTitle`
+    \providecommand*{\ManualTitleFront}{\ManualTitle}
+    % {\Huge \bfseries \ManualTitleFront \par}
     {\fontsize{30pt}{36pt}\selectfont \bfseries
-        \ThesisTitleFront \par}
+        \ManualTitleFront \par}
 
     \vfill
 
-    \Department
+    \Division
 
     \vspace{1.1em}
 
@@ -36,12 +36,12 @@
         \large
         \renewcommand{\arraystretch}{1.2}
         \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
-            Supervisor of the Thesis    & \Supervisor     \\
-            \ifdef{\CoSupervisor}{%
-            Co-Supervisor of the Thesis & \CoSupervisor   \\
+            Manual Maintainer    & \Maintainer     \\
+            \ifdef{\CoMaintainer}{%
+            Co-Maintainer        & \CoMaintainer   \\
             }{}
-            \ifdef{\StudyProgramme}{% TODO: programme vs program?
-            Study Programme             & \StudyProgramme \\
+            \ifdef{\ProductLine}{%
+            Product Line         & \ProductLine \\
             }{}
         \end{tabular}
     \end{center}
@@ -49,9 +49,9 @@
     \vspace{2em}
 
     \ifFANCY\sffamily\fi
-    Prague \YearSubmitted \\
-    \ifdef{\YearRevision}{%
-        \emph{Revised version \YearRevision} \par
+    Prague \YearReleased \\
+    \ifdef{\YearRevised}{%
+        \emph{Revised version \YearRevised} \par
     }{}
     \ifWIP
         \small\ttfamily \textcolor{red}{(Draft - \today)} \par

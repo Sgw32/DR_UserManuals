@@ -10,7 +10,7 @@ This repository hosts the LaTeX sources for the official documentation shipped w
 - **Feature reference** detailing onboard diagnostics, display modes, warning logic, and localization options available in the latest firmware.
 - **Appendices for technicians** with connector pinouts, signal tables, sensor compatibility, and troubleshooting flows collected from the community.
 
-The compiled PDF (`thesis.pdf`) is the master document used for customer deliveries.  Each section of the manual lives in the `chapters/` directory, supporting data and macros reside in `preamble/`, while ancillary assets (figures, tables, and scripts) are stored under `figures/` and `anc/`.
+The compiled PDF (`DR_DRNext_User_Manual_mk1_mk2.pdf`) is the master document used for customer deliveries.  Each section of the manual lives in the `chapters/` directory, supporting data and macros reside in `preamble/`, while ancillary assets (figures, tables, and scripts) are stored under `figures/` and `anc/`.
 
 ## 🚗 Hardware overview
 
@@ -39,10 +39,10 @@ Digifiz Replica is a modern replacement for factory VDO clusters in second-gener
 3. Clone this repository and run:
 
    ```sh
-   latexmk thesis
+   latexmk DR_DRNext_User_Manual_mk1_mk2
    ```
 
-   The command builds `thesis.pdf` in the repository root.  Clean builds (`latexmk -C`) and alternative engines can be configured in `.latexmkrc`.
+   The command builds `DR_DRNext_User_Manual_mk1_mk2.pdf` in the repository root.  Clean builds (`latexmk -C`) and alternative engines can be configured in `.latexmkrc`.
 
 If you prefer cloud editing, you can upload the project to Overleaf.  Select the latest TeX Live compiler and ensure shell-escape is enabled for chapters that render SVG figures.
 
