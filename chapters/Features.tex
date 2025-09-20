@@ -1,4 +1,4 @@
-\chapter{Configuring Digifiz Replica Next} \label{ch:Features}
+\chapter{Setting up and Maintaining Digifiz Replica Next} \label{ch:replica-next-setup}
 
 \section{Panel Handling and Clock}
 
@@ -164,3 +164,31 @@ Colour adjustments use commands 31--33 to set the RGB channels.
 Recent firmware revisions accept human-readable parameter names (for example, \verb|PARAMETER_RPMCOEFFICIENT 3000|).
 The diagnostic command \verb|adc 0| prints raw ADC readings for sensor troubleshooting.
 Colour configuration can also be performed using the visual controls added in the latest releases; update the firmware through the \emph{WiFi} tab to access these features.
+
+\chapter{Typical Situations for Setting up the Digifiz Panel Replica Next} \label{ch:replica-next-scenarios}
+
+The following scenarios summarise common configuration questions for Replica Next dashboards.
+
+\begin{description}
+    \item[Hotspot not visible] Move closer to the dashboard and ensure the vehicle is in an open area.
+          Disable cellular data and reconnect to \texttt{Digifiz\_AP} (or \texttt{PHOL-LABS2}).
+    \item[404 when opening \texttt{192.168.4.1}] Confirm that mobile data is disabled and retry the connection.
+    \item[Firmware updates] Open the \emph{WiFi} tab, select the provided \texttt{Digifiz.bin} release (latest builds are published at \url{https://github.com/Sgw32/DigifizReplica/releases}), click \emph{Upload}, and repeat if the upload fails.
+          Record the current odometer value and restore it with command \verb|11 <mileage>| after the update if required.
+    \item[Commands ignored] Refresh the web page, reopen the \emph{Control} tab, and send the command again.
+    \item[Speed reading incorrect] Connect via Wi-Fi, drive at an indicated 100~km/h, note the GPS speed, then issue \verb|1 <gps_value>| (for example, \verb|1 85|) to adjust \texttt{PARAMETER\_SPEEDCOEFFICIENT}.
+    \item[RPM reading incorrect] Issue \verb|22 <value>| (for example, \verb|22 1500| to halve the reading) to recalibrate \texttt{PARAMETER\_RPMCOEFFICIENT}.
+          Audi clusters typically use \verb|22 3000|.
+    \item[Display too dim] Disable automatic brightness with \verb|13 0| and increase manual brightness (for example, \verb|14 50|).
+          Use conservative values (below 60) to extend LED life.
+    \item[Setting the clock] From the web terminal (or Serial Bluetooth Terminal on legacy builds), enter \verb|255 <hours>| followed by \verb|254 <minutes>| (for example, \verb|255 23| and \verb|254 55|).
+    \item[Fuel level stuck at zero or maximum] Disconnect the battery, verify that the sender resistance measured between the harness pin and vehicle ground is within 30--300~\ohm{}, and inspect the connector for continuity.
+          Short circuits (<5~\ohm{}) must be eliminated.
+          If the resistance varies correctly but the gauge does not, capture \verb|adc 0| readings at multiple fuel levels and share them with the authors.
+    \item[Fuel flow readings inaccurate] The optional flow sensor delivers emulated data and is unreliable without the manifold pressure sensor; treat the readings as experimental.
+    \item[Coolant temperature scaling] Adjust \texttt{PARAMETER\_COOLANT\_MIN\_R} and \texttt{PARAMETER\_COOLANT\_MAX\_R} to tune the display range (for example, \verb|27 30| lowers the ``1~bar'' threshold to 30~\,^{\circ}C).
+    \item[Oil or ambient temperature missing] Disconnect the battery and measure the sensor resistance: oil sensors should read about 2~k\ohm{}, ambient sensors about 10~k\ohm{} at room temperature.
+          If necessary, adjust \texttt{PARAMETER\_NORMAL\_RESISTANCE\_OIL} (command 20) or \texttt{PARAMETER\_NORMAL\_RESISTANCE\_AMB} (command 21); values below the default lower the indicated temperature, higher values raise it.
+          Persistent issues should be escalated with \verb|adc 0| readings.
+    \item[Changing UI colours] Use commands 31--33 to set the RGB components or update to the latest firmware to access the visual colour controls in the web UI.
+\end{description}

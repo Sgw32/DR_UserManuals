@@ -1,61 +1,9 @@
-\setcounter{chapter}{13}
-\chapter{Product Coding and Supply Variants} \label{ch:notation}
-\markboth{Product Coding and Supply Variants}{Product Coding and Supply Variants}
+\chapter{Operating Principle} \label{ch:operating-principle}
 
-Digifiz Replica dashboards are identified by a four-letter code that captures drivetrain support, assembly method, speed sensor type, and wiring generation.
-Optional suffixes indicate the maximum supported engine speed and the units shown on the display.
-Understanding these codes is essential when matching the instrument cluster to a specific vehicle harness.
+Digifiz Replica dashboards reuse the original Volkswagen enclosure, the factory CE~1 or CE~2 connectors, and either the mechanical speedometer cable or an electronic speed sensor.
+Replica main boards are based on a fiberglass PCB populated with discrete components controlled by an ATmega~2560 microcontroller and MAX~7219 indicator drivers.
 
-\section{Model Coding Scheme}
+Digifiz Replica Next builds on an ESP32-S3 system-on-chip and introduces a newly manufactured SLA-printed enclosure, a redesigned front panel and cover, and a connector adapter board.
+The Next-generation display is illuminated by WS2812 addressable LEDs mounted behind the front frame, and the accompanying harness includes the electronic speed sensor by default.
 
-\begin{description}
-    \item[First letter] \textbf{G} indicates petrol engines, while \textbf{D} identifies diesel variants.
-    \item[Second letter] \textbf{A} denotes a factory-assembled dashboard and \textbf{M} denotes a kit for self-assembly.
-    \item[Third letter] \textbf{C} means the cluster expects a mechanical cable speed sensor; \textbf{R} selects the remote electronic speed sensor.
-    \item[Fourth letter] \textbf{T} is compatible with the pre-facelift (CE~1) wiring loom; \textbf{S} targets the facelift (CE~2) harness.
-\end{description}
-
-An optional trailing digit marks the maximum engine speed displayed on the tachometer (for example, the ``8'' in \texttt{GACT8} maps to an 8000~rpm scale).
-Export-oriented instrument panels append a unit designator: \texttt{M} for miles per hour, \texttt{G} for gallons, \texttt{F} for Fahrenheit, and \texttt{K} for Kelvin.
-Thus, \texttt{GART8-MGF} identifies a petrol panel with a remote speed sensor, CE~1 harness, 8000~rpm tachometer, and imperial units.
-
-\section{Model Range}
-
-\begin{tblr}{
-        colspec = {>{\ttfamily}Q[l,0.25\linewidth] Q[l]},
-        row{1} = {font=\bfseries},
-        rowsep = 3pt,
-    }
-    \toprule
-    Model & Description \\
-    \midrule
-    GACT    & Petrol, fully assembled, cable speed sensor, dual connectors, 7000~rpm scale. \\
-    GART    & Petrol, fully assembled, electronic speed sensor, dual connectors, 7000~rpm scale. \\
-    GAC     & Petrol, fully assembled, cable speed sensor, single connector, 7000~rpm scale. \\
-    GARS    & Petrol, fully assembled, electronic speed sensor, single connector, 7000~rpm scale. \\
-    GACT8   & Petrol, cable speed sensor, dual connectors, 8000~rpm scale. \\
-    GART8   & Petrol, electronic speed sensor, dual connectors, 8000~rpm scale. \\
-    GACS8   & Petrol, cable speed sensor, single connector, 8000~rpm scale. \\
-    GARS8   & Petrol, electronic speed sensor, single connector, 8000~rpm scale. \\
-    DACT    & Diesel, cable speed sensor, dual connectors, 6000~rpm scale. \\
-    DART    & Diesel, electronic speed sensor, dual connectors, 6000~rpm scale. \\
-    DACS    & Diesel, cable speed sensor, single connector, 6000~rpm scale. \\
-    DARS    & Diesel, electronic speed sensor, single connector, 6000~rpm scale. \\
-    MT      & Self-assembly kit with dual connectors. \\
-    MS      & Self-assembly kit with a single connector. \\
-    NEXT-GART & Replica Next, dual connectors, electronic speed sensor, 8000~rpm scale. \\
-    NEXT-GARS & Replica Next, single connector, electronic speed sensor, 8000~rpm scale. \\
-    NEXT-MT & Replica Next self-assembly kit with dual connectors. \\
-    NEXT-MS & Replica Next self-assembly kit with a single connector. \\
-    \bottomrule
-\end{tblr}
-
-\section{Supplied Components}
-
-Each dashboard ships with the parts required for its configuration:
-\begin{itemize}
-    \item A Digifiz Replica harness includes the assembled dashboard, a dual-channel temperature harness (ambient and oil), a USBasp programmer, and a speed sensor harness with sensor for remote-drive variants.
-    \item A Digifiz Replica Next kit includes the dashboard and the electronic speed sensor harness with sensor; the Wi-Fi configuration interface replaces the USB programmer.
-\end{itemize}
-
-Additional packaging recommendations and transport rules are provided in \Cref{ch:Summary}.
+Both generations share the same display layout and MFA pages, ensuring that installation procedures and day-to-day operation remain familiar between hardware revisions.
