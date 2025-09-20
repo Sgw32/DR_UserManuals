@@ -1,0 +1,17 @@
+\chapter{Typical situations for setting up the Digifiz panel Replica Next}\label{ch:replica-next-scenarios}
+
+\begin{description}
+    \item[Hotspot not visible] Move closer to the vehicle and ensure it is parked in an open area. Disable mobile data and reconnect to \texttt{Digifiz\_AP} (or \texttt{PHOL-LABS2}).
+    \item[404 at \texttt{192.168.4.1}] Turn off mobile data on the phone or laptop and try loading the page again.
+    \item[Firmware updates] Open the \emph{WiFi} tab, select the supplied \texttt{Digifiz.bin} file (the latest releases are published at \url{https://github.com/Sgw32/DigifizReplica/releases}), and click \emph{Upload}. Repeat the upload if it fails the first time. Record the odometer value before updating and restore it afterwards with \verb|11 <mileage>|.
+    \item[Commands ignored] Refresh the browser page, return to the \emph{Control} tab, and resend the command.
+    \item[Speed reading incorrect] Connect via Wi-Fi, drive at an indicated 100~km/h, note the GPS speed, then issue \verb|1 <gps_value>| (for example, \verb|1 85|) to set \texttt{PARAMETER\_SPEEDCOEFFICIENT}.
+    \item[RPM reading incorrect] Adjust \texttt{PARAMETER\_RPMCOEFFICIENT}. Older firmware uses \verb|0 <value>|; current versions use \verb|22 <value>|. Example: \verb|22 1500| halves the reading relative to \verb|22 3000|.
+    \item[Display too dim] Disable automatic brightness with \verb|13 0|, then raise the manual level (for example, \verb|14 50|). Experiment with values between 45 and 55; avoid levels above 60 to preserve LED life.
+    \item[Setting the clock] Use the web terminal (or Serial Bluetooth Terminal on legacy builds) to send \verb|255 <hours>| followed by \verb|254 <minutes>|. Example: \verb|255 23| and \verb|254 55| sets 23:55.
+    \item[Fuel readings stuck] Disconnect the battery and measure the resistance between the fuel sender pin and vehicle ground. Valid readings are typically 30--300~\ohm{}. Repair shorts (\(<5\)~\ohm{}) or open circuits before reconnecting. If the readings vary correctly but the gauge does not, record \verb|adc 0| results at several fuel levels and share them with the authors.
+    \item[Fuel flow readings inaccurate] The optional flow sensor produces emulated data and is unreliable without an intake manifold pressure sensor. Treat the readings as experimental.
+    \item[Coolant temperature out of range] Tune \texttt{PARAMETER\_COOLANT\_MIN\_R} and \texttt{PARAMETER\_COOLANT\_MAX\_R}. Example: \verb|27 30| lowers the ``1~bar'' threshold to 30~\,^{\circ}C.
+    \item[Oil or ambient temperature missing] With the battery disconnected and the engine cold, measure the sensor resistance. Oil sensors should read about 2~k\ohm{}, ambient sensors about 10~k\ohm{}. Adjust \texttt{PARAMETER\_NORMAL\_RESISTANCE\_OIL} (command~20) or \texttt{PARAMETER\_NORMAL\_RESISTANCE\_AMB} (command~21); values below the default lower the indicated temperature, higher values raise it. Persistent issues should be diagnosed by collecting \verb|adc 0| output and contacting the authors.
+    \item[Changing interface colour] Use commands 31--33 to set the RGB values. New firmware revisions include visual colour controls in the web interface, so update regularly.
+\end{description}

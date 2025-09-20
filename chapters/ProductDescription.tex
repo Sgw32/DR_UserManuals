@@ -1,0 +1,179 @@
+\chapter{Description and operation of the product}\label{ch:description}
+
+\section{Purpose}
+Digifiz Replica and Digifiz Replica Next dashboards replace the original Volkswagen instrument clusters while extending their functionality. They provide digital indications for speed, engine speed, coolant temperature, fuel level, and auxiliary MFA calculations, and they support both cable and electronic speed sensors. Replica units integrate a Bluetooth controller, while Replica Next adds Wi-Fi-based configuration modules and optional expansion units.
+
+\section{Model identification}
+Every dashboard is marked with a four-letter code that describes the drivetrain, assembly type, speed sensor interface, and wiring generation. Optional digits indicate the supported tachometer scale, and an additional three-letter suffix reports export measurement units.
+
+\subsection{Four-letter designation}
+\begin{description}
+    \item[Position~1] \textbf{G} for petrol engines or \textbf{D} for diesel engines.
+    \item[Position~2] \textbf{A} for factory-assembled units or \textbf{M} for self-assembly kits.
+    \item[Position~3] \textbf{C} for a mechanical cable speed sensor or \textbf{R} for an electronic speed sensor.
+    \item[Position~4] \textbf{T} for the pre-facelift (CE~1) harness or \textbf{S} for the facelift (CE~2) harness.
+\end{description}
+A trailing digit denotes the maximum displayed engine speed in thousands of RPM (for example, “8” on a GACT8 cluster equals an 8000~RPM scale).
+
+\subsection{Measurement suffix}
+Export variants may add a three-letter suffix formed from the set \texttt{MGFK}:
+\begin{description}
+    \item[M] miles per hour,
+    \item[G] gallons,
+    \item[F] Fahrenheit,
+    \item[K] Kelvin.
+\end{description}
+For example, a \texttt{GART8-MGF} dashboard is a petrol, factory-assembled, electronic-sensor, CE~2 unit with an 8000~RPM tachometer and imperial measurement units.
+
+\section{Model range}
+\begin{tblr}{
+    colspec={Q[l,2.2cm] X[l]},
+    row{1}={font=\bfseries},
+    hlines
+}
+Model & Description \\
+GACT & Petrol, fully assembled, cable speed sensor, two connectors, 7000~RPM scale. \\
+GART & Petrol, fully assembled, remote electronic speed sensor, two connectors, 7000~RPM scale. \\
+GAC & Petrol, fully assembled, cable speed sensor, single connector, 7000~RPM scale. \\
+GARS & Petrol, fully assembled, remote electronic speed sensor, single connector, 7000~RPM scale. \\
+GACT8 & Petrol, fully assembled, cable speed sensor, two connectors, 8000~RPM scale. \\
+GART8 & Petrol, fully assembled, remote electronic speed sensor, two connectors, 8000~RPM scale. \\
+GACS8 & Petrol, fully assembled, cable speed sensor, single connector, 8000~RPM scale. \\
+GARS8 & Petrol, fully assembled, remote electronic speed sensor, single connector, 8000~RPM scale. \\
+DACT & Diesel, fully assembled, cable speed sensor, two connectors, 6000~RPM scale. \\
+DART & Diesel, fully assembled, remote electronic speed sensor, two connectors, 6000~RPM scale. \\
+DACS & Diesel, fully assembled, cable speed sensor, single connector, 6000~RPM scale. \\
+DARS & Diesel, fully assembled, remote electronic speed sensor, single connector, 6000~RPM scale. \\
+MT & Self-assembly kit with two connectors. \\
+M.S. & Self-assembly kit with a single connector. \\
+NEXT-GART & Digifiz Replica Next, 8000~RPM scale, two connectors, electronic speed sensor. \\
+NEXT-GARS & Digifiz Replica Next, 8000~RPM scale, single connector, electronic speed sensor. \\
+NEXT-MT & Digifiz Replica Next self-assembly kit with two connectors. \\
+NEXT-MS & Digifiz Replica Next self-assembly kit with a single connector. \\
+\end{tblr}
+
+\section{Connector pin-outs}
+\subsection{Clusters with two connectors}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.72\textwidth]{digifiz_manual/image008.jpg}
+    \caption{Connector layout for dual-connector Digifiz Replica dashboards.}
+\end{figure}
+
+\paragraph{White connector}
+\begin{tblr}{
+    colspec={Q[l,1.4cm] X[l]},
+    row{1}={font=\bfseries},
+    hlines
+}
+Pin & Assignment \\
+1 & Blinker output, tied to ground for the indicator lamp. \\
+2 & Frei --- not connected. \\
+3 & Terminal~58, positive supply for the panel backlight. \\
+4 & Resistive coolant temperature sensor input. \\
+5 & Resistive fuel level sensor input. \\
+6 & Ground return. \\
+7 & Additional ground return. \\
+8 & Terminal~1 engine-speed signal (coil, distributor, or other waveform up to 12~V with possible 300~V spikes). \\
+9 & MFA mode line used to change MFA functions. \\
+10 & UNR permanent positive supply (unused on Replica, main supply on Replica Next). \\
+11 & MFA temperature “+” lead for the ambient sensor (Replica Next). \\
+12 & MFA oil temperature sensor lead (Replica Next only). \\
+13 & KL~56a high-beam indicator input (+12~V active). \\
+\end{tblr}
+
+\paragraph{Black connector}
+\begin{tblr}{
+    colspec={Q[l,1.4cm] X[l]},
+    row{1}={font=\bfseries},
+    hlines
+}
+Pin & Assignment \\
+1 & Terminal~15 switched +12~V from the ignition switch. \\
+2--4 & Not connected. \\
+5 & Handbrake indicator input (active low). \\
+6 & KL~61 generator warning lamp drive with 120~\ensuremath{\Omega} excitation resistor. \\
+7 & Oil pressure switch, 0.3~bar. \\
+8 & Oil pressure switch, 1.8~bar. \\
+9 & Not used. \\
+10 & Glow-plug indicator input (+12~V active, diesel only). \\
+11 & Hall sensor input for optional speed sensors. \\
+12 & MFA block selection line. \\
+13 & MFA reset line. \\
+\end{tblr}
+
+\subsection{Clusters with a single connector}
+Single-connector dashboards use the mapping shown in \autoref{fig:single-connector}. The harness replicates the same signals found on the dual-connector variants but consolidates them into a single plug.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.65\textwidth]{digifiz_manual/image009.png}
+    \caption{Single-connector layout used on compact Replica dashboards.}
+    \label{fig:single-connector}
+\end{figure}
+
+\subsection{Scirocco prospective harness}
+The prospective Scirocco harness uses two plugs:
+\begin{description}
+    \item[5-pin plug]
+        1.~D3, 2.~D2, 3.~D1, 4.~SA, 5.~SPERRE.
+    \item[14-pin plug]
+        1.~KL~58, 2.~MASS, 3.~TANK, 4.~TEMP, 5.~KL~1, 6.~UHR, 7.~FERNL, 8.~(reserved), 9.~OEL~1.8, 10.~CAT~VORGL(-), 11.~OEL~0.3, 12.~KL~61, 13.~KL~49a (blinker), 14.~KL~15.
+\end{description}
+
+\subsection{Mk1 connector mapping}
+Volkswagen Mk1 vehicles use the following assignments:
+\begin{enumerate}
+    \item Illumination and low-beam supply.
+    \item MASSE~31 ground reference.
+    \item TANK fuel-level sender.
+    \item TEMP coolant temperature sender.
+    \item KL~1 tachometer signal.
+    \item UHR permanent +12~V.
+    \item KL~56 high-beam signal.
+    \item OIL (HIGH) 1.8~bar pressure switch.
+    \item OIL (LOW) 0.3~bar pressure switch.
+    \item Diesel glow indicator.
+    \item CHOKE input (unused).
+    \item KL~61 generator lamp.
+    \item Blinker input (combined left/right).
+    \item KL~15 ignition supply.
+\end{enumerate}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{digifiz_manual/image010.png}
+    \caption{Harness connection diagram for Mk1 installations.}
+\end{figure}
+
+\subsection{Printed-circuit-board service connector}
+The third connector on the circuit board mirrors the dashboard connectors, with pins numbered right-to-left on Replica and Replica Next units. It provides a service interface with the assignments listed in \autoref{tab:service-connector}.
+
+\begin{tblr}{
+    colspec={Q[l,1.9cm] X[l]},
+    row{1}={font=\bfseries},
+    hlines,
+}
+\label{tab:service-connector}
+Position & Assignment \\
+1 & Indicator output. \\
+2 & Speed sensor input (SPM\_M). \\
+3 & Vehicle ground. \\
+4 & Indicator output. \\
+5 & Left blinker optocoupler input. \\
+6 & Right blinker optocoupler input. \\
+7 & Ignition +12~V. \\
+8 & Diesel-specific input. \\
+9 & Indicator input (positive). \\
+10 & Alternative RPM input (unused, Replica Next only). \\
+11 & Replica: indicator output (normally disconnected); Replica Next: brake input (active low). \\
+12 & Reserved. \\
+13 & Check-engine input. \\
+14 & No contact. \\
+\end{tblr}
+
+\section{Embedded software and completeness}
+The dashboard firmware is published at \url{https://github.com/Sgw32/DigifizReplica}. Two delivery sets are available:
+\begin{itemize}
+    \item \textbf{Digifiz Replica:} dashboard assembly, ambient and oil temperature harness, USBasp programmer, and (for remote sensors) a speed sensor harness.
+    \item \textbf{Digifiz Replica Next:} dashboard assembly and an electronic speed sensor harness.
+\end{itemize}
