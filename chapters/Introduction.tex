@@ -1,24 +1,32 @@
-\chapternotnumbered{Introduction} \label{ch:Introduction}
+\chapter{Introduction}\label{ch:introduction}
 
-This user manual consolidates the build notes, service procedures, and release checklists gathered while shipping Digifiz Replica dashboards across two hardware generations.
-The \TeXtured{} template powering the document was iterated on for years to balance production-ready typography with a modular source layout that stays maintainable as the manual grows.
+This operating manual covers the Digifiz Replica and Digifiz Replica Next digital instrument clusters for Volkswagen Golf~II, Jetta~II, and Scirocco~II vehicles. It summarises the hardware variants, describes their functions, and explains how to install, configure, operate, store, and maintain the dashboards. The guidance is intended for vehicle owners, automotive electricians, and service centres that retrofit the product.
 
-Refining the template for technical documentation meant embracing theorem-like and remark-like environments for tightly connected references, and investing into automation so that metadata, figures, and indexes stay synchronized between revisions.
-Improved understanding of the coding backbone behind \LaTeX{} and its package ecosystem enabled me to customize it even further to my liking, and add even more \enquote{bells and whistles}.
+The following chapters provide the product identification scheme, connector pin-outs, operating conditions, and detailed installation and configuration procedures. Maintenance and troubleshooting references for both Replica generations are also included so the instrument panel can be serviced without the factory documentation.
 
-\begin{remark}[Template Purpose]
-    While this project focuses on the Digifiz Replica user manual, \TeXtured{} can be used for other long-form technical documents as well.
-\end{remark}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{digifiz_manual/image003.jpg}
+        \caption{Digifiz Replica V1/V2/V2.11b illuminated in the vehicle.}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{digifiz_manual/image004.jpg}
+        \caption{Delivery set for the GART~8--MGF configuration.}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{digifiz_manual/image005.jpg}
+        \caption{Typical contents of a GART package.}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{digifiz_manual/image006.jpg}
+        \caption{Rear view of the single-connector GACS assembly.}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{digifiz_manual/image007.jpg}
+        \caption{Rear view of the dual-connector GACT assembly.}
+    \end{subfigure}
+    \caption{Representative Digifiz Replica and Replica Next instrument panels supplied with this manual.}
+\end{figure}
 
-To make it user-friendly, I have restructured the preamble into several files, each of which is responsible for a specific aspect of the document.
-This way, the user can (and is encouraged to) easily find the relevant part of the code and modify it.
-
-Numerous comments and explanations are provided throughout the code to further aid the user in understanding the template without always having to consult the documentation of packages (which is recommended for more advanced changes).
-
-\begin{remark}[How to Setup]
-    To set up \TeXtured{} template for your document, you can use the \texttt{Overleaf} template or clone the repository on \textsf{GitHub} \autocite{TeXtured}.
-    Then, you can start modifying the files to suit your needs.
-
-    Also make sure to check the \texttt{README.md} file for more detailed instructions, particularly on various software dependencies.
-    If you encounter any issues, please see \href{https://github.com/jdujava/TeXtured/issues/2}{\texttt{jdujava/TeXtured \#2}} and \href{https://github.com/jdujava/TeXtured/issues/5}{\texttt{jdujava/TeXtured \#5}}.
-\end{remark}
+Each variant ships with the components required for the intended drivetrain, measurement units, and wiring harness style. Later chapters decode the variant markings and provide connector tables so the cluster can be integrated safely.
