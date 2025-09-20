@@ -1,13 +1,13 @@
 \pdfbookmark{Title Page}{titlepage} % add PDF outline entry
 \thispagestyle{empty} % no number on the title page
 \begin{center}
-    \begin{adjustbox}{center,trim=0 0.2cm 4cm 0.2cm}
-        \includegraphics[width=1.4\textwidth]{MFF-logo.pdf}
+    \begin{adjustbox}{center,trim=0 0 0 0}
+        \includegraphics[width=0.72\textwidth]{digifiz_manual/image003.jpg}
     \end{adjustbox}
 
     \Large
 
-    \vspace{-2em}
+    \vspace{-1.5em}
     \vfill
 
     {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
@@ -20,9 +20,6 @@
 
     \vspace{1em}
 
-    %% if `\ManualTitleFront` is not defined, use `\ManualTitle`
-    \providecommand*{\ManualTitleFront}{\ManualTitle}
-    % {\Huge \bfseries \ManualTitleFront \par}
     {\fontsize{30pt}{36pt}\selectfont \bfseries
         \ManualTitleFront \par}
 
@@ -37,9 +34,6 @@
         \renewcommand{\arraystretch}{1.2}
         \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
             Manual Maintainer    & \Maintainer     \\
-            \ifdef{\CoMaintainer}{%
-            Co-Maintainer        & \CoMaintainer   \\
-            }{}
             \ifdef{\ProductLine}{%
             Product Line         & \ProductLine \\
             }{}
@@ -49,7 +43,7 @@
     \vspace{2em}
 
     \ifFANCY\sffamily\fi
-    Prague \YearReleased \\
+    Online Release \YearReleased \\
     \ifdef{\YearRevised}{%
         \emph{Revised version \YearRevised} \par
     }{}
