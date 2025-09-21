@@ -9,13 +9,13 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
     \centering
     \caption{Primary configuration commands for classic \ReplicaGenOne{} dashboards.}
     \label{tbl:replica-commands}
+    {\scriptsize
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Command & Name & Description \\
+        \textbf{Command} & \textbf{Name} & \textbf{Description} \\
         \midrule
         22 (or 0) & PARAMETER\_RPMCOEFFICIENT & Engine RPM calibration factor. \\
         1  & PARAMETER\_SPEEDCOEFFICIENT & Speed calibration factor. \\
@@ -48,7 +48,7 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
         253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Reset trip odometer. \\
         252 & PARAMETER\_RESET\_DIGITAL & Factory reset of stored parameters. \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}
 
 \section{Classic \ReplicaGenOneShort{} Default Values}
@@ -57,13 +57,13 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
     \centering
     \caption{Default configuration for the classic \ReplicaGenOne{}.}
     \label{tbl:replica-defaults}
+    {\scriptsize
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Parameter & Default & Notes \\
+        \textbf{Parameter} & \textbf{Default} & \textbf{Notes} \\
         \midrule
         PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
         PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\
@@ -96,7 +96,7 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
         PARAMETER\_RPM\_FILTER & 70 &  \\
         PARAMETER\_UPTIME & 0 &  \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}
 
 \section{Change Log} \label{app:change-log}
@@ -105,17 +105,17 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
     \centering
     \caption{Document change registration sheet.}
     \label{tbl:change-log}
+    {\scriptsize
     \begin{tblr}{
         colspec = {Q[c,0.12\linewidth] Q[l] Q[c,0.18\linewidth] Q[c,0.2\linewidth] Q[c,0.16\linewidth] Q[c,0.18\linewidth]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Change & Affected sheets & Document No. & Incoming reference & Signature & Date \\
+        \textbf{Change} & \textbf{Affected sheets} & \textbf{Document No.} & \textbf{Incoming reference} & \textbf{Signature} & \textbf{Date} \\
         \midrule
         1 & 04.10.2022 & -- & -- & -- & 04~Oct~2022 \\
         2 & 31.08.2023 & -- & -- & -- & 31~Aug~2023 \\
         3 & 05.08.2024 & -- & -- & -- & 05~Aug~2024 \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}

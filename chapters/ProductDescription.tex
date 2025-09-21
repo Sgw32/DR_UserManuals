@@ -26,12 +26,12 @@ Export variants may add a three-letter suffix formed from the set \texttt{MGFK}:
 For example, a \texttt{GART8-MGF} dashboard is a petrol, factory-assembled, electronic-sensor, CE~2 unit with an 8000~RPM tachometer and imperial measurement units.
 
 \section{Model range}
+{\scriptsize
 \begin{tblr}{
     colspec={Q[l,2.2cm] X[l]},
-    row{1}={font=\bfseries},
     hlines
 }
-Model & Description \\
+\textbf{Model} & \textbf{Description} \\
 GACT & Petrol, fully assembled, cable speed sensor, two connectors, 7000~RPM scale. \\
 GART & Petrol, fully assembled, remote electronic speed sensor, two connectors, 7000~RPM scale. \\
 GAC & Petrol, fully assembled, cable speed sensor, single connector, 7000~RPM scale. \\
@@ -50,7 +50,7 @@ NEXT-GART & \ReplicaNextLong{}, 8000~RPM scale, two connectors, electronic speed
 NEXT-GARS & \ReplicaNextLong{}, 8000~RPM scale, single connector, electronic speed sensor. \\
 NEXT-MT & \ReplicaNextLong{} self-assembly kit with two connectors. \\
 NEXT-MS & \ReplicaNextLong{} self-assembly kit with a single connector. \\
-\end{tblr}
+\end{tblr}}
 
 \section{Connector pin-outs}
 \subsection{Clusters with two connectors}
@@ -61,12 +61,12 @@ NEXT-MS & \ReplicaNextLong{} self-assembly kit with a single connector. \\
 \end{figure}
 
 \paragraph{White connector}
+{\scriptsize
 \begin{tblr}{
     colspec={Q[l,1.4cm] X[l]},
-    row{1}={font=\bfseries},
     hlines
 }
-Pin & Assignment \\
+\textbf{Pin} & \textbf{Assignment} \\
 1 & Blinker output, tied to ground for the indicator lamp. \\
 2 & Frei --- not connected. \\
 3 & Terminal~58, positive supply for the panel backlight. \\
@@ -80,15 +80,15 @@ Pin & Assignment \\
 11 & MFA temperature “+” lead for the ambient sensor (\ReplicaNextShort{}). \\
 12 & MFA oil temperature sensor lead (\ReplicaNextShort{} only). \\
 13 & KL~56a high-beam indicator input (+12~V active). \\
-\end{tblr}
+\end{tblr}}
 
 \paragraph{Black connector}
+{\scriptsize
 \begin{tblr}{
     colspec={Q[l,1.4cm] X[l]},
-    row{1}={font=\bfseries},
     hlines
 }
-Pin & Assignment \\
+\textbf{Pin} & \textbf{Assignment} \\
 1 & Terminal~15 switched +12~V from the ignition switch. \\
 2--4 & Not connected. \\
 5 & Handbrake indicator input (active low). \\
@@ -100,7 +100,7 @@ Pin & Assignment \\
 11 & Hall sensor input for optional speed sensors. \\
 12 & MFA block selection line. \\
 13 & MFA reset line. \\
-\end{tblr}
+\end{tblr}}
 
 \subsection{Clusters with a single connector}
 Single-connector dashboards use the mapping shown in \autoref{fig:single-connector}. The harness replicates the same signals found on the dual-connector variants but consolidates them into a single plug.
@@ -152,12 +152,12 @@ The third connector on the circuit board mirrors the dashboard connectors, with 
     \centering
     \caption{Service connector pin assignments.}
     \label{tab:service-connector}
+    {\scriptsize
     \begin{tblr}{
         colspec={Q[l,1.9cm] X[l]},
-        row{1}={font=\bfseries},
         hlines,
     }
-        Position & Assignment \\
+        \textbf{Position} & \textbf{Assignment} \\
         1 & Indicator output. \\
         2 & Speed sensor input (SPM\_M). \\
         3 & Vehicle ground. \\
@@ -172,7 +172,7 @@ The third connector on the circuit board mirrors the dashboard connectors, with 
         12 & Reserved. \\
         13 & Check-engine input. \\
         14 & No contact. \\
-    \end{tblr}
+    \end{tblr}}
 \end{table}
 
 \section{Embedded software and completeness}

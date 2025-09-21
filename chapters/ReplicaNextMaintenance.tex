@@ -52,13 +52,13 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
     \centering
     \caption{Primary \ReplicaNextShort{} configuration commands.}
     \label{tbl:next-commands}
+    {\scriptsize
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Command & Name & Description \\
+        \textbf{Command} & \textbf{Name} & \textbf{Description} \\
         \midrule
         22 (or 0) & PARAMETER\_RPMCOEFFICIENT & Engine RPM calibration factor (100--10000). \\
         1  & PARAMETER\_SPEEDCOEFFICIENT & Speed calibration factor (10--255). \\
@@ -97,7 +97,7 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
         253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Reset the trip odometer. \\
         252 & PARAMETER\_RESET\_DIGITAL & Factory reset of stored parameters. \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}
 
 \section{Default values}
@@ -105,13 +105,13 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
     \centering
     \caption{\ReplicaNextShort{} default settings.}
     \label{tbl:next-defaults}
+    {\scriptsize
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.18\linewidth] Q[c,0.18\linewidth] Q[l]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Parameter & Default & Notes \\
+        \textbf{Parameter} & \textbf{Default} & \textbf{Notes} \\
         \midrule
         PARAMETER\_RPMCOEFFICIENT & 3000 & Typical for Audi tachometer inputs. \\
         PARAMETER\_SPEEDCOEFFICIENT & 100 & Calibrated for 100~km/h. \\
@@ -146,7 +146,7 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
         PARAMETER\_RPM\_FILTER & 70 & Filter response. \\
         PARAMETER\_UPTIME & 0 & Runtime counter. \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}
 
 \section{Reading parameters and examples}
