@@ -148,28 +148,32 @@ Volkswagen Mk1 vehicles use the following assignments:
 \subsection{Printed-circuit-board service connector}
 The third connector on the circuit board mirrors the dashboard connectors, with pins numbered right-to-left on Replica and Replica Next units. It provides a service interface with the assignments listed in \autoref{tab:service-connector}.
 
-\begin{tblr}{
-    colspec={Q[l,1.9cm] X[l]},
-    row{1}={font=\bfseries},
-    hlines,
-}
-\label{tab:service-connector}
-Position & Assignment \\
-1 & Indicator output. \\
-2 & Speed sensor input (SPM\_M). \\
-3 & Vehicle ground. \\
-4 & Indicator output. \\
-5 & Left blinker optocoupler input. \\
-6 & Right blinker optocoupler input. \\
-7 & Ignition +12~V. \\
-8 & Diesel-specific input. \\
-9 & Indicator input (positive). \\
-10 & Alternative RPM input (unused, Replica Next only). \\
-11 & Replica: indicator output (normally disconnected); Replica Next: brake input (active low). \\
-12 & Reserved. \\
-13 & Check-engine input. \\
-14 & No contact. \\
-\end{tblr}
+\begin{table}[htbp]
+    \centering
+    \caption{Service connector pin assignments.}
+    \label{tab:service-connector}
+    \begin{tblr}{
+        colspec={Q[l,1.9cm] X[l]},
+        row{1}={font=\bfseries},
+        hlines,
+    }
+        Position & Assignment \\
+        1 & Indicator output. \\
+        2 & Speed sensor input (SPM\_M). \\
+        3 & Vehicle ground. \\
+        4 & Indicator output. \\
+        5 & Left blinker optocoupler input. \\
+        6 & Right blinker optocoupler input. \\
+        7 & Ignition +12~V. \\
+        8 & Diesel-specific input. \\
+        9 & Indicator input (positive). \\
+        10 & Alternative RPM input (unused, Replica Next only). \\
+        11 & Replica: indicator output (normally disconnected); Replica Next: brake input (active low). \\
+        12 & Reserved. \\
+        13 & Check-engine input. \\
+        14 & No contact. \\
+    \end{tblr}
+\end{table}
 
 \section{Embedded software and completeness}
 The dashboard firmware is published at \url{https://github.com/Sgw32/DigifizReplica}. Two delivery sets are available:
