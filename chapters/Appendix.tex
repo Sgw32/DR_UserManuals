@@ -34,7 +34,7 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
         16 & PARAMETER\_MFA\_STATE & Active MFA mode. \\
         17 & PARAMETER\_BUZZER\_OFF & Disable buzzer (Replica only). \\
         18 & PARAMETER\_MAX\_RPM & Tachometer scaling (7000 default). \\
-        19--21 & PARAMETER\_NORMAL\_RESISTANCE\_\textit{X} & Sensor resistances at 25\,^{\circ}C for coolant, oil, and ambient inputs. \\
+        19--21 & PARAMETER\_NORMAL\_RESISTANCE\_\textit{X} & Sensor resistances at \SI{25}{\celsius} for coolant, oil, and ambient inputs. \\
         23 & PARAMETER\_DOT\_OFF & Clock colon behaviour. \\
         24 & PARAMETER\_BACKLIGHT\_ON & Enable backlight when low beam is active. \\
         25 & PARAMETER\_M\_D\_FILTER & Median filter constant. \\
@@ -84,14 +84,14 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
         PARAMETER\_MFA\_STATE & 0 &  \\
         PARAMETER\_BUZZER\_OFF & 1 & Buzzer disabled. \\
         PARAMETER\_MAX\_RPM & 8000 & 7000 on earlier clusters. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & Ohms at 25\,^{\circ}C. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & Ohms at 25\,^{\circ}C. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & Ohms at 25\,^{\circ}C. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \si{\ohm} at \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \si{\ohm} at \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & \si{\ohm} at \SI{25}{\celsius}. \\
         PARAMETER\_DOT\_OFF & 0 & Blinking colon. \\
         PARAMETER\_BACKLIGHT\_ON & 1 & Enabled. \\
         PARAMETER\_M\_D\_FILTER & 65535 &  \\
-        PARAMETER\_COOLANT\_MAX\_R & 120 & \(^{\circ}\mathrm{C}\). \\
-        PARAMETER\_COOLANT\_MIN\_R & 60 & \(^{\circ}\mathrm{C}\). \\
+        PARAMETER\_COOLANT\_MAX\_R & 120 & \si{\celsius}. \\
+        PARAMETER\_COOLANT\_MIN\_R & 60 & \si{\celsius}. \\
         PARAMETER\_MAINCOLOR\_[RGB] & -- & Colour commands not active on classic Replica. \\
         PARAMETER\_RPM\_FILTER & 70 &  \\
         PARAMETER\_UPTIME & 0 &  \\
