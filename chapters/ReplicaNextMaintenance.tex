@@ -1,17 +1,17 @@
-\chapter{Setting up and maintaining Digifiz Replica Next}\label{ch:replica-next-setup}
+\chapter{Setting up and maintaining \ReplicaNextLong{}}\label{ch:replica-next-setup}
 
-This section applies to the Digifiz Replica Next dashboard shown in \autoref{fig:next-hardware}.
+This section applies to the \ReplicaNextLong{} dashboard shown in \autoref{fig:next-hardware}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{digifiz_manual/image019.png}
-    \caption{Digifiz Replica Next dashboard assembly.}
+    \caption{\ReplicaNextLong{} dashboard assembly.}
     \label{fig:next-hardware}
 \end{figure}
 
 \section{Panel handling}
 \begin{itemize}
-    \item The UV-printed polycarbonate faceplate must be protected from scratches and foreign objects. Significant damage requires replacement parts and is not treated as a warranty case.
+    \item The UV-printed polycarbonate faceplate must be protected from scratches and foreign objects. Significant damage requires replacement parts from PHOL-LABS Kft and is not treated as a warranty case.
     \item The real-time clock is configured via the Wi-Fi control panel. It resets whenever the permanent supply is disconnected.
 \end{itemize}
 
@@ -33,7 +33,7 @@ Configuration, data collection, and firmware management are performed through th
         \includegraphics[width=\linewidth]{digifiz_manual/image021.png}
         \caption{Numbered controls and command entry fields.}
     \end{subfigure}
-    \caption{Replica Next Wi-Fi control interface.}
+    \caption{\ReplicaNextShort{} Wi-Fi control interface.}
     \label{fig:next-control-tabs}
 \end{figure}
 
@@ -50,7 +50,7 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
 \section{Command reference}
 \begin{table}[htbp]
     \centering
-    \caption{Primary Replica Next configuration commands.}
+    \caption{Primary \ReplicaNextShort{} configuration commands.}
     \label{tbl:next-commands}
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
@@ -77,13 +77,13 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
         14 & PARAMETER\_BRIGHTNESS\_LEVEL & Manual brightness level (0--60\%; values above 60 reduce LED life). \\
         15 & PARAMETER\_TANK\_CAPACITY & Fuel tank capacity in litres (0--99; 55~L typical for Golf~2). \\
         16 & PARAMETER\_MFA\_STATE & Active MFA mode (normally controlled via hardware input). \\
-        17 & PARAMETER\_BUZZER\_OFF & Disable buzzer (1 disables, 0 enables; Replica Next lacks a buzzer). \\
+        17 & PARAMETER\_BUZZER\_OFF & Disable buzzer (1 disables, 0 enables; \ReplicaNextShort{} lacks a buzzer). \\
         18 & PARAMETER\_MAX\_RPM & Tachometer scaling (typical 8000, range 4000--16000). \\
         19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Coolant sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
         20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Oil sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
         21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Ambient sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
         23 & PARAMETER\_DOT\_OFF & Clock colon behaviour (0=blink, 1=solid). \\
-        24 & PARAMETER\_BACKLIGHT\_ON & Enable backlight on low beam (not used on Replica Next). \\
+        24 & PARAMETER\_BACKLIGHT\_ON & Enable backlight on low beam (not used on \ReplicaNextShort{}). \\
         25 & PARAMETER\_M\_D\_FILTER & Median filter constant (legacy, normally unused). \\
         26 & PARAMETER\_COOLANT\_MAX\_R & Coolant sensor threshold for full-scale indication (\SI{100}{\celsius}--\SI{150}{\celsius}). \\
         27 & PARAMETER\_COOLANT\_MIN\_R & Coolant sensor threshold for ``1~bar'' indication (\SI{0}{\celsius}--\SI{80}{\celsius}). \\
@@ -103,7 +103,7 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
 \section{Default values}
 \begin{table}[htbp]
     \centering
-    \caption{Replica Next default settings.}
+    \caption{\ReplicaNextShort{} default settings.}
     \label{tbl:next-defaults}
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.18\linewidth] Q[c,0.18\linewidth] Q[l]},

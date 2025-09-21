@@ -1,22 +1,23 @@
-\chapter{Typical situations for setting up the Digifiz Replica}\label{ch:replica-scenarios}
+\chapter{Typical situations for setting up the \ReplicaGenOne{}}\label{ch:replica-scenarios}
 
-Before troubleshooting, confirm that the dashboard is the classic Digifiz Replica (\autoref{ch:replica-setup}). Replica Next panels use a Wi-Fi portal and are covered in \autoref{ch:replica-next-scenarios}.
+Before troubleshooting, confirm that the dashboard is the classic \ReplicaGenOne{} (\autoref{ch:replica-setup}). \ReplicaNextLong{} panels use a Wi-Fi portal and are covered in \autoref{ch:replica-next-scenarios}.
 
 \begin{description}
-    \item[Bluetooth module not detected] Pair with the dashboard's Bluetooth Classic module. Serial Bluetooth Terminal for Android is the recommended tool; BLE-only scanners will not find the device.
-    \item[iPhone or iPad cannot connect] Classic Replica dashboards use Bluetooth~2.0 and are incompatible with iOS devices. Use an Android phone or a computer with a Bluetooth serial utility.
-    \item[Commands ignored on 2024+ firmware] Unlock the protocol by sending \verb|234 123|, then resend the required command sequence.
-    \item[Speed reading too high or low] Connect via Serial Bluetooth Terminal, drive at an indicated \SI{100}{\kilo\metre\per\hour}, and note the GPS speed. Send \verb|1 <gps_value>| (for example, \verb|1 85|) to set \texttt{PARAMETER\_SPEEDCOEFFICIENT} to the GPS value.
-    \item[RPM reading incorrect] Older firmware uses \verb|0 <value>| while current builds use \verb|22 <value>|. Audi engines typically require \verb|22 3000|; halve or double the value to correct the display (for example, \verb|22 1500|).
-    \item[Increase brightness] Disable automatic control with \verb|13 0|, then set \verb|14 15| (or another preferred value) for maximum manual brightness. Re-enable automatic control later with \verb|13 1|.
-    \item[Setting the clock] Send \verb|255 <hours>| followed by \verb|254 <minutes>|. Examples: \verb|255 23| and \verb|254 55| for 23:55; \verb|255 14| and \verb|254 30| for 14:30; \verb|255 2| and \verb|254 28| for 02:28.
-    \item[Fuel gauge issues] Disconnect the vehicle battery before measuring.\begin{itemize}
-        \item If the display drops slowly from 60 to 0, measure the sender resistance between the harness pin and ground; valid readings are typically \SIrange{30}{300}{\ohm}. Check the connector and the feed into the main board.
-        \item If the gauge is pegged full, look for a short to ground (less than \SI{5}{\ohm}) on the sender line and repair it.
-        \item If the reading never changes, compare the sender resistance with full and empty tanks. Replace the sensor if the resistance is constant.
+    \item[Bluetooth module not detected] Pair with the dashboard's Bluetooth Classic interface (it normally advertises as \texttt{Digifiz}). Serial Bluetooth Terminal for Android remains the recommended tool: configure the end-of-line character as LF and avoid BLE-only scanners, which cannot discover the module.
+    \item[iPhone or iPad cannot connect] \ReplicaGenOneShort{} dashboards use Bluetooth~2.0 and are incompatible with iOS devices. Use an Android phone or a computer running a Bluetooth serial utility.
+    \item[Commands ignored on 2024+ firmware] Unlock the command parser by sending \verb|234 123|, then repeat the desired sequence. Store quick-access buttons in Serial Bluetooth Terminal for the values you adjust frequently.
+    \item[Speed reading too high or low] Connect through Serial Bluetooth Terminal, drive at an indicated \SI{100}{\kilo\metre\per\hour}, and note the GPS speed. Send \verb|1 <gps_value>| (for example, \verb|1 85|) so \texttt{PARAMETER\_SPEEDCOEFFICIENT} matches the verified GPS speed.
+    \item[RPM reading incorrect] Firmware prior to 2024 expects \verb|0 <value>| while current releases use \verb|22 <value>|. Audi engines typically need \verb|22 3000|; halve or double the value (for example, \verb|22 1500| or \verb|22 6000|) until the display matches the tachometer.
+    \item[Increase brightness] Disable automatic control with \verb|13 0| and raise the manual level with \verb|14 <value>|. Values between 45 and 55 brighten the display substantially; avoid levels above 60 to preserve LED life. Re-enable the photodiode later with \verb|13 1|.
+    \item[Setting the clock] Use Serial Bluetooth Terminal to send \verb|255 <hours>| followed by \verb|254 <minutes>|. Examples: \verb|255 23|, \verb|254 55| sets 23:55; \verb|255 14|, \verb|254 30| sets 14:30; \verb|255 2|, \verb|254 28| sets 02:28.
+    \item[Fuel gauge issues] Disconnect the vehicle battery before probing.\begin{itemize}
+        \item If the display drifts from 60 to 0, measure the sender resistance between the harness pin and ground; valid readings are typically \SIrange{30}{300}{\ohm}. Clean the connector and confirm the signal reaches the main board.
+        \item If the gauge is pegged full, look for a short to ground below \SI{5}{\ohm} on the sender line and repair it.
+        \item If the reading never changes, compare the sender resistance with full and empty tanks. Replace the sensor if it stays constant.
     \end{itemize}
-    \item[Fuel flow values seem wrong] The displayed flow is emulated unless an intake-manifold pressure sensor is installed. Treat the reading as indicative only.
-    \item[Coolant gauge inaccurate] Adjust \texttt{PARAMETER\_COOLANT\_MIN\_R} and \texttt{PARAMETER\_COOLANT\_MAX\_R}. Example: \verb|27 30| shortens the scale so that ``1~bar'' corresponds to roughly \SI{30}{\celsius}.
+    \item[Fuel flow values seem wrong] The flow channel is emulated unless an intake-manifold pressure sensor is fitted. Treat the reading as indicative rather than absolute.
+    \item[Coolant gauge inaccurate] Adjust \texttt{PARAMETER\_COOLANT\_MIN\_R} and \texttt{PARAMETER\_COOLANT\_MAX\_R}. Example: \verb|27 30| shortens the scale so that the ``1~bar'' mark aligns with roughly \SI{30}{\celsius}.
+    \item[Oil or ambient temperature readings missing] A reading of \texttt{-999} or a stuck value indicates a sensor issue. With the battery disconnected and the engine cold, measure the sensor resistance between the harness pin and ground. Oil sensors should read about \SI{2}{\kilo\ohm} \ensuremath{\pm}\SI{0.3}{\kilo\ohm}; ambient sensors about \SI{10}{\kilo\ohm} \ensuremath{\pm}\SI{2}{\kilo\ohm}. Adjust \texttt{PARAMETER\_NORMAL\_RESISTANCE\_OIL} (command~20) or \texttt{PARAMETER\_NORMAL\_RESISTANCE\_AMB} (command~21) if the display needs fine-tuning. Persistent faults should be documented with \verb|adc 0| logs and escalated to PHOL-LABS Kft support.
 \end{description}
 
 Collect raw sensor data with \verb|adc 0| if the problem persists and share the results with the dashboard developers for analysis.

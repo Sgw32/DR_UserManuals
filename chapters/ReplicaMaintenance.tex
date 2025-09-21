@@ -1,25 +1,25 @@
-\chapter{Setup and maintenance of the Digifiz Replica}\label{ch:replica-setup}
+\chapter{Setup and maintenance of the \ReplicaGenOne{}}\label{ch:replica-setup}
 
-This chapter applies to the classic Digifiz Replica instrument panel shown in \autoref{fig:replica-classic}. If your dashboard matches the Replica Next layout, refer to the previous chapter.
+This chapter applies to the classic \ReplicaGenOne{} instrument panel shown in \autoref{fig:replica-classic}. If your dashboard matches the \ReplicaNextLong{} layout, refer to the previous chapter.
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.46\textwidth}
         \includegraphics[width=\linewidth]{digifiz_manual/image046.png}
-        \caption{Classic Digifiz Replica with square bezel.}
+        \caption{Classic \ReplicaGenOne{} with square bezel.}
     \end{subfigure}\hfill
     \begin{subfigure}{0.46\textwidth}
         \includegraphics[width=\linewidth]{digifiz_manual/image047.png}
         \caption{Round-edge fascia used on later kits.}
     \end{subfigure}
-    \caption{Appearance of the Digifiz Replica dashboard.}
+    \caption{Appearance of the \ReplicaGenOne{} dashboard.}
     \label{fig:replica-classic}
 \end{figure}
 
 \section{Handling and screen care}
 \begin{itemize}
     \item The plexiglass front with UV printing is easily marred. Avoid contact with sharp or abrasive objects.
-    \item Surface damage is cosmetic and not covered by warranty. Request replacement parts from the manufacturer if the screen pattern is deformed.
+    \item Surface damage is cosmetic and not covered by warranty. Request replacement parts from PHOL-LABS Kft if the screen pattern is deformed.
 \end{itemize}
 
 \section{Real-time clock battery}
@@ -31,7 +31,7 @@ Each kit ships with a USBasp programmer lead already connected inside the housin
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.32\textwidth]{digifiz_manual/image048.png}
-    \caption{USBasp harness orientation inside the Digifiz Replica.}
+    \caption{USBasp harness orientation inside the \ReplicaGenOne{}.}
     \label{fig:usbasp-cable}
 \end{figure}
 
@@ -63,10 +63,10 @@ Most parameters are adjusted over Bluetooth using an Android phone and the Seria
 Enter commands as space-separated pairs \verb|<number> <value>|. For example, to store an odometer value of 123\,456~km send \verb|11 123456|. Add 128 to a command number to read its current value (\verb|129 0| reports the speed coefficient). The diagnostic command \verb|adc 0| prints raw sensor readings that help the developers analyse faults.
 
 \section{Configuration parameters}
-The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-commands}. Default settings for Generation~1/1.5 and Generation~2 dashboards are summarised in \autoref{tbl:replica-defaults}. Use commands~31--33 only on Replica Next units; they have no effect on the classic Replica.
+The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-commands}. Default settings for Generation~1/1.5 and Generation~2 dashboards are summarised in \autoref{tbl:replica-defaults}. Use commands~31--33 only on \ReplicaNextShort{} units; they have no effect on the classic \ReplicaGenOneShort{}.
 
 \begin{longtblr}[
-    caption = {Classic Digifiz Replica configuration commands.},
+    caption = {Classic \ReplicaGenOne{} configuration commands.},
     label = {tbl:replica-classic-commands},
 ]{
     colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l,0.30\linewidth] Q[l]},
@@ -103,7 +103,7 @@ The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-comman
     25 & PARAMETER\_M\_D\_FILTER & Median filter constant (legacy). \\
     26 & PARAMETER\_COOLANT\_MAX\_R & Coolant ``full-scale'' temperature threshold. \\
     27 & PARAMETER\_COOLANT\_MIN\_R & Coolant ``1~bar'' temperature threshold. \\
-    31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Interface colour components (Replica Next only). \\
+    31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Interface colour components (\ReplicaNextShort{} only). \\
     37 & PARAMETER\_RPM\_FILTER & RPM filtering aggressiveness. \\
     128 & PARAMETER\_READ\_ADDITION & Add to read any parameter. \\
     255 & PARAMETER\_SET\_HOUR & Set clock hours (24-hour). \\

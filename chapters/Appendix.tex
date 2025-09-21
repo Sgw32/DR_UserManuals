@@ -1,13 +1,13 @@
 \chapter{Reference Tables} \label{appendix:reference}
 
-\section{Classic Digifiz Replica Command Reference}
+\section{Classic \ReplicaGenOne{} Command Reference}
 
-The classic Replica firmware shares most commands with Replica Next.
-Commands 31--33 (colour control) are only active on Replica Next units; other commands apply equally to both generations.
+The classic Replica firmware shares most commands with \ReplicaNextShort{}.
+Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; other commands apply equally to both generations.
 
 \begin{table}[htbp]
     \centering
-    \caption{Primary configuration commands for classic Digifiz Replica dashboards.}
+    \caption{Primary configuration commands for classic \ReplicaGenOne{} dashboards.}
     \label{tbl:replica-commands}
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
@@ -40,7 +40,7 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
         25 & PARAMETER\_M\_D\_FILTER & Median filter constant. \\
         26 & PARAMETER\_COOLANT\_MAX\_R & Coolant sensor threshold for full-scale indication. \\
         27 & PARAMETER\_COOLANT\_MIN\_R & Coolant sensor threshold for ``1~bar'' indication. \\
-        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & UI colour components (Replica Next only). \\
+        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & UI colour components (\ReplicaNextShort{} only). \\
         37 & PARAMETER\_RPM\_FILTER & RPM filtering aggressiveness. \\
         128 & PARAMETER\_READ\_ADDITION & Add 128 to read the current value of a command. \\
         255 & PARAMETER\_SET\_HOUR & Set clock hours. \\
@@ -51,11 +51,11 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
     \end{tblr}
 \end{table}
 
-\section{Classic Replica Default Values}
+\section{Classic \ReplicaGenOneShort{} Default Values}
 
 \begin{table}[htbp]
     \centering
-    \caption{Default configuration for the classic Digifiz Replica.}
+    \caption{Default configuration for the classic \ReplicaGenOne{}.}
     \label{tbl:replica-defaults}
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
