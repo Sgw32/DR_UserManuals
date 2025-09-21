@@ -79,14 +79,14 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
         16 & PARAMETER\_MFA\_STATE & Active MFA mode (normally controlled via hardware input). \\
         17 & PARAMETER\_BUZZER\_OFF & Disable buzzer (1 disables, 0 enables; Replica Next lacks a buzzer). \\
         18 & PARAMETER\_MAX\_RPM & Tachometer scaling (typical 8000, range 4000--16000). \\
-        19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Coolant sensor resistance at 25\,^{\circ}C (1000--10000~\ohm). \\
-        20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Oil sensor resistance at 25\,^{\circ}C (1000--10000~\ohm). \\
-        21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Ambient sensor resistance at 25\,^{\circ}C (1000--10000~\ohm). \\
+        19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Coolant sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
+        20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Oil sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
+        21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Ambient sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
         23 & PARAMETER\_DOT\_OFF & Clock colon behaviour (0=blink, 1=solid). \\
         24 & PARAMETER\_BACKLIGHT\_ON & Enable backlight on low beam (not used on Replica Next). \\
         25 & PARAMETER\_M\_D\_FILTER & Median filter constant (legacy, normally unused). \\
-        26 & PARAMETER\_COOLANT\_MAX\_R & Coolant sensor threshold for full-scale indication (100--150~\,^{\circ}C). \\
-        27 & PARAMETER\_COOLANT\_MIN\_R & Coolant sensor threshold for ``1~bar'' indication (0--80~\,^{\circ}C). \\
+        26 & PARAMETER\_COOLANT\_MAX\_R & Coolant sensor threshold for full-scale indication (\SI{100}{\celsius}--\SI{150}{\celsius}). \\
+        27 & PARAMETER\_COOLANT\_MIN\_R & Coolant sensor threshold for ``1~bar'' indication (\SI{0}{\celsius}--\SI{80}{\celsius}). \\
         31 & PARAMETER\_MAINCOLOR\_R & Red component of the UI colour (0--255). \\
         32 & PARAMETER\_MAINCOLOR\_G & Green component of the UI colour (0--255). \\
         33 & PARAMETER\_MAINCOLOR\_B & Blue component of the UI colour (0--255). \\
@@ -132,14 +132,14 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
         PARAMETER\_MFA\_STATE & 0 & Default MFA page. \\
         PARAMETER\_BUZZER\_OFF & 1 & Buzzer disabled. \\
         PARAMETER\_MAX\_RPM & 8000 & Tachometer scale. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \ohm{} at 25\,^{\circ}C. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \ohm{} at 25\,^{\circ}C. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \ohm{} at \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \ohm{} at \SI{25}{\celsius}. \\
         PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & 500~\ohm{} for Generation~2 sensors. \\
         PARAMETER\_DOT\_OFF & 0 & Blinking clock colon. \\
         PARAMETER\_BACKLIGHT\_ON & 1 & Backlight enabled with low beam. \\
         PARAMETER\_M\_D\_FILTER & 65535 & Legacy median filter constant. \\
-        PARAMETER\_COOLANT\_MAX\_R & 120 & \(^{\circ}\mathrm{C}\). \\
-        PARAMETER\_COOLANT\_MIN\_R & 60 & \(^{\circ}\mathrm{C}\). \\
+        PARAMETER\_COOLANT\_MAX\_R & 120 & \si{\celsius}. \\
+        PARAMETER\_COOLANT\_MIN\_R & 60 & \si{\celsius}. \\
         PARAMETER\_MAINCOLOR\_R & 180 & Yellow-green default. \\
         PARAMETER\_MAINCOLOR\_G & 240 & Yellow-green default. \\
         PARAMETER\_MAINCOLOR\_B & 6 & Yellow-green default. \\
