@@ -115,13 +115,44 @@ Single-connector dashboards use the mapping shown in \autoref{fig:single-connect
 \end{figure}
 
 \subsection{Scirocco prospective harness}
-The prospective Scirocco harness uses two plugs:
-\begin{description}
-    \item[5-pin plug]
-        1.~D3, 2.~D2, 3.~D1, 4.~SA, 5.~SPERRE.
-    \item[14-pin plug]
-        1.~KL~58, 2.~MASS, 3.~TANK, 4.~TEMP, 5.~KL~1, 6.~UHR, 7.~FERNL, 8.~(reserved), 9.~OEL~1.8, 10.~CAT~VORGL(-), 11.~OEL~0.3, 12.~KL~61, 13.~KL~49a (blinker), 14.~KL~15.
-\end{description}
+The prospective Scirocco harness uses two plugs. Their functions are summarised below.
+
+\paragraph{5-pin plug}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,2.6cm] X[l]},
+    hlines
+}
+\textbf{Pin} & \textbf{Assignment} \\
+1~(D3) & Automatic-transmission “D” range indicator contact. Grounds the drive lamp when the selector is in position~D. \\
+2~(D2) & Automatic-transmission second-range indicator contact. Grounds the “2” lamp when the selector is in position~2. \\
+3~(D1) & Automatic-transmission low-range indicator contact. Grounds the “1” lamp when the selector is in position~1. \\
+4~(SA) & Common feed for the automatic selector display (\emph{Schaltanzeige}); provides the +12~V supply for the range lamps. \\
+5~(SPERRE) & Starter interlock contact from the selector. Closed in park or neutral to permit engine cranking. \\
+\end{tblr}}
+
+\paragraph{14-pin plug}
+{\scriptsize
+\begin{tblr}{
+    colspec={Q[l,2.6cm] X[l]},
+    hlines
+}
+\textbf{Pin} & \textbf{Assignment} \\
+1~(KL~58) & Illumination supply for the panel backlight. \\
+2~(MASS) & Chassis ground return. \\
+3~(TANK) & Fuel-level sender input. \\
+4~(TEMP) & Coolant temperature sender input. \\
+5~(KL~1) & Engine-speed signal (terminal~1). \\
+6~(UHR) & Permanent +12~V feed for the clock and memory backup. \\
+7~(FERNL) & High-beam indicator input. \\
+8~(reserved) & Not connected. \\
+9~(OEL~1.8) & High-pressure oil switch, 1.8~bar. \\
+10~(CAT~VORGL(-)) & Catalytic-preheat / diesel pre-glow warning lamp input (active low). \\
+11~(OEL~0.3) & Low-pressure oil switch, 0.3~bar. \\
+12~(KL~61) & Alternator warning lamp and excitation feed. \\
+13~(KL~49a) & Combined turn-signal indicator feed. \\
+14~(KL~15) & Ignition-switched +12~V supply. \\
+\end{tblr}}
 
 \subsection{Mk1 connector mapping}
 Volkswagen Mk1 vehicles use the following assignments:
