@@ -6,3 +6,15 @@
 \usepackage{hologo} % Provides *TeX logos (for example `\hologo{pdfLaTeX}`)
 
 \providecommand*{\ohm}{\ensuremath{\Omega}}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\paramname}{m}
+  {\texttt{\dr_param_name:n {#1}}}
+
+\cs_new_protected:Npn \dr_param_name:n #1
+  {
+    \tl_set:Nn \l_tmpa_tl {#1}
+    \tl_replace_all:Nnn \l_tmpa_tl {\_}{\_\allowbreak}
+    \tl_use:N \l_tmpa_tl
+  }
+\ExplSyntaxOff
