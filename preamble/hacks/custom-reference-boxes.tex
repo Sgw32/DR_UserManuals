@@ -36,6 +36,12 @@
 \NewCommandCopy{\hrefold}{\href}
 \NewCommandCopy{\urlold}{\url}
 
+\NewDocumentCommand{\displayurl}{m}{%
+    \par\noindent
+    \urlold{#1}%
+    \par
+}
+
 %% Overwrite the default link commands to use the new boxes
 \RenewDocumentCommand{\href}{O{} m m}{\hrefold{#2}{\hrefbox[#1]{#3}}}        % remote links (DOI, arXiv, etc.)
 \RenewDocumentCommand{\url}{O{} m}{\href[#1]{#2}{\nolinkurl{#2}}}            % URLs (using the new \href command)
