@@ -26,7 +26,9 @@ This chapter applies to the classic \ReplicaGenOne{} instrument panel shown in \
 The dashboard contains a DS3231 real-time clock with a CR2032 cell. The battery typically lasts about four years. When it is depleted the clock resets at every power-up. Remove the front and/or rear cover, keep the wiring harnesses connected, and replace the coin cell. Dispose of the spent battery according to local regulations.
 
 \section{Firmware maintenance with USBasp}
-Each kit ships with a USBasp programmer lead already connected inside the housing (\autoref{fig:usbasp-cable}). Install a suitable USBasp driver (for example from \url{https://myrobot.ru/downloads/driver-usbasp-v-2.0-usb-isp-windows-7-8-10-xp.php}) before flashing. The programmer powers the dashboard when it is connected to a computer, allowing bench checks.
+Each kit ships with a USBasp programmer lead already connected inside the housing (\autoref{fig:usbasp-cable}). Install a suitable USBasp driver before flashing. For example, download it from the following address:
+\displayurl{https://myrobot.ru/downloads/driver-usbasp-v-2.0-usb-isp-windows-7-8-10-xp.php}
+The programmer powers the dashboard when it is connected to a computer, allowing bench checks.
 
 \begin{figure}[htbp]
     \centering
@@ -43,10 +45,13 @@ avrdude -c usbasp -p m2560 -e \
     -U flash:w:Digifiz.ino.mega.hex
 \end{verbatim}
 
-After a successful upload press the front touch button four to five times to initialise the memory blocks. If the blocks remain empty, repeat the flashing procedure or issue the Bluetooth command \verb|252 0| to trigger a factory reset. Ready-to-use firmware images are published at \url{https://github.com/Sgw32/DigifizReplica}.
+After a successful upload press the front touch button four to five times to initialise the memory blocks. If the blocks remain empty, repeat the flashing procedure or issue the Bluetooth command \verb|252 0| to trigger a factory reset. Ready-to-use firmware images are published at:
+\displayurl{https://github.com/Sgw32/DigifizReplica}
 
 \section{Bluetooth configuration}
-Most parameters are adjusted over Bluetooth using an Android phone and the Serial Bluetooth Terminal application (\url{https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=en&gl=US}). iOS devices cannot connect to the classic Bluetooth 2.0 module.
+Most parameters are adjusted over Bluetooth using an Android phone and the Serial Bluetooth Terminal application. Download it from the following link before pairing with the dashboard:
+\displayurl{https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=en&gl=US}
+iOS devices cannot connect to the classic Bluetooth 2.0 module.
 
 \begin{itemize}
     \item Ensure you pair with the dashboard's Bluetooth Classic interface rather than BLE-only devices.

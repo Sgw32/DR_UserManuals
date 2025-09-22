@@ -3,7 +3,9 @@
 \begin{description}
     \item[Hotspot not visible] Move closer to the vehicle and ensure it is parked in an open area. Disable mobile data, forget stale Wi-Fi profiles, and reconnect to \texttt{Digifiz\_AP} (or \texttt{PHOL-LABS2}).
     \item[404 at \texttt{192.168.4.1}] Turn off mobile data on the phone or laptop and reload the page. Captive portal detection on Android/iOS often interferes until the cellular modem is disabled.
-    \item[Firmware updates] Open the \emph{WiFi} tab, select the supplied \texttt{Digifiz.bin} file (the latest releases are published at \url{https://github.com/Sgw32/DigifizReplica/releases}), and click \emph{Upload}. The first attempt can fail; repeat the upload if necessary. Successful flashes redirect to a confirmation page. Record the odometer before updating and restore it afterwards with \verb|11 <mileage>|.
+    \item[Firmware updates] Open the \emph{WiFi} tab and select the supplied \texttt{Digifiz.bin} file. The latest releases are published at the link below.
+        \displayurl{https://github.com/Sgw32/DigifizReplica/releases}
+        Click \emph{Upload}. The first attempt can fail; repeat the upload if necessary. Successful flashes redirect to a confirmation page. Record the odometer before updating and restore it afterwards with \verb|11 <mileage>|.
     \item[Commands ignored] Refresh the browser, return to the \emph{Control} tab, and resend the command. Ensure the \emph{Process} button is pressed after entering the value.
     \item[Speed reading incorrect] Connect via Wi-Fi, drive at an indicated \SI{100}{\kilo\metre\per\hour}, note the GPS speed, then issue \verb|1 <gps_value>| (for example, \verb|1 85|) to set \paramname{PARAMETER\_SPEEDCOEFFICIENT} to the verified value.
     \item[RPM reading incorrect] Adjust \paramname{PARAMETER\_RPMCOEFFICIENT}. Older firmware uses \verb|0 <value>|; current versions use \verb|22 <value>|. Example: \verb|22 1500| halves the reading relative to \verb|22 3000|.
