@@ -10,8 +10,8 @@ Follow the sequence below when replacing the factory cluster with a Digifiz dash
     \item Unscrew the panel from its brackets and carefully remove it from the vehicle.
     \item Route the supplied temperature and speed sensor harnesses as required.
     \item Install the Digifiz dashboard into the bracket grooves and secure it with screws.
-    \item For Digifiz Replica Next, install the Volkswagen MFA sensors (or equivalents) and route their leads to the CE~1/CE~2 connectors.
-    \item On \texttt{GACS}/\texttt{GARS}/\texttt{DARS}/\texttt{DACS} models, connect the labelled \texttt{MFA\_MODE}, \texttt{MFA\_RESET}, \texttt{MFA\_BLOCK}, and handbrake wires manually if the vehicle harness lacks these contacts. The second-generation Replica Next connects these signals internally by default.
+    \item For \ReplicaNextLong{}, install the Volkswagen MFA sensors (or equivalents) and route their leads to the CE~1/CE~2 connectors.
+    \item On \texttt{GACS}/\texttt{GARS}/\texttt{DARS}/\texttt{DACS} models, connect the labelled \texttt{MFA\_MODE}, \texttt{MFA\_RESET}, \texttt{MFA\_BLOCK}, and handbrake wires manually if the vehicle harness lacks these contacts. The second-generation \ReplicaNextShort{} connects these signals internally by default.
     \item Plug the harnesses into the dashboard.
     \item Fit the electronic speed sensor or reconnect the mechanical cable.
     \item Reinstall the dashboard trim and pedal cover in the reverse order.
@@ -34,7 +34,7 @@ Six MFA pages are available:
     \item Engine oil temperature (external harness required).
     \item Ambient temperature (external harness required).
 \end{enumerate}
-On classic Replica dashboards a capacitive touch point behind the VW badge cycles the pages; Replica Next uses an external steering-column switch. Touch durations behave as follows:
+On \ReplicaGenOneShort{} dashboards a capacitive touch point behind the VW badge cycles the pages; \ReplicaNextShort{} uses an external steering-column switch. Touch durations behave as follows:
 \begin{itemize}
     \item Short press (\(<1\)~s): cycle to the next MFA function.
     \item Medium press (1--3~s when no steering-column switch is fitted): switch between MFA memory blocks; the change is indicated on screen.
@@ -42,7 +42,7 @@ On classic Replica dashboards a capacitive touch point behind the VW badge cycle
 \end{itemize}
 
 \subsection{Backlight and indicator layout}
-The classic dashboard offers a manual brightness trim above the parking-light switch; Replica Next relies on automatic brightness driven by a photodiode. Manual overrides can be configured through the maintenance interfaces described in \Cref{ch:replica-setup,ch:replica-next-setup}.
+The \ReplicaGenOneShort{} dashboard offers a manual brightness trim above the parking-light switch; \ReplicaNextShort{} relies on automatic brightness driven by a photodiode. Manual overrides can be configured through the maintenance interfaces described in \Cref{ch:replica-setup,ch:replica-next-setup}.
 
 The layout of the horizontal indicator block and the on-screen legend are shown in \autoref{fig:indicator-layout}.
 
@@ -62,7 +62,7 @@ The layout of the horizontal indicator block and the on-screen legend are shown 
 
 \subsection{Configuration interfaces}
 \begin{itemize}
-    \item Classic Digifiz Replica units include a Bluetooth 2.0 (or BLE-compatible) module. Install the \emph{Serial Bluetooth Terminal} application from Google Play, pair with the dashboard, and issue commands directly from the terminal view. Apple iOS devices cannot connect to this module.
-    \item Replica Next exposes an embedded Wi-Fi access point and configuration portal described in \Cref{ch:replica-next-setup}. Disable mobile data while connecting to ensure the captive portal loads correctly.
+    \item Classic \ReplicaGenOne{} units include a Bluetooth 2.0 (or BLE-compatible) module. Install the \emph{Serial Bluetooth Terminal} application from Google Play, pair with the dashboard, and issue commands directly from the terminal view. Apple iOS devices cannot connect to this module.
+    \item \ReplicaNextShort{} exposes an embedded Wi-Fi access point and configuration portal described in \Cref{ch:replica-next-setup}. Disable mobile data while connecting to ensure the captive portal loads correctly.
 \end{itemize}
 Both generations can also be powered and configured on the bench using the USBasp programming interface.

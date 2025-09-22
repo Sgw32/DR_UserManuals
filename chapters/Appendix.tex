@@ -1,21 +1,21 @@
 \chapter{Reference Tables} \label{appendix:reference}
 
-\section{Classic Digifiz Replica Command Reference}
+\section{Classic \ReplicaGenOne{} Command Reference}
 
-The classic Replica firmware shares most commands with Replica Next.
-Commands 31--33 (colour control) are only active on Replica Next units; other commands apply equally to both generations.
+The classic Replica firmware shares most commands with \ReplicaNextShort{}.
+Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; other commands apply equally to both generations.
 
 \begin{table}[htbp]
     \centering
-    \caption{Primary configuration commands for classic Digifiz Replica dashboards.}
+    \caption{Primary configuration commands for classic \ReplicaGenOne{} dashboards.}
     \label{tbl:replica-commands}
+    {\scriptsize
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Command & Name & Description \\
+        \textbf{Command} & \textbf{Name} & \textbf{Description} \\
         \midrule
         22 (or 0) & PARAMETER\_RPMCOEFFICIENT & Engine RPM calibration factor. \\
         1  & PARAMETER\_SPEEDCOEFFICIENT & Speed calibration factor. \\
@@ -40,7 +40,7 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
         25 & PARAMETER\_M\_D\_FILTER & Median filter constant. \\
         26 & PARAMETER\_COOLANT\_MAX\_R & Coolant sensor threshold for full-scale indication. \\
         27 & PARAMETER\_COOLANT\_MIN\_R & Coolant sensor threshold for ``1~bar'' indication. \\
-        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & UI colour components (Replica Next only). \\
+        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & UI colour components (\ReplicaNextShort{} only). \\
         37 & PARAMETER\_RPM\_FILTER & RPM filtering aggressiveness. \\
         128 & PARAMETER\_READ\_ADDITION & Add 128 to read the current value of a command. \\
         255 & PARAMETER\_SET\_HOUR & Set clock hours. \\
@@ -48,22 +48,22 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
         253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Reset trip odometer. \\
         252 & PARAMETER\_RESET\_DIGITAL & Factory reset of stored parameters. \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}
 
-\section{Classic Replica Default Values}
+\section{Classic \ReplicaGenOneShort{} Default Values}
 
 \begin{table}[htbp]
     \centering
-    \caption{Default configuration for the classic Digifiz Replica.}
+    \caption{Default configuration for the classic \ReplicaGenOne{}.}
     \label{tbl:replica-defaults}
+    {\scriptsize
     \begin{tblr}{
         colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Parameter & Default & Notes \\
+        \textbf{Parameter} & \textbf{Default} & \textbf{Notes} \\
         \midrule
         PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
         PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\
@@ -96,7 +96,7 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
         PARAMETER\_RPM\_FILTER & 70 &  \\
         PARAMETER\_UPTIME & 0 &  \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}
 
 \section{Change Log} \label{app:change-log}
@@ -105,17 +105,17 @@ Commands 31--33 (colour control) are only active on Replica Next units; other co
     \centering
     \caption{Document change registration sheet.}
     \label{tbl:change-log}
+    {\scriptsize
     \begin{tblr}{
         colspec = {Q[c,0.12\linewidth] Q[l] Q[c,0.18\linewidth] Q[c,0.2\linewidth] Q[c,0.16\linewidth] Q[c,0.18\linewidth]},
-        row{1} = {font=\bfseries},
         rowsep = 2pt,
     }
         \toprule
-        Change & Affected sheets & Document No. & Incoming reference & Signature & Date \\
+        \textbf{Change} & \textbf{Affected sheets} & \textbf{Document No.} & \textbf{Incoming reference} & \textbf{Signature} & \textbf{Date} \\
         \midrule
         1 & 04.10.2022 & -- & -- & -- & 04~Oct~2022 \\
         2 & 31.08.2023 & -- & -- & -- & 31~Aug~2023 \\
         3 & 05.08.2024 & -- & -- & -- & 05~Aug~2024 \\
         \bottomrule
-    \end{tblr}
+    \end{tblr}}
 \end{table}
