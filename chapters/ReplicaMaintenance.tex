@@ -65,14 +65,14 @@ Enter commands as space-separated pairs \verb|<number> <value>|. For example, to
 \section{Configuration parameters}
 The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-commands}. Default settings for Generation~1/1.5 and Generation~2 dashboards are summarised in \autoref{tbl:replica-defaults}. Use commands~31--33 only on \ReplicaNextShort{} units; they have no effect on the classic \ReplicaGenOneShort{}.
 
+{\scriptsize
 \begin{longtblr}[
     caption = {Classic \ReplicaGenOne{} configuration commands.},
     label = {tbl:replica-classic-commands},
 ]{
-    colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l,0.30\linewidth] Q[l]},
+    colspec = {Q[c,0.14\linewidth] >{\ttfamily}Q[l,0.38\linewidth] Q[l]},
     rowsep = 2pt,
 }
-\scriptsize
     \toprule
     \textbf{ID} & \textbf{Name} & \textbf{Description} \\
     \midrule
@@ -111,6 +111,6 @@ The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-comman
     253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Reset the trip odometer. \\
     252 & PARAMETER\_RESET\_DIGITAL & Factory reset and memory initialisation. \\
     \bottomrule
-\end{longtblr}
+\end{longtblr}}
 
 The Serial Bluetooth Terminal quick buttons are convenient for routine actions such as toggling automatic brightness (\verb|13 0| and \verb|13 1|) or writing colour values. Keep values above \SI{60}{\percent} brightness only for short tests to preserve LED life.
