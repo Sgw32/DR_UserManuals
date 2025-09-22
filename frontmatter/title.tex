@@ -1,19 +1,20 @@
 \pdfbookmark{Title Page}{titlepage} % add PDF outline entry
 \thispagestyle{empty} % no number on the title page
 \begin{center}
+    \Large
+
+    \vspace{-1.5em}
+
+    {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
+        \MakeUppercase{User Manual} \par}
+
+    \vspace{1.5em}
+
     \begin{adjustbox}{center,trim=0 0 0 0}
         \includegraphics[width=0.72\textwidth]{digifiz_manual/image003.jpg}
     \end{adjustbox}
 
-    \Large
-
-    \vspace{-1.5em}
-    \vfill
-
-    {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
-        \MakeUppercase{\ManualDocumentType} USER MANUAL}
-
-    \vfill
+    \vspace{1.5em}
 
     {\Huge
         \ManualAuthor}
@@ -23,17 +24,13 @@
     {\fontsize{30pt}{36pt}\selectfont \bfseries
         \ManualTitleFront \par}
 
-    \vfill
-
-    \Division
-
     \vspace{1.1em}
 
     \begin{center}
         \large
         \renewcommand{\arraystretch}{1.2}
         \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
-            Manual Maintainer    & \Maintainer     \\
+            % Manual Maintainer    & \Maintainer     \\
             \ifdef{\ProductLine}{%
             Product Line         & \ProductLine \\
             }{}
