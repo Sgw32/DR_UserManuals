@@ -16,11 +16,6 @@
 
     \vspace{1.5em}
 
-    {\Huge
-        \ManualAuthor}
-
-    \vspace{1em}
-
     {\fontsize{30pt}{36pt}\selectfont \bfseries
         \ManualTitleFront \par}
 
@@ -47,6 +42,11 @@
     \ifWIP
         \small\ttfamily \textcolor{red}{(Draft - \today)} \par
     \fi
+
+    \vfill
+
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        \ManualAuthorFooter}
 \end{center}
 
 \newpage
