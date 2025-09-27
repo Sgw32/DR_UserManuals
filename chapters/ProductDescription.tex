@@ -217,6 +217,37 @@ Three supplementary four-pin headers are fitted to the main board to simplify ha
 \end{itemize}
 All three use the \mbox{KF2510-4p} mating connector, which is not supplied with the dashboard kit and must be sourced separately if needed.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{digifiz_manual/ext_conn.png}
+    \caption{Auxiliary connector layout on the main board.}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    {\small
+    \begin{tblr}{
+        colspec={Q[l,2.3cm] Q[c,1.3cm] X[l]},
+        hlines,
+        row{1} = {font=\bfseries}
+    }
+    Connector & Pin & Assignment \\
+    Connector~I & 4 & Aux analog input~1 \\
+    Connector~I & 3 & Ground (GND) \\
+    Connector~I & 2 & Aux analog input~2 \\
+    Connector~I & 1 & VCC (3V3, unfused\textbf{!!!}) \\
+    Connector~II & 4 & MFA reset \\
+    Connector~II & 3 & Ground (GND) \\
+    Connector~II & 2 & MFA memory block \\
+    Connector~II & 1 & MFA mode \\
+    Connector~III & 4 & Oil temperature sensor output \\
+    Connector~III & 3 & Ground (GND) \\
+    Connector~III & 2 & Outdoor temperature sensor output \\
+    Connector~III & 1 & Brake indicator \\
+    \end{tblr}}
+    \caption{Pin assignments for the auxiliary expansion connectors.}
+\end{table}
+
 \section{Embedded software and completeness}
 The dashboard firmware is published at the following address:
 \displayurl{https://github.com/Sgw32/DigifizReplica}
