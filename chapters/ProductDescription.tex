@@ -208,6 +208,15 @@ The third connector on the circuit board mirrors the dashboard connectors, with 
     \end{tblr}}
 \end{table}
 
+\subsection{Auxiliary expansion connectors}
+Three supplementary four-pin headers are fitted to the main board to simplify harness upgrades and service work:
+\begin{itemize}
+    \item \textbf{Expansion analog signals:} provides a dedicated breakout for additional analog inputs when integrating custom sensors.
+    \item \textbf{MFA mirror:} duplicates the standard \textsc{MFA} connector to support parallel tapping of the trip computer signals.
+    \item \textbf{Analog duplicates:} repeats the oil temperature, ambient temperature, and brake indicator inputs so these circuits can be routed to external logging or monitoring modules.
+\end{itemize}
+All three use the \mbox{KF2510-4p} mating connector, which is not supplied with the dashboard kit and must be sourced separately if needed.
+
 \section{Embedded software and completeness}
 The dashboard firmware is published at the following address:
 \displayurl{https://github.com/Sgw32/DigifizReplica}
