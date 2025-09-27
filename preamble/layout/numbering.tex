@@ -1,12 +1,12 @@
 %% Page numbering style and counters for different parts of the document
 \makeatletter
 \NewDocumentCommand{\frontmatter}{}{     % the front matter
-    \pagenumbering{roman}                %   roman page numbering
+    \pagenumbering{arabic}               %   arabic page numbering from the very first page
+    \setcounter{page}{1}                 %   ensure the document starts at page 1
     \gdef\thechapter{\@Alph\c@chapter}   %   uppercase roman chapter numbering
 }
 \NewDocumentCommand{\mainmatter}{}{      % the main matter
     \cleardoublepage                     %   start on the right page
-    \pagenumbering{arabic}               %   arabic page numbering
     \setcounter{chapter}{0}              %   reset chapter counter
     \setcounter{section}{0}              %   reset section counter
     \gdef\thechapter{\@arabic\c@chapter} %   arabic chapter numbering
