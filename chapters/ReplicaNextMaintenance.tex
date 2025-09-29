@@ -54,48 +54,48 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
     \label{tbl:next-commands}
     {\scriptsize
     \begin{tblr}{
-        colspec = {Q[c,0.14\linewidth] >{\ttfamily}Q[l,0.36\linewidth] Q[l]},
+        colspec = {Q[c,0.16\linewidth] Q[l,0.5\linewidth] Q[l]},
         rowsep = 2pt,
     }
         \toprule
         \textbf{Command} & \textbf{Name} & \textbf{Description} \\
         \midrule
-        22 (or 0) & PARAMETER\_RPMCOEFFICIENT & Engine RPM calibration factor (100--10000). \\
-        1  & PARAMETER\_SPEEDCOEFFICIENT & Speed calibration factor (10--255). \\
-        2  & PARAMETER\_COOLANTTHERMISTORB & Coolant thermistor beta coefficient (2000--5000). \\
-        3  & PARAMETER\_OILTHERMISTORB & Oil thermistor beta coefficient (2000--5000). \\
-        4  & PARAMETER\_AIRTHERMISTORB & Ambient thermistor beta coefficient (2000--5000). \\
-        5  & PARAMETER\_TANKMINRESISTANCE & Minimum fuel sender resistance (0--1000~\ohm). \\
-        6  & PARAMETER\_TANKMAXRESISTANCE & Maximum fuel sender resistance (100--1000~\ohm). \\
-        7  & PARAMETER\_TAU\_COOLANT & Coolant temperature filter constant (1--50, higher is more responsive). \\
-        8  & PARAMETER\_TAU\_OIL & Oil temperature filter constant (1--50). \\
-        9  & PARAMETER\_TAU\_AIR & Ambient temperature filter constant (1--50). \\
-        10 & PARAMETER\_TAU\_TANK & Fuel level filter constant (1--50). \\
-        11 & PARAMETER\_MILEAGE & Total odometer value (0--999999). \\
-        12 & PARAMETER\_DAILY\_MILEAGE & Trip odometer (0--9999). \\
-        13 & PARAMETER\_AUTO\_BRIGHTNESS & Automatic brightness enable (1=on, 0=off). \\
-        14 & PARAMETER\_BRIGHTNESS\_LEVEL & Manual brightness level (0--60\%; values above 60 reduce LED life). \\
-        15 & PARAMETER\_TANK\_CAPACITY & Fuel tank capacity in litres (0--99; 55~L typical for Golf~2). \\
-        16 & PARAMETER\_MFA\_STATE & Active MFA mode (normally controlled via hardware input). \\
-        17 & PARAMETER\_BUZZER\_OFF & Disable buzzer (1 disables, 0 enables; \ReplicaNextShort{} lacks a buzzer). \\
-        18 & PARAMETER\_MAX\_RPM & Tachometer scaling (typical 8000, range 4000--16000). \\
-        19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Coolant sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
-        20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Oil sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
-        21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Ambient sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
-        23 & PARAMETER\_DOT\_OFF & Clock colon behaviour (0=blink, 1=solid). \\
-        24 & PARAMETER\_BACKLIGHT\_ON & Enable backlight on low beam (not used on \ReplicaNextShort{}). \\
-        25 & PARAMETER\_M\_D\_FILTER & Median filter constant (legacy, normally unused). \\
-        26 & PARAMETER\_COOLANT\_MAX\_R & Coolant sensor threshold for full-scale indication (\SI{100}{\celsius}--\SI{150}{\celsius}). \\
-        27 & PARAMETER\_COOLANT\_MIN\_R & Coolant sensor threshold for ``1~bar'' indication (\SI{0}{\celsius}--\SI{80}{\celsius}). \\
-        31 & PARAMETER\_MAINCOLOR\_R & Red component of the UI colour (0--255). \\
-        32 & PARAMETER\_MAINCOLOR\_G & Green component of the UI colour (0--255). \\
-        33 & PARAMETER\_MAINCOLOR\_B & Blue component of the UI colour (0--255). \\
-        37 & PARAMETER\_RPM\_FILTER & RPM filter aggressiveness (10--200, higher reacts faster). \\
-        128 & PARAMETER\_READ\_ADDITION & Add 128 to read the current value of any command. \\
-        255 & PARAMETER\_SET\_HOUR & Set clock hours (24-hour format). \\
-        254 & PARAMETER\_SET\_MINUTE & Set clock minutes. \\
-        253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Reset the trip odometer. \\
-        252 & PARAMETER\_RESET\_DIGITAL & Factory reset of stored parameters. \\
+        22 (or 0) & \InlineCode{PARAMETER\_RPMCOEFFICIENT} & Engine RPM calibration factor (100--10000). \\
+        1  & \InlineCode{PARAMETER\_SPEEDCOEFFICIENT} & Speed calibration factor (10--255). \\
+        2  & \InlineCode{PARAMETER\_COOLANTTHERMISTORB} & Coolant thermistor beta coefficient (2000--5000). \\
+        3  & \InlineCode{PARAMETER\_OILTHERMISTORB} & Oil thermistor beta coefficient (2000--5000). \\
+        4  & \InlineCode{PARAMETER\_AIRTHERMISTORB} & Ambient thermistor beta coefficient (2000--5000). \\
+        5  & \InlineCode{PARAMETER\_TANKMINRESISTANCE} & Minimum fuel sender resistance (0--1000~\ohm). \\
+        6  & \InlineCode{PARAMETER\_TANKMAXRESISTANCE} & Maximum fuel sender resistance (100--1000~\ohm). \\
+        7  & \InlineCode{PARAMETER\_TAU\_COOLANT} & Coolant temperature filter constant (1--50, higher is more responsive). \\
+        8  & \InlineCode{PARAMETER\_TAU\_OIL} & Oil temperature filter constant (1--50). \\
+        9  & \InlineCode{PARAMETER\_TAU\_AIR} & Ambient temperature filter constant (1--50). \\
+        10 & \InlineCode{PARAMETER\_TAU\_TANK} & Fuel level filter constant (1--50). \\
+        11 & \InlineCode{PARAMETER\_MILEAGE} & Total odometer value (0--999999). \\
+        12 & \InlineCode{PARAMETER\_DAILY\_MILEAGE} & Trip odometer (0--9999). \\
+        13 & \InlineCode{PARAMETER\_AUTO\_BRIGHTNESS} & Automatic brightness enable (1=on, 0=off). \\
+        14 & \InlineCode{PARAMETER\_BRIGHTNESS\_LEVEL} & Manual brightness level (0--60\%; values above 60 reduce LED life). \\
+        15 & \InlineCode{PARAMETER\_TANK\_CAPACITY} & Fuel tank capacity in litres (0--99; 55~L typical for Golf~2). \\
+        16 & \InlineCode{PARAMETER\_MFA\_STATE} & Active MFA mode (normally controlled via hardware input). \\
+        17 & \InlineCode{PARAMETER\_BUZZER\_OFF} & Disable buzzer (1 disables, 0 enables; \ReplicaNextShort{} lacks a buzzer). \\
+        18 & \InlineCode{PARAMETER\_MAX\_RPM} & Tachometer scaling (typical 8000, range 4000--16000). \\
+        19 & \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Coolant sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
+        20 & \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Oil sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
+        21 & \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Ambient sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
+        23 & \InlineCode{PARAMETER\_DOT\_OFF} & Clock colon behaviour (0=blink, 1=solid). \\
+        24 & \InlineCode{PARAMETER\_BACKLIGHT\_ON} & Enable backlight on low beam (not used on \ReplicaNextShort{}). \\
+        25 & \InlineCode{PARAMETER\_M\_D\_FILTER} & Median filter constant (legacy, normally unused). \\
+        26 & \InlineCode{PARAMETER\_COOLANT\_MAX\_R} & Coolant sensor threshold for full-scale indication (\SI{100}{\celsius}--\SI{150}{\celsius}). \\
+        27 & \InlineCode{PARAMETER\_COOLANT\_MIN\_R} & Coolant sensor threshold for ``1~bar'' indication (\SI{0}{\celsius}--\SI{80}{\celsius}). \\
+        31 & \InlineCode{PARAMETER\_MAINCOLOR\_R} & Red component of the UI colour (0--255). \\
+        32 & \InlineCode{PARAMETER\_MAINCOLOR\_G} & Green component of the UI colour (0--255). \\
+        33 & \InlineCode{PARAMETER\_MAINCOLOR\_B} & Blue component of the UI colour (0--255). \\
+        37 & \InlineCode{PARAMETER\_RPM\_FILTER} & RPM filter aggressiveness (10--200, higher reacts faster). \\
+        128 & \InlineCode{PARAMETER\_READ\_ADDITION} & Add 128 to read the current value of any command. \\
+        255 & \InlineCode{PARAMETER\_SET\_HOUR} & Set clock hours (24-hour format). \\
+        254 & \InlineCode{PARAMETER\_SET\_MINUTE} & Set clock minutes. \\
+        253 & \InlineCode{PARAMETER\_RESET\_DAILY\_MILEAGE} & Reset the trip odometer. \\
+        252 & \InlineCode{PARAMETER\_RESET\_DIGITAL} & Factory reset of stored parameters. \\
         \bottomrule
     \end{tblr}}
 \end{table}
@@ -107,50 +107,50 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
     \label{tbl:next-defaults}
     {\scriptsize
     \begin{tblr}{
-        colspec = {>{\ttfamily}Q[l,0.42\linewidth] Q[c,0.15\linewidth] Q[l]},
+        colspec = {Q[l,0.55\linewidth] Q[c,0.14\linewidth] Q[l]},
         rowsep = 2pt,
     }
         \toprule
         \textbf{Parameter} & \textbf{Default} & \textbf{Notes} \\
         \midrule
-        PARAMETER\_RPMCOEFFICIENT & 3000 & Typical for Audi tachometer inputs. \\
-        PARAMETER\_SPEEDCOEFFICIENT & 100 & Calibrated for 100~km/h. \\
-        PARAMETER\_COOLANTTHERMISTORB & 4000 &  \\
-        PARAMETER\_OILTHERMISTORB & 4000 &  \\
-        PARAMETER\_AIRTHERMISTORB & 3812 & 3600 for Generation~2 panels. \\
-        PARAMETER\_TANKMINRESISTANCE & 35 & \ohm. \\
-        PARAMETER\_TANKMAXRESISTANCE & 265 & \ohm. \\
-        PARAMETER\_TAU\_COOLANT & 2 & Filter constant. \\
-        PARAMETER\_TAU\_OIL & 2 & Filter constant. \\
-        PARAMETER\_TAU\_AIR & 2 & Filter constant. \\
-        PARAMETER\_TAU\_TANK & 2 & Filter constant. \\
-        PARAMETER\_MILEAGE & Vehicle-specific & Retains stored odometer. \\
-        PARAMETER\_DAILY\_MILEAGE & 0 &  \\
-        PARAMETER\_AUTO\_BRIGHTNESS & 1 & Enabled. \\
-        PARAMETER\_BRIGHTNESS\_LEVEL & 25 & Generation~2 default; Generation~1/1.5 use 7 or 13. \\
-        PARAMETER\_TANK\_CAPACITY & 63 & Litres. \\
-        PARAMETER\_MFA\_STATE & 0 & Default MFA page. \\
-        PARAMETER\_BUZZER\_OFF & 1 & Buzzer disabled. \\
-        PARAMETER\_MAX\_RPM & 8000 & Tachometer scale. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \ohm{} at \SI{25}{\celsius}. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \ohm{} at \SI{25}{\celsius}. \\
-        PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & 500~\ohm{} for Generation~2 sensors. \\
-        PARAMETER\_DOT\_OFF & 0 & Blinking clock colon. \\
-        PARAMETER\_BACKLIGHT\_ON & 1 & Backlight enabled with low beam. \\
-        PARAMETER\_M\_D\_FILTER & 65535 & Legacy median filter constant. \\
-        PARAMETER\_COOLANT\_MAX\_R & 120 & \si{\celsius}. \\
-        PARAMETER\_COOLANT\_MIN\_R & 60 & \si{\celsius}. \\
-        PARAMETER\_MAINCOLOR\_R & 180 & Yellow-green default. \\
-        PARAMETER\_MAINCOLOR\_G & 240 & Yellow-green default. \\
-        PARAMETER\_MAINCOLOR\_B & 6 & Yellow-green default. \\
-        PARAMETER\_RPM\_FILTER & 70 & Filter response. \\
-        PARAMETER\_UPTIME & 0 & Runtime counter. \\
+        \InlineCode{PARAMETER\_RPMCOEFFICIENT} & 3000 & Typical for Audi tachometer inputs. \\
+        \InlineCode{PARAMETER\_SPEEDCOEFFICIENT} & 100 & Calibrated for 100~km/h. \\
+        \InlineCode{PARAMETER\_COOLANTTHERMISTORB} & 4000 &  \\
+        \InlineCode{PARAMETER\_OILTHERMISTORB} & 4000 &  \\
+        \InlineCode{PARAMETER\_AIRTHERMISTORB} & 3812 & 3600 for Generation~2 panels. \\
+        \InlineCode{PARAMETER\_TANKMINRESISTANCE} & 35 & \ohm. \\
+        \InlineCode{PARAMETER\_TANKMAXRESISTANCE} & 265 & \ohm. \\
+        \InlineCode{PARAMETER\_TAU\_COOLANT} & 2 & Filter constant. \\
+        \InlineCode{PARAMETER\_TAU\_OIL} & 2 & Filter constant. \\
+        \InlineCode{PARAMETER\_TAU\_AIR} & 2 & Filter constant. \\
+        \InlineCode{PARAMETER\_TAU\_TANK} & 2 & Filter constant. \\
+        \InlineCode{PARAMETER\_MILEAGE} & Vehicle-specific & Retains stored odometer. \\
+        \InlineCode{PARAMETER\_DAILY\_MILEAGE} & 0 &  \\
+        \InlineCode{PARAMETER\_AUTO\_BRIGHTNESS} & 1 & Enabled. \\
+        \InlineCode{PARAMETER\_BRIGHTNESS\_LEVEL} & 25 & Generation~2 default; Generation~1/1.5 use 7 or 13. \\
+        \InlineCode{PARAMETER\_TANK\_CAPACITY} & 63 & Litres. \\
+        \InlineCode{PARAMETER\_MFA\_STATE} & 0 & Default MFA page. \\
+        \InlineCode{PARAMETER\_BUZZER\_OFF} & 1 & Buzzer disabled. \\
+        \InlineCode{PARAMETER\_MAX\_RPM} & 8000 & Tachometer scale. \\
+        \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & 1000 & \ohm{} at \SI{25}{\celsius}. \\
+        \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & 1000 & \ohm{} at \SI{25}{\celsius}. \\
+        \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & 2991 & 500~\ohm{} for Generation~2 sensors. \\
+        \InlineCode{PARAMETER\_DOT\_OFF} & 0 & Blinking clock colon. \\
+        \InlineCode{PARAMETER\_BACKLIGHT\_ON} & 1 & Backlight enabled with low beam. \\
+        \InlineCode{PARAMETER\_M\_D\_FILTER} & 65535 & Legacy median filter constant. \\
+        \InlineCode{PARAMETER\_COOLANT\_MAX\_R} & 120 & \si{\celsius}. \\
+        \InlineCode{PARAMETER\_COOLANT\_MIN\_R} & 60 & \si{\celsius}. \\
+        \InlineCode{PARAMETER\_MAINCOLOR\_R} & 180 & Yellow-green default. \\
+        \InlineCode{PARAMETER\_MAINCOLOR\_G} & 240 & Yellow-green default. \\
+        \InlineCode{PARAMETER\_MAINCOLOR\_B} & 6 & Yellow-green default. \\
+        \InlineCode{PARAMETER\_RPM\_FILTER} & 70 & Filter response. \\
+        \InlineCode{PARAMETER\_UPTIME} & 0 & Runtime counter. \\
         \bottomrule
     \end{tblr}}
 \end{table}
 
 \section{Reading parameters and examples}
-To read a parameter, add 128 to the command number (for example, \verb|129 0| reports the speed coefficient). Typical commands include disabling automatic brightness (\verb|13 0|), enabling it again (\verb|13 1|), adjusting the speed coefficient (\verb|1 110| increases the displayed speed by roughly 5\%), and setting the odometer (\verb|11 123456|). Clock values are set with \verb|255 <hours>| followed by \verb|254 <minutes>|. Commands 31--33 set the RGB components of the user interface colour.
+To read a parameter, add 128 to the command number (for example, \InlineCode{129 0} reports the speed coefficient). Typical commands include disabling automatic brightness (\InlineCode{13 0}), enabling it again (\InlineCode{13 1}), adjusting the speed coefficient (\InlineCode{1 110} increases the displayed speed by roughly 5\%), and setting the odometer (\InlineCode{11 123456}). Clock values are set by sending command \InlineCode{255} with the desired hour value, followed by \InlineCode{254} with the minute value. Commands 31--33 set the RGB components of the user interface colour.
 
 \section{Service commands}
-Recent firmware revisions accept human-readable parameter names, for example \verb|PARAMETER_RPMCOEFFICIENT 3000|. The diagnostic command \verb|adc 0| prints raw ADC readings for sensor troubleshooting. Firmware updates add visual colour controls, so update regularly through the \emph{WiFi} tab to access the latest features.
+Recent firmware revisions accept human-readable parameter names, for example \InlineCode{PARAMETER\_RPMCOEFFICIENT 3000}. The diagnostic command \InlineCode{adc 0} prints raw ADC readings for sensor troubleshooting. Firmware updates add visual colour controls, so update regularly through the \emph{WiFi} tab to access the latest features.

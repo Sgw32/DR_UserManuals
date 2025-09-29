@@ -60,7 +60,7 @@ Most parameters are adjusted over Bluetooth using an Android phone and the Seria
     \label{fig:sbt-settings}
 \end{figure}
 
-Enter commands as space-separated pairs \verb|<number> <value>|. For example, to store an odometer value of 123\,456~km send \verb|11 123456|. Add 128 to a command number to read its current value (\verb|129 0| reports the speed coefficient). The diagnostic command \verb|adc 0| prints raw sensor readings that help the developers analyse faults.
+Enter commands as space-separated number/value pairs. For example, to store an odometer value of 123\,456~km send \InlineCode{11 123456}. Add 128 to a command number to read its current value (\InlineCode{129 0} reports the speed coefficient). The diagnostic command \InlineCode{adc 0} prints raw sensor readings that help the developers analyse faults.
 
 \section{Configuration parameters}
 The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-commands}. Default settings for Generation~1/1.5 and Generation~2 dashboards are summarised in \autoref{tbl:replica-defaults}. Use commands~31--33 only on \ReplicaNextShort{} units; they have no effect on the classic \ReplicaGenOneShort{}.
@@ -70,47 +70,47 @@ The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-comman
     caption = {Classic \ReplicaGenOne{} configuration commands.},
     label = {tbl:replica-classic-commands},
 ]{
-    colspec = {Q[c,0.14\linewidth] >{\ttfamily}Q[l,0.38\linewidth] Q[l]},
+    colspec = {Q[c,0.16\linewidth] Q[l,0.5\linewidth] Q[l]},
     rowsep = 2pt,
 }
     \toprule
     \textbf{ID} & \textbf{Name} & \textbf{Description} \\
     \midrule
-    22 (or 0) & PARAMETER\_RPMCOEFFICIENT & Engine RPM calibration factor. \\
-    1 & PARAMETER\_SPEEDCOEFFICIENT & Speed calibration factor. \\
-    2 & PARAMETER\_COOLANTTHERMISTORB & Coolant thermistor beta coefficient. \\
-    3 & PARAMETER\_OILTHERMISTORB & Oil thermistor beta coefficient. \\
-    4 & PARAMETER\_AIRTHERMISTORB & Ambient thermistor beta coefficient. \\
-    5 & PARAMETER\_TANKMINRESISTANCE & Minimum fuel sender resistance (\si{\ohm}). \\
-    6 & PARAMETER\_TANKMAXRESISTANCE & Maximum fuel sender resistance (\si{\ohm}). \\
-    7 & PARAMETER\_TAU\_COOLANT & Coolant temperature filter constant. \\
-    8 & PARAMETER\_TAU\_OIL & Oil temperature filter constant. \\
-    9 & PARAMETER\_TAU\_AIR & Ambient temperature filter constant. \\
-    10 & PARAMETER\_TAU\_TANK & Fuel level filter constant. \\
-    11 & PARAMETER\_MILEAGE & Total odometer value. \\
-    12 & PARAMETER\_DAILY\_MILEAGE & Trip odometer. \\
-    13 & PARAMETER\_AUTO\_BRIGHTNESS & Enable automatic brightness adjustment. \\
-    14 & PARAMETER\_BRIGHTNESS\_LEVEL & Manual brightness level (0--15). \\
-    15 & PARAMETER\_TANK\_CAPACITY & Fuel tank capacity (litres). \\
-    16 & PARAMETER\_MFA\_STATE & Active MFA page. \\
-    17 & PARAMETER\_BUZZER\_OFF & Disable the buzzer (1 disables, 0 enables). \\
-    18 & PARAMETER\_MAX\_RPM & Tachometer scale (default 8000). \\
-    19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Coolant sensor resistance at \SI{25}{\celsius}. \\
-    20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Oil sensor resistance at \SI{25}{\celsius}. \\
-    21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Ambient sensor resistance at \SI{25}{\celsius}. \\
-    23 & PARAMETER\_DOT\_OFF & Clock colon behaviour (0 blink, 1 solid). \\
-    24 & PARAMETER\_BACKLIGHT\_ON & Switch on backlight with low beam. \\
-    25 & PARAMETER\_M\_D\_FILTER & Median filter constant (legacy). \\
-    26 & PARAMETER\_COOLANT\_MAX\_R & Coolant ``full-scale'' temperature threshold. \\
-    27 & PARAMETER\_COOLANT\_MIN\_R & Coolant ``1~bar'' temperature threshold. \\
-    31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Interface colour components (\ReplicaNextShort{} only). \\
-    37 & PARAMETER\_RPM\_FILTER & RPM filtering aggressiveness. \\
-    128 & PARAMETER\_READ\_ADDITION & Add to read any parameter. \\
-    255 & PARAMETER\_SET\_HOUR & Set clock hours (24-hour). \\
-    254 & PARAMETER\_SET\_MINUTE & Set clock minutes. \\
-    253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Reset the trip odometer. \\
-    252 & PARAMETER\_RESET\_DIGITAL & Factory reset and memory initialisation. \\
+    22 (or 0) & \InlineCode{PARAMETER\_RPMCOEFFICIENT} & Engine RPM calibration factor. \\
+    1 & \InlineCode{PARAMETER\_SPEEDCOEFFICIENT} & Speed calibration factor. \\
+    2 & \InlineCode{PARAMETER\_COOLANTTHERMISTORB} & Coolant thermistor beta coefficient. \\
+    3 & \InlineCode{PARAMETER\_OILTHERMISTORB} & Oil thermistor beta coefficient. \\
+    4 & \InlineCode{PARAMETER\_AIRTHERMISTORB} & Ambient thermistor beta coefficient. \\
+    5 & \InlineCode{PARAMETER\_TANKMINRESISTANCE} & Minimum fuel sender resistance (\si{\ohm}). \\
+    6 & \InlineCode{PARAMETER\_TANKMAXRESISTANCE} & Maximum fuel sender resistance (\si{\ohm}). \\
+    7 & \InlineCode{PARAMETER\_TAU\_COOLANT} & Coolant temperature filter constant. \\
+    8 & \InlineCode{PARAMETER\_TAU\_OIL} & Oil temperature filter constant. \\
+    9 & \InlineCode{PARAMETER\_TAU\_AIR} & Ambient temperature filter constant. \\
+    10 & \InlineCode{PARAMETER\_TAU\_TANK} & Fuel level filter constant. \\
+    11 & \InlineCode{PARAMETER\_MILEAGE} & Total odometer value. \\
+    12 & \InlineCode{PARAMETER\_DAILY\_MILEAGE} & Trip odometer. \\
+    13 & \InlineCode{PARAMETER\_AUTO\_BRIGHTNESS} & Enable automatic brightness adjustment. \\
+    14 & \InlineCode{PARAMETER\_BRIGHTNESS\_LEVEL} & Manual brightness level (0--15). \\
+    15 & \InlineCode{PARAMETER\_TANK\_CAPACITY} & Fuel tank capacity (litres). \\
+    16 & \InlineCode{PARAMETER\_MFA\_STATE} & Active MFA page. \\
+    17 & \InlineCode{PARAMETER\_BUZZER\_OFF} & Disable the buzzer (1 disables, 0 enables). \\
+    18 & \InlineCode{PARAMETER\_MAX\_RPM} & Tachometer scale (default 8000). \\
+    19 & \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Coolant sensor resistance at \SI{25}{\celsius}. \\
+    20 & \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Oil sensor resistance at \SI{25}{\celsius}. \\
+    21 & \InlineCode{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Ambient sensor resistance at \SI{25}{\celsius}. \\
+    23 & \InlineCode{PARAMETER\_DOT\_OFF} & Clock colon behaviour (0 blink, 1 solid). \\
+    24 & \InlineCode{PARAMETER\_BACKLIGHT\_ON} & Switch on backlight with low beam. \\
+    25 & \InlineCode{PARAMETER\_M\_D\_FILTER} & Median filter constant (legacy). \\
+    26 & \InlineCode{PARAMETER\_COOLANT\_MAX\_R} & Coolant ``full-scale'' temperature threshold. \\
+    27 & \InlineCode{PARAMETER\_COOLANT\_MIN\_R} & Coolant ``1~bar'' temperature threshold. \\
+    31--33 & \InlineCode{PARAMETER\_MAINCOLOR\_[RGB]} & Interface colour components (\ReplicaNextShort{} only). \\
+    37 & \InlineCode{PARAMETER\_RPM\_FILTER} & RPM filtering aggressiveness. \\
+    128 & \InlineCode{PARAMETER\_READ\_ADDITION} & Add to read any parameter. \\
+    255 & \InlineCode{PARAMETER\_SET\_HOUR} & Set clock hours (24-hour). \\
+    254 & \InlineCode{PARAMETER\_SET\_MINUTE} & Set clock minutes. \\
+    253 & \InlineCode{PARAMETER\_RESET\_DAILY\_MILEAGE} & Reset the trip odometer. \\
+    252 & \InlineCode{PARAMETER\_RESET\_DIGITAL} & Factory reset and memory initialisation. \\
     \bottomrule
 \end{longtblr}}
 
-The Serial Bluetooth Terminal quick buttons are convenient for routine actions such as toggling automatic brightness (\verb|13 0| and \verb|13 1|) or writing colour values. Keep values above \SI{60}{\percent} brightness only for short tests to preserve LED life.
+The Serial Bluetooth Terminal quick buttons are convenient for routine actions such as toggling automatic brightness (\InlineCode{13 0} and \InlineCode{13 1}) or writing colour values. Keep values above \SI{60}{\percent} brightness only for short tests to preserve LED life.
