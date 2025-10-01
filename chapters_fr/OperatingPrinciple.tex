@@ -1,0 +1,9 @@
+\chapter{Principe de fonctionnement} \label{ch:operating-principle}
+
+Les tableaux \ReplicaGenOne{} réutilisent le boîtier Volkswagen d'origine, les connecteurs CE~1 ou CE~2 du constructeur et, selon la configuration, soit le câble de compteur de vitesse mécanique soit un capteur de vitesse électronique.
+Les cartes principales \ReplicaGenOneShort{} reposent sur un circuit imprimé en fibre de verre peuplé de composants discrets pilotés par un microcontrôleur ATmega~2560 et des pilotes d'afficheurs MAX~7219.
+
+\ReplicaNextLong{} s'appuie sur un système sur puce ESP32-S3 et introduit un boîtier nouvellement fabriqué en impression SLA, une façade et un capot repensés ainsi qu'une carte adaptatrice de connecteur.
+L'afficheur \ReplicaNextShort{} est rétroéclairé par des LED adressables WS2812 montées derrière la façade, et le faisceau associé inclut d'office le capteur de vitesse électronique.
+
+Les deux générations partagent la même disposition d'affichage et les mêmes pages MFA, ce qui garantit des procédures d'installation et une utilisation quotidienne familières d'une révision matérielle à l'autre.

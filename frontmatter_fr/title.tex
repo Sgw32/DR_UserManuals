@@ -1,4 +1,4 @@
-\pdfbookmark{Title Page}{titlepage} % add PDF outline entry
+\pdfbookmark{Page de titre}{titlepage} % add PDF outline entry
 \thispagestyle{empty} % no number on the title page
 \begin{center}
     \Large
@@ -6,7 +6,7 @@
     \vspace{-1.5em}
 
     {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
-        \MakeUppercase{User Manual} \par}
+        \MakeUppercase{Manuel d'utilisation} \par}
 
     \vspace{2.5em}
 
@@ -21,7 +21,7 @@
         \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
             % Manual Maintainer    & \Maintainer     \\
             \ifdef{\ProductLine}{%
-            Product Line         & \ProductLine \\
+            Gamme de produits     & \ProductLine \\
             }{}
         \end{tabular}
     \end{center}
@@ -29,12 +29,12 @@
     \vspace{2em}
 
     \ifFANCY\sffamily\fi
-    Online Release \YearReleased \\
+    Publication en ligne \YearReleased \\
     \ifdef{\YearRevised}{%
-        \emph{Revised version \YearRevised} \par
+        \emph{Version révisée \YearRevised} \par
     }{}
     \ifWIP
-        \small\ttfamily \textcolor{red}{(Draft - \today)} \par
+        \small\ttfamily \textcolor{red}{(Brouillon - \today)} \par
     \fi
 
     \vfill

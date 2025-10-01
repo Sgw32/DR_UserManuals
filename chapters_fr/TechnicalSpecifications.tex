@@ -1,0 +1,15 @@
+\chapter{Caractéristiques techniques}\label{ch:technical-specs}
+
+Le tableau \ReplicaGenOne{} ne consomme aucun courant de veille lorsqu'il est hors tension.
+\ReplicaNextShort{} tire environ 13~mA du +12~V contact coupé, point à prendre en compte lors d'un stationnement prolongé du véhicule.
+Les deux générations fonctionnent de manière fiable sur le réseau électrique automobile entre 9~V et 16~V\,CC.
+
+\section{Capacités de mesure}
+\begin{itemize}
+    \item \textbf{Vitesse véhicule~:} mesurée via le câble d'origine ou un capteur de vitesse électronique. L'erreur systématique est de 10~km/h, l'erreur relative de 3~km/h, et l'affichage se sature à 999~km/h (ou mph pour les unités impériales).
+    \item \textbf{Régime moteur~:} dérivé du signal d'allumage au travers d'un étage optocoupleur avec réseau RC 430~nF/1,2~k\ensuremath{\Omega} et diode de limitation. Les erreurs absolue et relative restent dans une plage de 200~tr/min.
+    \item \textbf{Niveau de carburant~:} lu sur la jauge résistive du réservoir avec une incertitude d'environ 10~litres.
+    \item \textbf{Température de liquide de refroidissement~:} indiquée qualitativement via la thermistance d'origine connectée par le faisceau ; aucune valeur numérique n'est affichée.
+    \item \textbf{Horodatage~:} maintien de l'heure à une minute près.
+    \item \textbf{Voyants~:} clignotants, plein phare, alertes de pression d'huile, état de l'alternateur, frein à main, dégivrage de lunette arrière ou bougies de préchauffage diesel, et antibrouillards avant/arrière.
+\end{itemize}

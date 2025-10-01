@@ -1,0 +1,23 @@
+\chapter{Situations typiques lors du réglage de \ReplicaGenOne{}}\label{ch:replica-scenarios}
+
+Avant tout dépannage, vérifiez que le tableau est bien un \ReplicaGenOne{} classique (\autoref{ch:replica-setup}). Les panneaux \ReplicaNextLong{} utilisent un portail Wi-Fi et sont traités au \autoref{ch:replica-next-scenarios}.
+
+\begin{description}
+    \item[Module Bluetooth introuvable] Associez-vous à l'interface Bluetooth Classic du tableau (il apparaît généralement comme \texttt{Digifiz}). Serial Bluetooth Terminal pour Android reste l'outil recommandé~: configurez le caractère de fin de ligne sur LF et évitez les scanners BLE uniquement, incapables de détecter le module.
+    \item[iPhone ou iPad non compatible] Les tableaux \ReplicaGenOneShort{} emploient du Bluetooth~2.0 et sont incompatibles avec iOS. Utilisez un téléphone Android ou un ordinateur équipé d'un utilitaire série Bluetooth.
+    \item[Commandes ignorées sur firmware 2024+] Déverrouillez l'analyseur de commandes en envoyant \verb|234 123|, puis rejouez la séquence souhaitée. Programmez des boutons rapides dans Serial Bluetooth Terminal pour les valeurs fréquemment ajustées.
+    \item[Vitesse trop haute ou trop basse] Connectez-vous via Serial Bluetooth Terminal, roulez à \SI{100}{\kilo\metre\per\hour} indiqués et relevez la vitesse GPS. Envoyez \verb|1 <valeur_gps>| (par exemple \verb|1 85|) afin que \paramname{PARAMETER\_SPEEDCOEFFICIENT} corresponde à la vitesse vérifiée.
+    \item[Régime erroné] Les micrologiciels antérieurs à 2024 attendent \verb|0 <valeur>| tandis que les versions actuelles utilisent \verb|22 <valeur>|. Les moteurs Audi nécessitent généralement \verb|22 3000| ; divisez ou doublez la valeur (par exemple \verb|22 1500| ou \verb|22 6000|) jusqu'à concordance avec le compte-tours.
+    \item[Augmenter la luminosité] Désactivez le contrôle automatique avec \verb|13 0| puis augmentez le niveau manuel via \verb|14 <valeur>|. Des valeurs entre 45 et 55 éclairent nettement l'affichage ; évitez de dépasser 60 pour préserver les LED. Réactivez la photodiode ensuite avec \verb|13 1|.
+    \item[Réglage de l'horloge] Utilisez Serial Bluetooth Terminal pour envoyer \verb|255 <heures>| puis \verb|254 <minutes>|. Exemples~: \verb|255 23|, \verb|254 55| règle 23:55 ; \verb|255 14|, \verb|254 30| règle 14:30 ; \verb|255 2|, \verb|254 28| règle 02:28.
+    \item[Problèmes de jauge de carburant] Débranchez la batterie du véhicule avant toute mesure.\begin{itemize}
+        \item Si l'affichage dérive de 60 vers 0, mesurez la résistance de la jauge entre la broche de faisceau et la masse ; les valeurs valides se situent généralement entre \SIrange{30}{300}{\ohm}. Nettoyez le connecteur et confirmez que le signal atteint la carte principale.
+        \item Si la jauge reste au maximum, recherchez un court-circuit à la masse inférieur à \SI{5}{\ohm} sur la ligne de sonde et réparez-le.
+        \item Si l'indication ne varie jamais, comparez la résistance de la jauge réservoir plein et vide. Remplacez le capteur s'il reste constant.
+    \end{itemize}
+    \item[Débit de carburant incohérent] Le canal de débit est simulé tant qu'aucun capteur de pression de collecteur n'est installé. Considérez la mesure comme indicative.
+    \item[Jauge de liquide imprécise] Ajustez \paramname{PARAMETER\_COOLANT\_MIN\_R} et \paramname{PARAMETER\_COOLANT\_MAX\_R}. Exemple~: \verb|27 30| réduit l'échelle afin que la marque « 1~bar » corresponde à environ \SI{30}{\celsius}.
+    \item[Température d'huile ou ambiante absente] Une valeur \texttt{-999} ou figée indique un souci de capteur. Batterie débranchée et moteur froid, mesurez la résistance entre la broche de faisceau et la masse. Les sondes d'huile doivent indiquer environ \SI{2}{\kilo\ohm} \ensuremath{\pm}\SI{0.3}{\kilo\ohm} ; les sondes ambiantes environ \SI{10}{\kilo\ohm} \ensuremath{\pm}\SI{2}{\kilo\ohm}. Ajustez \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} (commande~20) ou \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} (commande~21) si l'affichage nécessite un calibrage fin. En cas de panne persistante, consignez les relevés \verb|adc 0| et transmettez-les au support PHOL-LABS Kft.
+\end{description}
+
+Collectez les données brutes des capteurs avec \verb|adc 0| si le problème perdure et communiquez les résultats aux développeurs pour analyse.

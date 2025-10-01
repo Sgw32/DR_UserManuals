@@ -1,0 +1,121 @@
+\chapter{Tableaux de référence} \label{appendix:reference}
+
+\section{Référence des commandes \ReplicaGenOne{} classique}
+
+Le micrologiciel Replica classique partage la plupart des commandes avec \ReplicaNextShort{}.
+Les commandes 31--33 (contrôle des couleurs) ne sont actives que sur \ReplicaNextShort{} ; les autres s'appliquent aux deux générations.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Principales commandes de configuration pour les tableaux \ReplicaGenOne{} classiques.}
+    \label{tbl:replica-commands}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Commande} & \textbf{Nom} & \textbf{Description} \\
+        \midrule
+        22 (ou 0) & PARAMETER\_RPMCOEFFICIENT & Facteur d'étalonnage du régime moteur. \\
+        1  & PARAMETER\_SPEEDCOEFFICIENT & Facteur d'étalonnage de vitesse. \\
+        2  & PARAMETER\_COOLANTTHERMISTORB & Coefficient bêta de la thermistance liquide. \\
+        3  & PARAMETER\_OILTHERMISTORB & Coefficient bêta de la thermistance d'huile. \\
+        4  & PARAMETER\_AIRTHERMISTORB & Coefficient bêta de la thermistance ambiante. \\
+        5  & PARAMETER\_TANKMINRESISTANCE & Résistance minimale de jauge. \\
+        6  & PARAMETER\_TANKMAXRESISTANCE & Résistance maximale de jauge. \\
+        7--10 & PARAMETER\_TAU\_\textit{X} & Constantes de filtrage pour le liquide, l'huile, l'air et le niveau de carburant. \\
+        11 & PARAMETER\_MILEAGE & Kilométrage total. \\
+        12 & PARAMETER\_DAILY\_MILEAGE & Compteur journalier. \\
+        13 & PARAMETER\_AUTO\_BRIGHTNESS & Activation de la luminosité automatique. \\
+        14 & PARAMETER\_BRIGHTNESS\_LEVEL & Niveau de luminosité manuel. \\
+        15 & PARAMETER\_TANK\_CAPACITY & Capacité du réservoir. \\
+        16 & PARAMETER\_MFA\_STATE & Mode MFA actif. \\
+        17 & PARAMETER\_BUZZER\_OFF & Désactivation du buzzer (Replica uniquement). \\
+        18 & PARAMETER\_MAX\_RPM & Échelle du compte-tours (7000 par défaut). \\
+        19--21 & PARAMETER\_NORMAL\_RESISTANCE\_\textit{X} & Résistances de capteurs à \SI{25}{\celsius} pour liquide, huile et air. \\
+        23 & PARAMETER\_DOT\_OFF & Comportement des deux-points de l'horloge. \\
+        24 & PARAMETER\_BACKLIGHT\_ON & Activation du rétroéclairage avec les feux de croisement. \\
+        25 & PARAMETER\_M\_D\_FILTER & Constante de filtre médian. \\
+        26 & PARAMETER\_COOLANT\_MAX\_R & Seuil de sonde liquide pour affichage pleine échelle. \\
+        27 & PARAMETER\_COOLANT\_MIN\_R & Seuil de sonde liquide pour l'indication « 1~bar ». \\
+        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Composantes de couleur de l'interface (\ReplicaNextShort{} uniquement). \\
+        37 & PARAMETER\_RPM\_FILTER & Agressivité du filtrage régime. \\
+        128 & PARAMETER\_READ\_ADDITION & Ajouter 128 pour lire la valeur courante d'une commande. \\
+        255 & PARAMETER\_SET\_HOUR & Réglage des heures. \\
+        254 & PARAMETER\_SET\_MINUTE & Réglage des minutes. \\
+        253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Remise à zéro du compteur journalier. \\
+        252 & PARAMETER\_RESET\_DIGITAL & Réinitialisation usine des paramètres stockés. \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Valeurs par défaut \ReplicaGenOneShort{} classique}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Configuration par défaut du \ReplicaGenOne{} classique.}
+    \label{tbl:replica-defaults}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Paramètre} & \textbf{Valeur} & \textbf{Remarques} \\
+        \midrule
+        PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
+        PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\
+        PARAMETER\_COOLANTTHERMISTORB & 4000 &  \\
+        PARAMETER\_OILTHERMISTORB & 4000 &  \\
+        PARAMETER\_AIRTHERMISTORB & 3812 & 3600 sur Gen~2. \\
+        PARAMETER\_TANKMINRESISTANCE & 35 & Ohms. \\
+        PARAMETER\_TANKMAXRESISTANCE & 265 & Ohms. \\
+        PARAMETER\_TAU\_COOLANT & 2 &  \\
+        PARAMETER\_TAU\_OIL & 2 &  \\
+        PARAMETER\_TAU\_AIR & 2 &  \\
+        PARAMETER\_TAU\_TANK & 2 &  \\
+        PARAMETER\_MILEAGE & Spécifique au véhicule & Conserve l'odomètre existant. \\
+        PARAMETER\_DAILY\_MILEAGE & 0 &  \\
+        PARAMETER\_AUTO\_BRIGHTNESS & 1 & Activée. \\
+        PARAMETER\_BRIGHTNESS\_LEVEL & 7 ou 13 & Valeurs typiques pour Gen~1/1.5. \\
+        PARAMETER\_TANK\_CAPACITY & 63 & Litres. \\
+        PARAMETER\_MFA\_STATE & 0 &  \\
+        PARAMETER\_BUZZER\_OFF & 1 & Buzzer désactivé. \\
+        PARAMETER\_MAX\_RPM & 8000 & 7000 sur les blocs plus anciens. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \si{\ohm} à \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \si{\ohm} à \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & \si{\ohm} à \SI{25}{\celsius}. \\
+        PARAMETER\_DOT\_OFF & 0 & Deux-points clignotant. \\
+        PARAMETER\_BACKLIGHT\_ON & 1 & Activé. \\
+        PARAMETER\_M\_D\_FILTER & 65535 &  \\
+        PARAMETER\_COOLANT\_MAX\_R & 120 & \si{\celsius}. \\
+        PARAMETER\_COOLANT\_MIN\_R & 60 & \si{\celsius}. \\
+        PARAMETER\_MAINCOLOR\_[RGB] & -- & Commandes couleur inactives sur Replica classique. \\
+        PARAMETER\_RPM\_FILTER & 70 &  \\
+        PARAMETER\_UPTIME & 0 &  \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Historique des révisions} \label{app:change-log}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Feuille d'enregistrement des modifications.}
+    \label{tbl:change-log}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {Q[c,0.12\linewidth] Q[l] Q[c,0.2\linewidth]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Modification} & \textbf{Feuilles affectées} & \textbf{Date} \\
+        \midrule
+        1 & 04.10.2022 & 04~oct.~2022 \\
+        2 & 31.08.2023 & 31~août~2023 \\
+        3 & 05.08.2024 & 05~août~2024 \\
+        4 & Document LaTeX introduit. & 22.09.2025 \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
