@@ -20,7 +20,7 @@ Configuration, data collection, and firmware management are performed through th
 \begin{itemize}
     \item Connect to the dashboard's Wi-Fi access point. Disable mobile data and join \texttt{Digifiz\_AP} (password \texttt{87654321}); some revisions advertise \texttt{PHOL-LABS2} with the same password.
     \item The default IP address is \texttt{192.168.4.1}. If the dashboard is configured to join another network, scan the subnet for an address ending in \texttt{.32} using an IP tools application.
-    \item The portal contains three tabs: \emph{WiFi}, \emph{Control}, and \emph{About} (\autoref{fig:next-control-tabs}). The Wi-Fi tab configures network settings and handles firmware uploads; the Control tab adjusts dashboard parameters; the About tab lists author information.
+    \item The portal contains five tabs: \emph{WiFi}, \emph{Control}, \emph{Settings}, \emph{Colors}, and \emph{About} (\autoref{fig:next-control-tabs}). The Wi-Fi tab configures network settings and handles firmware uploads; the Control tab adjusts dashboard parameters; the Settings tab provides a structured editor for all firmware parameters; the Colors tab manages multi-segment colour schemes; the About tab lists author information.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -154,3 +154,31 @@ To read a parameter, add 128 to the command number (for example, \verb|129 0| re
 
 \section{Service commands}
 Recent firmware revisions accept human-readable parameter names, for example \verb|PARAMETER_RPMCOEFFICIENT 3000|. The diagnostic command \verb|adc 0| prints raw ADC readings for sensor troubleshooting. Firmware updates add visual colour controls, so update regularly through the \emph{WiFi} tab to access the latest features.
+
+\section{Settings tab parameter editor}
+The \emph{Settings} tab mirrors the parameter list in \autoref{tbl:next-commands} and \autoref{tbl:next-defaults} while adding metadata about ranges, descriptions, and data types.
+Use it whenever you prefer a graphical workflow instead of typing command numbers.
+
+\begin{enumerate}
+    \item Press \emph{Load Parameters} to fetch the live values from the dashboard. The browser displays each item with its name, current value, tooltip, and type.
+    \item For numeric entries, type the desired value inside the \emph{New Value} column. The interface enforces the permissible range shown in the \emph{Min} and \emph{Max} columns. Boolean parameters appear as checkboxes.
+    \item Click \emph{Set} to submit the change instantly. The table refreshes to confirm the updated value.
+    \item Repeat the process for every parameter you want to adjust. When finished, return to the \emph{Control} tab and press \emph{Save parameters} to write the configuration to non-volatile memory.
+\end{enumerate}
+
+The colour workflow requires that you enable the firmware flag responsible for custom palettes before moving to the \emph{Colors} tab.
+Locate the boolean entry labelled ``Custom colour scheme'' (published as \verb|PARAMETER_CUSTOM_COLORSCHEME_ENABLE| in the parameter list), tick the checkbox, and press \emph{Set}. The dashboard will reject bespoke segment edits until this flag is turned on.
+
+\section{Custom colour schemes}
+The \emph{Colors} tab introduces a segment-based editor for the WS2812 LED backlight. Each row describes a range end point, the functional area it corresponds to, and the colour or base colour inheritance.
+
+\begin{enumerate}
+    \item Press \emph{Load Scheme} to read the active mapping. Use \emph{Add Segment}, or the inline ``+\textuparrow{}'' and ``+\textdownarrow{}'' controls, to insert new ranges. The drop-down menus select the instrument function, and the base-colour selector lets you reuse the main or back colours instead of specifying a fixed RGB value.
+    \item Click the colour picker to fine-tune the RGB tone for segments that are set to ``Custom''. The editor reports component values in real time.
+    \item Use the reorder arrows to match the physical LED sequence (segments must remain in ascending order). Delete redundant rows with the ``\texttimes{}'' button.
+    \item When the table reflects the desired layout, press \emph{Set Scheme}. The browser iterates through the rows and pushes each segment to the dashboard.
+    \item Immediately switch to the \emph{Control} tab and press \emph{Save parameters}. This step is mandatory---the firmware caches the uploaded segments in RAM and discards them after a reboot if they are not saved.
+    \item Optionally export the JSON representation via \emph{Export to File} for backups, or import a previously saved file with \emph{Import from File}. The \emph{Reset Scheme} button restores the factory layout after confirmation.
+\end{enumerate}
+
+If you later disable the custom colour scheme flag in the \emph{Settings} tab, the dashboard falls back to the classic single-colour mode driven by \verb|PARAMETER_MAINCOLOR_R/G/B|.
