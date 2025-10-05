@@ -20,7 +20,7 @@ La configuration, la collecte de données et la gestion du micrologiciel s'effec
 \begin{itemize}
     \item Connectez-vous au point d'accès Wi-Fi du tableau. Désactivez les données mobiles et rejoignez \texttt{Digifiz\_AP} (mot de passe \texttt{87654321}); certaines révisions annoncent \texttt{PHOL-LABS2} avec le même mot de passe.
     \item L'adresse IP par défaut est \texttt{192.168.4.1}. Si le tableau est configuré pour rejoindre un autre réseau, analysez le sous-réseau à la recherche d'une adresse se terminant par \texttt{.32} à l'aide d'un utilitaire IP.
-    \item Le portail comporte trois onglets~: \emph{WiFi}, \emph{Control} et \emph{About} (\autoref{fig:next-control-tabs}). L'onglet WiFi gère les paramètres réseau et les mises à jour de micrologiciel ; l'onglet Control ajuste les paramètres du tableau ; l'onglet About récapitule les informations sur les auteurs.
+    \item Le portail comporte cinq onglets~: \emph{WiFi}, \emph{Control}, \emph{Settings}, \emph{Colors} et \emph{About} (\autoref{fig:next-control-tabs}). L'onglet WiFi gère les paramètres réseau et les mises à jour de micrologiciel ; l'onglet Control ajuste les paramètres du tableau ; l'onglet Settings propose un éditeur structuré de tous les paramètres du micrologiciel ; l'onglet Colors pilote les jeux de couleurs multi-segments ; l'onglet About récapitule les informations sur les auteurs.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -161,3 +161,31 @@ Les commandes 31 à 33 fixent les composantes RVB de la couleur d'interface.
 Les versions récentes du micrologiciel acceptent les noms de paramètres lisibles, par exemple \verb|PARAMETER_RPMCOEFFICIENT 3000|.
 La commande de diagnostic \verb|adc 0| affiche les mesures ADC brutes pour le dépannage des capteurs.
 Les mises à jour de micrologiciel ajoutent des contrôles visuels de couleur ; mettez régulièrement à jour via l'onglet \emph{WiFi} pour profiter des dernières fonctionnalités.
+
+\section{Éditeur de paramètres (onglet Settings)}
+L'onglet \emph{Settings} reprend la liste de \autoref{tbl:next-commands} et \autoref{tbl:next-defaults} en y ajoutant les plages autorisées, le type de donnée et des infobulles.
+Il constitue une alternative graphique à la saisie de commandes numériques.
+
+\begin{enumerate}
+    \item Cliquez sur \emph{Load Parameters} pour charger les valeurs en direct depuis le tableau. Chaque ligne affiche le nom du paramètre, sa valeur courante, une description et son type.
+    \item Pour les champs numériques, saisissez la valeur souhaitée dans la colonne \emph{New Value}. L'interface impose la plage indiquée dans les colonnes \emph{Min} et \emph{Max}. Les paramètres booléens sont présentés sous forme de cases à cocher.
+    \item Appuyez sur \emph{Set} pour envoyer immédiatement la modification. Le tableau se recharge afin de confirmer la mise à jour.
+    \item Répétez l'opération pour chaque paramètre à ajuster. Une fois terminé, revenez dans l'onglet \emph{Control} et appuyez sur \emph{Save parameters} afin d'écrire la configuration en mémoire non volatile.
+\end{enumerate}
+
+Avant d'utiliser l'onglet \emph{Colors}, activez l'indicateur micrologiciel dédié aux palettes personnalisées.
+Repérez la case booléenne intitulée «~Custom colour scheme~» (exposée sous la forme \verb|PARAMETER_CUSTOM_COLORSCHEME_ENABLE| dans la liste) ; cochez-la puis validez avec \emph{Set}. Le tableau refusera toute modification de segments tant que ce drapeau reste inactif.
+
+\section{Jeux de couleurs personnalisés}
+L'onglet \emph{Colors} fournit un éditeur par segments pour le rétroéclairage WS2812. Chaque ligne définit une fin de plage, la zone fonctionnelle concernée et la couleur (fixe ou héritée).
+
+\begin{enumerate}
+    \item Cliquez sur \emph{Load Scheme} pour lire la cartographie active. Utilisez \emph{Add Segment} ou les contrôles «~+\textuparrow{}~» et «~+\textdownarrow{}~» pour insérer de nouvelles plages. Les listes déroulantes associent la fonction instrument, tandis que le sélecteur de base permet de réemployer la couleur principale ou d'arrière-plan plutôt qu'un RVB fixe.
+    \item Ajustez la teinte via le sélecteur de couleur pour les segments configurés en «~Custom~». L'éditeur affiche en direct les composantes.
+    \item Réordonnez les lignes à l'aide des flèches afin de respecter l'ordre physique des LED (les segments doivent rester croissants). Supprimez les entrées inutiles avec le bouton «~\texttimes{}~».
+    \item Lorsque la table reflète le rendu souhaité, appuyez sur \emph{Set Scheme}. Le navigateur parcourt chaque segment et l'envoie au tableau.
+    \item Passez immédiatement dans l'onglet \emph{Control} et cliquez sur \emph{Save parameters}. Cette étape est obligatoire~: sans sauvegarde, le micrologiciel conserve les segments en RAM et les perdra après redémarrage.
+    \item Exportez éventuellement la représentation JSON via \emph{Export to File} pour constituer une sauvegarde, ou importez un fichier existant avec \emph{Import from File}. Le bouton \emph{Reset Scheme} restaure la configuration d'usine après confirmation.
+\end{enumerate}
+
+Si vous désactivez ultérieurement le drapeau de jeu de couleurs personnalisé dans l'onglet \emph{Settings}, le tableau revient au mode monochrome classique piloté par \verb|PARAMETER_MAINCOLOR_R/G/B|.
