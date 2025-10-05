@@ -1,0 +1,26 @@
+%%% Page d'informations obligatoire du manuel
+
+\cleardoublepage
+
+% \chapternotnumbered{Informations \& Résumé}
+\MakeLinkTarget{}
+\addcontentsline{toc}{chapter}{Informations \& Résumé}
+\markboth{Informations \& Résumé}{Informations \& Résumé}
+
+\subsection*{Informations}
+
+{\scriptsize
+\begin{tblr}{
+        colspec = {r X},
+    }
+    \textsf{\textcolor{Gray40}{Titre}}             & \ManualTitle                           \\
+    \textsf{\textcolor{Gray40}{Auteur}}            & \ManualAuthor                          \\
+    % \textsf{\textcolor{Gray40}{\DivisionType{}}} & \Division                                \\
+    % \textsf{\textcolor{Gray40}{Mainteneur}}      & \Maintainer{} --- \MaintainersDivision \\
+    % \textsf{\textcolor{Gray40}{Résumé}}         & \ManualAbstract                          \\
+    \textsf{\textcolor{Gray40}{Mots-clés}}         & \ManualKeywords                          \\
+\end{tblr}}
+
+\subsection*{Résumé}
+
+\ManualAbstract

@@ -1,0 +1,83 @@
+\newcommand*{\TeXturedVERSION}{1.5.0} %% TeXtured 2025-08-06
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOTE: If you find any issues or have any suggestions, please open %%
+%%       an Issue on GitHub: https://github.com/jdujava/TeXtured     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Enable built-in LaTeX support for PDF/A compliance (must be before `\documentclass`)
+\DocumentMetadata{lang=fr, pdfversion=1.7, pdfstandard=A-2u}
+\input{preamble/pdfA-compliance/glyphtounicode}
+
+%% NOTE: Choose the desirable page layout version (electronic vs print)
+\documentclass[12pt,a4paper]{report}                      % single-side (electronic)
+% \documentclass[12pt,a4paper,openright,twoside]{report}  % two-sided (for printing)
+
+%% Set some toggle flags to control some of the document properties
+\input{preamble/toggles}
+% \FANCYfalse % disable some of the more fancy stylistic choices
+%% NOTE: Comment out the following lines for the final version
+\WIPtrue            % THIS IS A WORK-IN-PROGRESS VERSION
+% \EXTRAMARGINtrue  % add extra right margin in WIP version (for notes/corrections)
+% \LINKBOXESfalse   % disable reference/link boxes for faster compilations
+\CENSORtrue         % THIS IS A CENSORED VERSION
+
+%% Preamble - data, packages, macros, and more
+\input{preamble/main}
+
+%% Only uncommented files are included (faster compilation)
+%% NOTE: If no files are uncommented, all files are included
+\includeonlysmart{
+    % frontmatter_fr/title,
+    % frontmatter_fr/declaration,
+    % frontmatter_fr/dedication,
+    % frontmatter_fr/information,
+    % chapters_fr/Precautions,
+    % chapters_fr/Introduction,
+    % chapters_fr/ProductDescription,
+    % chapters_fr/OperatingPrinciple,
+    % chapters_fr/TechnicalSpecifications,
+    % chapters_fr/Safety,
+    % chapters_fr/Preparation,
+    % chapters_fr/ReplicaNextMaintenance,
+    % chapters_fr/ReplicaNextScenarios,
+    % chapters_fr/ReplicaMaintenance,
+    % chapters_fr/ReplicaScenarios,
+    % chapters_fr/Marking,
+    % chapters_fr/Package,
+    % chapters_fr/Storage,
+    % chapters_fr/Appendix,
+}
+
+\begin{document}
+
+\frontmatter
+\include{frontmatter_fr/title}
+% \include{frontmatter_fr/declaration}
+% \include{frontmatter_fr/dedication}
+% \include{frontmatter_fr/information}
+
+\contentsandlists
+
+\mainmatter
+\include{chapters_fr/Precautions}
+\include{chapters_fr/Introduction}
+\include{chapters_fr/ProductDescription}
+\include{chapters_fr/OperatingPrinciple}
+\include{chapters_fr/TechnicalSpecifications}
+\include{chapters_fr/Safety}
+\include{chapters_fr/Preparation}
+\include{chapters_fr/ReplicaNextMaintenance}
+\include{chapters_fr/ReplicaNextScenarios}
+\include{chapters_fr/ReplicaMaintenance}
+\include{chapters_fr/ReplicaScenarios}
+\include{chapters_fr/Marking}
+\include{chapters_fr/Package}
+\include{chapters_fr/Storage}
+
+\appendix
+\include{chapters_fr/Appendix}
+
+\backmatter
+\references
+
+\end{document}
