@@ -20,29 +20,18 @@
     {\fontsize{30pt}{36pt}\selectfont \bfseries
         \ManualTitleFront \par}
 
-    \vspace{1.1em}
+    \vspace{1.5em}
 
-    \begin{center}
-        \large
-        \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
-            % Manual Maintainer    & \Maintainer     \\
-            \ifdef{\ProductLine}{%
-            Product Line         & \ProductLine \\
-            }{}
-        \end{tabular}
-    \end{center}
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        Product Line \ProductLine \par}
 
-    \vspace{2em}
+    \vspace{1em}
 
-    \ifFANCY\sffamily\fi
-    Online Release \YearReleased \\
-    \ifdef{\YearRevised}{%
-        \emph{Revised version \YearRevised} \par
-    }{}
-    \ifWIP
-        \small\ttfamily \textcolor{red}{(Draft - \today)} \par
-    \fi
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        Online Release 2025 \par}
+
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        (Draft- October 5, 2025) \par}
 
     \vfill
 
