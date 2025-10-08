@@ -1,0 +1,26 @@
+%%% Обязательная информационная страница руководства
+
+\cleardoublepage
+
+% \chapternotnumbered{Информация и аннотация}
+\MakeLinkTarget{}
+\addcontentsline{toc}{chapter}{Информация и аннотация}
+\markboth{Информация и аннотация}{Информация и аннотация}
+
+\subsection*{Информация}
+
+{\scriptsize
+\begin{tblr}{
+        colspec = {r X},
+    }
+    \textsf{\textcolor{Gray40}{Название}}       & \ManualTitle                           \\
+    \textsf{\textcolor{Gray40}{Автор}}          & \ManualAuthor                          \\
+    % \textsf{\textcolor{Gray40}{\DivisionType{}}} & \Division                                \\
+    % \textsf{\textcolor{Gray40}{Куратор}}        & \Maintainer{} --- \MaintainersDivision \\
+    % \textsf{\textcolor{Gray40}{Аннотация}}      & \ManualAbstract                          \\
+    \textsf{\textcolor{Gray40}{Ключевые слова}} & \ManualKeywords                          \\
+\end{tblr}}
+
+\subsection*{Аннотация}
+
+\ManualAbstract

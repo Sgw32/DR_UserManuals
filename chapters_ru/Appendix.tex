@@ -1,0 +1,121 @@
+\chapter{Справочные таблицы}\label{appendix:reference-ru}
+
+\section{Команды классической \ReplicaGenOne{}}
+
+Прошивка классической Replica использует те же команды, что и \ReplicaNextShort{}.
+Команды 31--33 (управление цветом) активны только на \ReplicaNextShort{}; остальные команды работают в обеих поколениях.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Основные команды конфигурации для классических приборок \ReplicaGenOne{}.}
+    \label{tbl:replica-commands-ru}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Команда} & \textbf{Название} & \textbf{Описание} \\
+        \midrule
+        22 (или 0) & PARAMETER\_RPMCOEFFICIENT & Калибровочный коэффициент оборотов. \\
+        1  & PARAMETER\_SPEEDCOEFFICIENT & Калибровка скорости. \\
+        2  & PARAMETER\_COOLANTTHERMISTORB & Бета-коэффициент датчика ОЖ. \\
+        3  & PARAMETER\_OILTHERMISTORB & Бета-коэффициент датчика масла. \\
+        4  & PARAMETER\_AIRTHERMISTORB & Бета-коэффициент датчика наружного воздуха. \\
+        5  & PARAMETER\_TANKMINRESISTANCE & Минимальное сопротивление датчика топлива. \\
+        6  & PARAMETER\_TANKMAXRESISTANCE & Максимальное сопротивление датчика топлива. \\
+        7--10 & PARAMETER\_TAU\_\textit{X} & Константы фильтрации для ОЖ, масла, воздуха и уровня топлива. \\
+        11 & PARAMETER\_MILEAGE & Общий пробег. \\
+        12 & PARAMETER\_DAILY\_MILEAGE & Суточный пробег. \\
+        13 & PARAMETER\_AUTO\_BRIGHTNESS & Включение автоматической яркости. \\
+        14 & PARAMETER\_BRIGHTNESS\_LEVEL & Ручной уровень яркости. \\
+        15 & PARAMETER\_TANK\_CAPACITY & Ёмкость бака. \\
+        16 & PARAMETER\_MFA\_STATE & Активная страница MFA. \\
+        17 & PARAMETER\_BUZZER\_OFF & Отключение зуммера (только Replica). \\
+        18 & PARAMETER\_MAX\_RPM & Диапазон тахометра (по умолчанию 7000). \\
+        19--21 & PARAMETER\_NORMAL\_RESISTANCE\_\textit{X} & Сопротивления датчиков при \SI{25}{\celsius} для ОЖ, масла и наружного воздуха. \\
+        23 & PARAMETER\_DOT\_OFF & Поведение разделителя часов. \\
+        24 & PARAMETER\_BACKLIGHT\_ON & Включение подсветки при ближнем свете. \\
+        25 & PARAMETER\_M\_D\_FILTER & Константа медианного фильтра. \\
+        26 & PARAMETER\_COOLANT\_MAX\_R & Порог датчика ОЖ для полной шкалы. \\
+        27 & PARAMETER\_COOLANT\_MIN\_R & Порог датчика ОЖ для отметки «1~bar». \\
+        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Компоненты цвета интерфейса (только \ReplicaNextShort{}). \\
+        37 & PARAMETER\_RPM\_FILTER & Агрессивность фильтра оборотов. \\
+        128 & PARAMETER\_READ\_ADDITION & Добавьте 128 для чтения значения команды. \\
+        255 & PARAMETER\_SET\_HOUR & Установка часов. \\
+        254 & PARAMETER\_SET\_MINUTE & Установка минут. \\
+        253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Сброс суточного пробега. \\
+        252 & PARAMETER\_RESET\_DIGITAL & Заводской сброс параметров. \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Значения по умолчанию для \ReplicaGenOneShort{}}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Настройки по умолчанию для классической \ReplicaGenOne{}.}
+    \label{tbl:replica-defaults-ru}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Параметр} & \textbf{Значение} & \textbf{Примечание} \\
+        \midrule
+        PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
+        PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\
+        PARAMETER\_COOLANTTHERMISTORB & 4000 &  \\
+        PARAMETER\_OILTHERMISTORB & 4000 &  \\
+        PARAMETER\_AIRTHERMISTORB & 3812 & Для поколения~2 — 3600. \\
+        PARAMETER\_TANKMINRESISTANCE & 35 & \ohm. \\
+        PARAMETER\_TANKMAXRESISTANCE & 265 & \ohm. \\
+        PARAMETER\_TAU\_COOLANT & 2 &  \\
+        PARAMETER\_TAU\_OIL & 2 &  \\
+        PARAMETER\_TAU\_AIR & 2 &  \\
+        PARAMETER\_TAU\_TANK & 2 &  \\
+        PARAMETER\_MILEAGE & Зависит от автомобиля & Сохраняет текущий пробег. \\
+        PARAMETER\_DAILY\_MILEAGE & 0 &  \\
+        PARAMETER\_AUTO\_BRIGHTNESS & 1 & Включена. \\
+        PARAMETER\_BRIGHTNESS\_LEVEL & 7 или 13 & Типичные значения для поколений~1/1.5. \\
+        PARAMETER\_TANK\_CAPACITY & 63 & Литры. \\
+        PARAMETER\_MFA\_STATE & 0 &  \\
+        PARAMETER\_BUZZER\_OFF & 1 & Зуммер отключён. \\
+        PARAMETER\_MAX\_RPM & 8000 & В ранних версиях — 7000. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \si{\ohm} при \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \si{\ohm} при \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & \si{\ohm} при \SI{25}{\celsius}. \\
+        PARAMETER\_DOT\_OFF & 0 & Мигание разделителя. \\
+        PARAMETER\_BACKLIGHT\_ON & 1 & Включена. \\
+        PARAMETER\_M\_D\_FILTER & 65535 &  \\
+        PARAMETER\_COOLANT\_MAX\_R & 120 & \si{\celsius}. \\
+        PARAMETER\_COOLANT\_MIN\_R & 60 & \si{\celsius}. \\
+        PARAMETER\_MAINCOLOR\_[RGB] & -- & Команды цвета не активны на классической Replica. \\
+        PARAMETER\_RPM\_FILTER & 70 &  \\
+        PARAMETER\_UPTIME & 0 &  \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Журнал изменений}\label{app:change-log-ru}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Лист регистрации изменений документа.}
+    \label{tbl:change-log-ru}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {Q[c,0.12\linewidth] Q[l] Q[c,0.2\linewidth]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Изменение} & \textbf{Затронутые листы} & \textbf{Дата} \\
+        \midrule
+        1 & 04.10.2022 & 04~октября~2022 \\
+        2 & 31.08.2023 & 31~августа~2023 \\
+        3 & 05.08.2024 & 05~августа~2024 \\
+        4 & Внедрён LaTeX-документ. & 22.09.2025 \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
