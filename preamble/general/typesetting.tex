@@ -1,9 +1,11 @@
 %%% Typesetting, figures, tables, etc.
 
 \ifpdftex % only for pdfLaTeX
-    \usepackage[T1]{fontenc} % better support for accented characters
+    \usepackage[T1,T2A]{fontenc} % support for Latin and Cyrillic scripts
+    \usepackage[utf8]{inputenc}  % explicit UTF-8 input encoding for compatibility
 \fi
 \usepackage{lmodern}  % Latin Modern fonts
+\usepackage[main=english,french,russian]{babel} % multi-language support
 \usepackage{romanbar} % Roman numerals with bars, provides `\Romanbar{...}`
 
 %% slightly more breathing space between lines

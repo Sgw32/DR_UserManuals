@@ -1,0 +1,46 @@
+\pdfbookmark{Титульный лист}{titlepage}
+\thispagestyle{empty}
+\begin{center}
+    \Large
+
+    \vspace{-1.5em}
+
+    {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
+        \MakeUppercase{Руководство пользователя} \par}
+
+    \vspace{2.5em}
+
+    {\fontsize{30pt}{36pt}\selectfont \bfseries
+        \ManualTitleFront \par}
+
+    \vspace{1.1em}
+
+    \begin{center}
+        \large
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
+            % Manual Maintainer    & \Maintainer     \\
+            \ifdef{\ProductLine}{%
+            Линейка продуктов    & \ProductLine \\
+            }{}
+        \end{tabular}
+    \end{center}
+
+    \vspace{2em}
+
+    \ifFANCY\sffamily\fi
+    Электронное издание \YearReleased \\
+    \ifdef{\YearRevised}{%
+        \emph{Переработанная версия \YearRevised} \par
+    }{}
+    \ifWIP
+        \small\ttfamily \textcolor{red}{(Черновик — \today)} \par
+    \fi
+
+    \vfill
+
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        \ManualAuthorFooter}
+\end{center}
+
+\newpage
