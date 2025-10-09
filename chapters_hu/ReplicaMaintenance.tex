@@ -1,6 +1,6 @@
 \chapter{A \ReplicaGenOne{} beállítása és karbantartása}\label{ch:replica-setup}
 
-Ez a fejezet a klasszikus \ReplicaGenOne{} műszeregységre vonatkozik, amelyet a utoref{fig:replica-classic} ábra mutat. Ha a műszer a \ReplicaNextLong{} elrendezését követi, használja az előző fejezetet.
+Ez a fejezet a klasszikus \ReplicaGenOne{} műszeregységre vonatkozik, amelyet a \autoref{fig:replica-classic} ábra mutat. Ha a műszer a \ReplicaNextLong{} elrendezését követi, használja az előző fejezetet.
 
 \begin{figure}[htbp]
     \centering
@@ -26,7 +26,7 @@ Ez a fejezet a klasszikus \ReplicaGenOne{} műszeregységre vonatkozik, amelyet 
 A műszerben DS3231 valós idejű óra dolgozik CR2032 gombelemmel. Az elem jellemzően körülbelül négy évig tart; lemerüléskor az óra minden bekapcsolásnál alaphelyzetbe áll. A front- és/vagy hátlap eltávolítása után, a kábelezés leválasztása nélkül cserélje ki a cellát. A használt elemet a helyi szabályozás szerint selejtezze.
 
 \section{Firmware karbantartása USBasp programozóval}
-Minden készlethez USBasp programozókábelt mellékelünk, amelyet előre bekötve talál a házban (utoref{fig:usbasp-cable}). A villogtatás előtt telepítsen megfelelő USBasp illesztőprogramot, például a következő címről:
+Minden készlethez USBasp programozókábelt mellékelünk, amelyet előre bekötve talál a házban (\autoref{fig:usbasp-cable}). A villogtatás előtt telepítsen megfelelő USBasp illesztőprogramot, például a következő címről:
 \displayurl{https://myrobot.ru/downloads/driver-usbasp-v-2.0-usb-isp-windows-7-8-10-xp.php}
 A programozó a számítógéphez csatlakoztatva tápot ad a műszernek, így padon is ellenőrizhető.
 
@@ -68,7 +68,7 @@ iOS eszközök nem tudnak csatlakozni a klasszikus Bluetooth 2.0 modulhoz.
 A parancsokat szóközzel elválasztott \verb|<szám> <érték>| párokként adja meg. Például a 123\,456~km futásteljesítmény tárolásához küldje el a \verb|11 123456| parancsot. Egy parancs aktuális értékének lekérdezéséhez adjon hozzá 128-at a számához (a \verb|129 0| visszaadja a sebességkorrekciós tényezőt). A \verb|adc 0| diagnosztikai parancs nyers szenzoradatokat jelenít meg, amelyek segítenek a hibák feltárásában.
 
 \section{Konfigurációs paraméterek}
-A legfontosabb Bluetooth parancsokat a utoref{tbl:replica-classic-commands} táblázat sorolja fel. Az 1/1.5 és 2. generációs műszerek alapbeállításait a utoref{tbl:replica-defaults} összegzi. A 31--33 parancsokat csak \ReplicaNextShort{} egységeken használja; a klasszikus \ReplicaGenOneShort{} esetén nincs hatásuk.
+A legfontosabb Bluetooth parancsokat a \autoref{tbl:replica-classic-commands} táblázat sorolja fel. Az 1/1.5 és 2. generációs műszerek alapbeállításait a \autoref{tbl:replica-defaults} összegzi. A 31--33 parancsokat csak \ReplicaNextShort{} egységeken használja; a klasszikus \ReplicaGenOneShort{} esetén nincs hatásuk.
 
 {\scriptsize
 \begin{longtblr}[

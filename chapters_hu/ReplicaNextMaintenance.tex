@@ -1,6 +1,6 @@
 \chapter{\ReplicaNextLong{} beállítása és karbantartása}\label{ch:replica-next-setup}
 
-Ez a fejezet a \ReplicaNextLong{} műszeregységre vonatkozik, amelyet a utoref{fig:next-hardware} ábra mutat.
+Ez a fejezet a \ReplicaNextLong{} műszeregységre vonatkozik, amelyet a \autoref{fig:next-hardware} ábra mutat.
 
 \begin{figure}[htbp]
     \centering
@@ -20,7 +20,7 @@ A konfiguráció, az adatgyűjtés és a firmware kezelése a beágyazott webalk
 \begin{itemize}
     \item Csatlakozzon a műszerfal Wi-Fi hozzáférési pontjára. Kapcsolja ki a mobiladatot, majd jelentkezzen be a \texttt{Digifiz\_AP} hálózatra (jelszó: \texttt{87654321}); egyes revíziók \texttt{PHOL-LABS2} SSID-t sugároznak ugyanilyen jelszóval.
     \item Az alapértelmezett IP-cím \texttt{192.168.4.1}. Ha a műszerfal más hálózathoz csatlakozik, keressen egy \texttt{.32} végű címet a helyi alhálózaton IP eszközkereső alkalmazással.
-    \item A portál öt lapot tartalmaz: \emph{WiFi}, \emph{Control}, \emph{Settings}, \emph{Colors} és \emph{About} (lásd utoref{fig:next-control-tabs}). A WiFi lap kezeli a hálózati beállításokat és a firmware feltöltést; a Control lap a műszerfal paramétereit módosítja; a Settings lap strukturált szerkesztőt kínál az összes firmware paraméterhez; a Colors lap több szegmensből álló színsémákat kezel; az About lapon a szerzői információk találhatók.
+    \item A portál öt lapot tartalmaz: \emph{WiFi}, \emph{Control}, \emph{Settings}, \emph{Colors} és \emph{About} (lásd \autoref{fig:next-control-tabs}). A WiFi lap kezeli a hálózati beállításokat és a firmware feltöltést; a Control lap a műszerfal paramétereit módosítja; a Settings lap strukturált szerkesztőt kínál az összes firmware paraméterhez; a Colors lap több szegmensből álló színsémákat kezel; az About lapon a szerzői információk találhatók.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -38,7 +38,7 @@ A konfiguráció, az adatgyűjtés és a firmware kezelése a beágyazott webalk
 \end{figure}
 
 \section{Parancsbevitel}
-A \emph{Control} lap egy parancsbeviteli sort (1), egy \emph{Process} gombot (2), egy eredményablakot (3), gyorsvezérlőket (4), egy \emph{Save} gombot (5) és egy \emph{Reset} gombot (6) tartalmaz. A parancsokat szóközzel elválasztott \verb|<szám> <érték>| párokként kell megadni, kizárólag egész számokkal; írásjelek és idézőjelek nem szükségesek. A utoref{fig:next-command-example} példa az automatikus fényerő ki- és bekapcsolását szemlélteti.
+A \emph{Control} lap egy parancsbeviteli sort (1), egy \emph{Process} gombot (2), egy eredményablakot (3), gyorsvezérlőket (4), egy \emph{Save} gombot (5) és egy \emph{Reset} gombot (6) tartalmaz. A parancsokat szóközzel elválasztott \verb|<szám> <érték>| párokként kell megadni, kizárólag egész számokkal; írásjelek és idézőjelek nem szükségesek. A \autoref{fig:next-command-example} példa az automatikus fényerő ki- és bekapcsolását szemlélteti.
 
 \begin{figure}[htbp]
     \centering
@@ -156,7 +156,7 @@ Paraméter olvasásához adjon 128-at a parancs számához (például a \verb|12
 Az újabb firmware-verziók emberi olvasású paraméterneveket is elfogadnak, például \verb|PARAMETER_RPMCOEFFICIENT 3000|. A \verb|adc 0| diagnosztikai parancs nyers ADC értékeket jelenít meg a szenzorok hibakereséséhez. A firmware-frissítések vizuális színszabályzókat adnak, ezért rendszeresen frissítsen a \emph{WiFi} lapon, hogy hozzáférjen az új funkciókhoz.
 
 \section{Beállítások lap paraméter szerkesztője}
-A \emph{Settings} lap a utoref{tbl:next-commands} és utoref{tbl:next-defaults} táblázatokban szereplő listát tükrözi, miközben megjeleníti a tartományokat, leírásokat és adattípusokat. Használja, ha inkább grafikus felületen dolgozna a parancsok beírása helyett.
+A \emph{Settings} lap a \autoref{tbl:next-commands} és \autoref{tbl:next-defaults} táblázatokban szereplő listát tükrözi, miközben megjeleníti a tartományokat, leírásokat és adattípusokat. Használja, ha inkább grafikus felületen dolgozna a parancsok beírása helyett.
 
 \begin{enumerate}
     \item Nyomja meg a \emph{Load Parameters} gombot, hogy lekérje az aktuális értékeket a műszerről. A böngésző minden tételt a nevével, aktuális értékével, tippjével és típusával jelenít meg.
