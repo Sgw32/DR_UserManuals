@@ -1,0 +1,23 @@
+\chapter{Tipikus beállítási helyzetek \ReplicaGenOne{} műszerekhez}\label{ch:replica-scenarios}
+
+Hibaelhárítás előtt győződjön meg róla, hogy a műszeregység valóban klasszikus \ReplicaGenOne{} (\autoref{ch:replica-setup}). A \ReplicaNextLong{} panelek Wi-Fi portált használnak; ezekről a \autoref{ch:replica-next-scenarios} fejezet szól.
+
+\begin{description}
+    \item[A Bluetooth modul nem látható] A műszeregység Bluetooth Classic interfészéhez párosítson (általában \texttt{Digifiz} néven jelenik meg). Androidon továbbra is a Serial Bluetooth Terminal ajánlott: állítsa a sorvégjelet LF-re, és kerülje a csak BLE-t támogató keresőket, mert azok nem találják meg a modult.
+    \item[iPhone vagy iPad nem csatlakozik] A \ReplicaGenOneShort{} műszerek Bluetooth~2.0-t használnak, amely nem kompatibilis az iOS eszközökkel. Használjon Android telefont vagy Bluetooth soros segédprogramot futtató számítógépet.
+    \item[Parancsokat figyelmen kívül hagyó 2024-es firmware] Küldje el a \verb|234 123| parancsot a feldolgozó feloldásához, majd ismételje meg a kívánt sorozatot. A gyakran használt értékekhez hozzon létre gyorsgombokat a Serial Bluetooth Terminalban.
+    \item[Túl magas vagy alacsony sebességkijelzés] Csatlakozzon a Serial Bluetooth Terminalon keresztül, vezessen \SI{100}{\kilo\metre\per\hour} kijelzett sebességgel, és jegyezze fel a GPS értéket. Küldje el a \verb|1 <gps_érték>| parancsot (például \verb|1 85|), így a \paramname{PARAMETER\_SPEEDCOEFFICIENT} a hiteles sebességet követi.
+    \item[Téves fordulatszám] A 2024 előtti firmware \verb|0 <érték>| formát vár, az aktuális kiadások \verb|22 <érték>| parancsot használnak. Audi motoroknál tipikusan \verb|22 3000| szükséges; felezze vagy duplázza az értéket (például \verb|22 1500| vagy \verb|22 6000|), amíg a kijelzés megegyezik a fordulatszámmérővel.
+    \item[Fényerő növelése] Tiltsa le az automatikus szabályzást a \verb|13 0| paranccsal, majd emelje a kézi szintet \verb|14 <érték>| paranccsal. A 45 és 55 közötti értékek jelentősen növelik a fényerőt; 60 fölé ne lépjen, hogy megőrizze a LED-ek élettartamát. Később a \verb|13 1| paranccsal aktiválja újra a fotodiódát.
+    \item[Óra beállítása] A Serial Bluetooth Terminalban küldje el a \verb|255 <óra>| parancsot, majd a \verb|254 <perc>| parancsot. Példák: \verb|255 23| és \verb|254 55| beállítja a 23:55-öt; \verb|255 14| és \verb|254 30| a 14:30-at; \verb|255 2| és \verb|254 28| a 02:28-at.
+    \item[Üzemanyagszint hibák] A jármű akkumulátorát mindig válassza le a mérések előtt.\begin{itemize}
+        \item Ha a kijelzés 60-ról 0-ra sodródik, mérje meg a jeladó láb és a test közötti ellenállást; a tipikus érték \SIrange{30}{300}{\ohm}. Tisztítsa meg a csatlakozót, és ellenőrizze, hogy a jel eljut a főpanelre.
+        \item Ha a mutató végig telített, keressen \SI{5}{\ohm} alatti testzárlatot a jeladó vezetékén, és javítsa.
+        \item Ha az érték soha nem változik, hasonlítsa össze a jeladó ellenállását tele és üres tankkal. Állandó érték esetén cserélje az érzékelőt.
+    \end{itemize}
+    \item[Hibás üzemanyag-áramlás] Az átfolyási csatorna emulált adatot szolgáltat, ha nincs szívócső-nyomásérzékelő. Tekintse tájékoztató jellegűnek.
+    \item[Pontatlan hűtőfolyadék kijelzés] Hangolja a \paramname{PARAMETER\_COOLANT\_MIN\_R} és \paramname{PARAMETER\_COOLANT\_MAX\_R} értékeket. Példa: a \verb|27 30| lerövidíti a skálát, így a „1~bar” jelzés kb. \SI{30}{\celsius}-nál jelenik meg.
+    \item[Hiányzó olaj- vagy külső hőmérséklet] A \texttt{-999} vagy beragadt érték érzékelőhibára utal. Leválasztott akkumulátorral, hideg motor mellett mérje meg az érzékelő ellenállását a kábel és a test között. Az olajszenzor kb. \ensuremath{2\pm0.3}~\si{k\ohm}, a külső hőmérő kb. \ensuremath{10\pm2}~\si{k\ohm}. Finomhangoláshoz módosítsa a \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} (20-as parancs) vagy a \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} (21-es parancs) értékét. Tartós hibáknál készítsen \verb|adc 0| naplókat, és küldje el a PHOL-LABS Kft. támogatásának.
+\end{description}
+
+Ha a hiba továbbra is fennáll, gyűjtse össze a nyers szenzoradatokat a \verb|adc 0| paranccsal, és ossza meg az elemzéshez.
