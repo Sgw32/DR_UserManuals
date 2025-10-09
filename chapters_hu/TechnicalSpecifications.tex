@@ -1,0 +1,13 @@
+\chapter{Műszaki jellemzők}\label{ch:technical-specs}
+
+A \ReplicaGenOne{} műszeregység kikapcsolt állapotban nem vesz fel készenléti áramot. A \ReplicaNextShort{} körülbelül 13~mA-t vesz fel a +12~V-os tápról akkor is, amikor a gyújtás lekapcsolt; hosszabb tárolásnál ezzel számolni kell. Mindkét generáció megbízhatóan működik a jármű elektromos rendszerében 9~V és 16~V~DC között.
+
+\section{Mérési képességek}
+\begin{itemize}
+    \item \textbf{Járműsebesség:} a gyári bowdenes vagy elektronikus sebességérzékelőről mérve. A rendszeres hiba 10~km/h, a relatív hiba 3~km/h, a kijelzés 999~km/h-nál (imperiális egységeknél mph-nál) telítődik.
+    \item \textbf{Motorfordulatszám:} a gyújtásjelből származtatva egy optocsatolós fokozaton keresztül 430~nF/1.2~k\ensuremath{\Omega} RC taggal és dióda-határolással. Az abszolút és relatív hiba 200~fordulat/perc alatt marad.
+    \item \textbf{Üzemanyagszint:} az ellenállásos tankjeladóról olvasva, körülbelül 10~liter bizonytalansággal.
+    \item \textbf{Hűtőfolyadék-hőmérséklet:} a jármű kábelkorbácsába kötött szabványos termisztor minőségi kijelzése; pontos numerikus érték nem jelenik meg.
+    \item \textbf{Időmérés:} pontossága legfeljebb egy perc eltérés.
+    \item \textbf{Visszajelző lámpák:} irányjelzők, távolsági fényszóró, olajnyomás riasztások, generátor állapot, kézifék, hátsó ablakfűtés vagy dízel izzítás, valamint első és hátsó ködlámpa.
+\end{itemize}

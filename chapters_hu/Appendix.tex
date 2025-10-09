@@ -1,0 +1,120 @@
+\chapter{Referencia táblázatok}\label{appendix:reference}
+
+\section{Klasszikus \ReplicaGenOne{} parancsok}
+
+A klasszikus Replica firmware a legtöbb parancsot megosztja a \ReplicaNextShort{} verzióval. A 31--33-as (színvezérlő) parancsok csak \ReplicaNextShort{} egységeken aktívak; a többi mindkét generációra érvényes.
+
+\begin{table}[htbp]
+    \centering
+    \caption{A klasszikus \ReplicaGenOne{} műszerek fő konfigurációs parancsai.}
+    \label{tbl:replica-commands}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Parancs} & \textbf{Név} & \textbf{Leírás} \\
+        \midrule
+        22 (vagy 0) & PARAMETER\_RPMCOEFFICIENT & Motorfordulatszám-korrekciós tényező. \\
+        1  & PARAMETER\_SPEEDCOEFFICIENT & Sebességkorrekciós tényező. \\
+        2  & PARAMETER\_COOLANTTHERMISTORB & Hűtőfolyadék termisztor béta tényező. \\
+        3  & PARAMETER\_OILTHERMISTORB & Olaj termisztor béta tényező. \\
+        4  & PARAMETER\_AIRTHERMISTORB & Külső levegő termisztor béta tényező. \\
+        5  & PARAMETER\_TANKMINRESISTANCE & Minimális üzemanyagszint-ellenállás. \\
+        6  & PARAMETER\_TANKMAXRESISTANCE & Maximális üzemanyagszint-ellenállás. \\
+        7--10 & PARAMETER\_TAU\_\textit{X} & Szűrőállandók a hűtő-, olaj-, külső hőmérséklethez és az üzemanyagszinthez. \\
+        11 & PARAMETER\_MILEAGE & Összesített kilométer-számláló. \\
+        12 & PARAMETER\_DAILY\_MILEAGE & Napi számláló. \\
+        13 & PARAMETER\_AUTO\_BRIGHTNESS & Automatikus fényerő engedélyezése. \\
+        14 & PARAMETER\_BRIGHTNESS\_LEVEL & Kézi fényerő szint. \\
+        15 & PARAMETER\_TANK\_CAPACITY & Üzemanyagtartály kapacitása. \\
+        16 & PARAMETER\_MFA\_STATE & Aktív MFA mód. \\
+        17 & PARAMETER\_BUZZER\_OFF & Hangjelző letiltása (csak Replica). \\
+        18 & PARAMETER\_MAX\_RPM & Fordulatszámmérő skálázás (alap 7000). \\
+        19--21 & PARAMETER\_NORMAL\_RESISTANCE\_\textit{X} & Érzékelő ellenállások \SI{25}{\celsius}-on a hűtő-, olaj- és külső bemeneten. \\
+        23 & PARAMETER\_DOT\_OFF & Óra kettőspont viselkedése. \\
+        24 & PARAMETER\_BACKLIGHT\_ON & Háttérvilágítás engedélyezése tompított fénnyel. \\
+        25 & PARAMETER\_M\_D\_FILTER & Mediánszűrő állandó. \\
+        26 & PARAMETER\_COOLANT\_MAX\_R & Hűtő jeladó küszöbje teljes skálához. \\
+        27 & PARAMETER\_COOLANT\_MIN\_R & Hűtő jeladó küszöbje „1~bar” jelzéshez. \\
+        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Felhasználói felület színkomponensei (csak \ReplicaNextShort{}). \\
+        37 & PARAMETER\_RPM\_FILTER & Fordulatszám-szűrő agresszivitása. \\
+        128 & PARAMETER\_READ\_ADDITION & 128 hozzáadásával kiolvassa egy parancs aktuális értékét. \\
+        255 & PARAMETER\_SET\_HOUR & Óra beállítása. \\
+        254 & PARAMETER\_SET\_MINUTE & Perc beállítása. \\
+        253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Napi számláló nullázása. \\
+        252 & PARAMETER\_RESET\_DIGITAL & Tárolt paraméterek gyári visszaállítása. \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Klasszikus \ReplicaGenOneShort{} alapértékek}
+
+\begin{table}[htbp]
+    \centering
+    \caption{A klasszikus \ReplicaGenOne{} alap konfigurációja.}
+    \label{tbl:replica-defaults}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Paraméter} & \textbf{Alapérték} & \textbf{Megjegyzés} \\
+        \midrule
+        PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
+        PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\
+        PARAMETER\_COOLANTTHERMISTORB & 4000 &  \\
+        PARAMETER\_OILTHERMISTORB & 4000 &  \\
+        PARAMETER\_AIRTHERMISTORB & 3812 & 3600 a 2. generáción. \\
+        PARAMETER\_TANKMINRESISTANCE & 35 & Ohm. \\
+        PARAMETER\_TANKMAXRESISTANCE & 265 & Ohm. \\
+        PARAMETER\_TAU\_COOLANT & 2 &  \\
+        PARAMETER\_TAU\_OIL & 2 &  \\
+        PARAMETER\_TAU\_AIR & 2 &  \\
+        PARAMETER\_TAU\_TANK & 2 &  \\
+        PARAMETER\_MILEAGE & Járműfüggő & Megőrzi a korábbi futásteljesítményt. \\
+        PARAMETER\_DAILY\_MILEAGE & 0 &  \\
+        PARAMETER\_AUTO\_BRIGHTNESS & 1 & Engedélyezve. \\
+        PARAMETER\_BRIGHTNESS\_LEVEL & 7 vagy 13 & Tipikus érték Gen~1/1.5 műszereknél. \\
+        PARAMETER\_TANK\_CAPACITY & 63 & Liter. \\
+        PARAMETER\_MFA\_STATE & 0 &  \\
+        PARAMETER\_BUZZER\_OFF & 1 & Hangjelző letiltva. \\
+        PARAMETER\_MAX\_RPM & 8000 & Korai műszereken 7000. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \si{\ohm} \SI{25}{\celsius}-on. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \si{\ohm} \SI{25}{\celsius}-on. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & \si{\ohm} \SI{25}{\celsius}-on. \\
+        PARAMETER\_DOT\_OFF & 0 & Villogó kettőspont. \\
+        PARAMETER\_BACKLIGHT\_ON & 1 & Engedélyezve. \\
+        PARAMETER\_M\_D\_FILTER & 65535 &  \\
+        PARAMETER\_COOLANT\_MAX\_R & 120 & \si{\celsius}. \\
+        PARAMETER\_COOLANT\_MIN\_R & 60 & \si{\celsius}. \\
+        PARAMETER\_MAINCOLOR\_[RGB] & -- & A klasszikus Replica nem használ színparancsokat. \\
+        PARAMETER\_RPM\_FILTER & 70 &  \\
+        PARAMETER\_UPTIME & 0 &  \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Változásnapló}\label{app:change-log}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Dokumentum módosítási jegyzék.}
+    \label{tbl:change-log}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {Q[c,0.12\linewidth] Q[l] Q[c,0.2\linewidth]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Módosítás} & \textbf{Érintett lapok} & \textbf{Dátum} \\
+        \midrule
+        1 & 2022.10.04 & 2022. okt. 04. \\
+        2 & 2023.08.31 & 2023. aug. 31. \\
+        3 & 2024.08.05 & 2024. aug. 05. \\
+        4 & LaTeX dokumentum bevezetve. & 2025. szept. 22. \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
