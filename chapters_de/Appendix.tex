@@ -1,0 +1,122 @@
+\chapter{Referenztabellen} \label{appendix:reference}
+
+\section{Classic \ReplicaGenOne{} Command Reference}
+
+The classic Replica firmware shares most commands with \ReplicaNextShort{}.
+Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; other commands apply equally to both generations.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Primary configuration commands for classic \ReplicaGenOne{} dashboards.}
+    \label{tbl:replica-commands}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Command} & \textbf{Name} & \textbf{Description} \\
+        \midrule
+        22 (or 0) & PARAMETER\_RPMCOEFFICIENT & Engine RPM calibration factor. \\
+        1  & PARAMETER\_SPEEDCOEFFICIENT & Speed calibration factor. \\
+        2  & PARAMETER\_COOLANTTHERMISTORB & Coolant thermistor beta coefficient. \\
+        3  & PARAMETER\_OILTHERMISTORB & Oil thermistor beta coefficient. \\
+        4  & PARAMETER\_AIRTHERMISTORB & Ambient thermistor beta coefficient. \\
+        5  & PARAMETER\_TANKMINRESISTANCE & Minimum fuel sender resistance. \\
+        6  & PARAMETER\_TANKMAXRESISTANCE & Maximum fuel sender resistance. \\
+        7--10 & PARAMETER\_TAU\_\textit{X} & Filtering constants for coolant, oil, air, and fuel level.
+        \\
+        11 & PARAMETER\_MILEAGE & Total odometer value. \\
+        12 & PARAMETER\_DAILY\_MILEAGE & Trip odometer. \\
+        13 & PARAMETER\_AUTO\_BRIGHTNESS & Automatic brightness enable. \\
+        14 & PARAMETER\_BRIGHTNESS\_LEVEL & Manual brightness level. \\
+        15 & PARAMETER\_TANK\_CAPACITY & Fuel tank capacity. \\
+        16 & PARAMETER\_MFA\_STATE & Active MFA mode. \\
+        17 & PARAMETER\_BUZZER\_OFF & Disable buzzer (Replica only). \\
+        18 & PARAMETER\_MAX\_RPM & Tachometer scaling (7000 default). \\
+        19--21 & PARAMETER\_NORMAL\_RESISTANCE\_\textit{X} & Sensor resistances at \SI{25}{\celsius} for coolant, oil, and ambient inputs. \\
+        23 & PARAMETER\_DOT\_OFF & Clock colon behaviour. \\
+        24 & PARAMETER\_BACKLIGHT\_ON & Enable backlight when low beam is active. \\
+        25 & PARAMETER\_M\_D\_FILTER & Median filter constant. \\
+        26 & PARAMETER\_COOLANT\_MAX\_R & Coolant sensor threshold for full-scale indication. \\
+        27 & PARAMETER\_COOLANT\_MIN\_R & Coolant sensor threshold for ``1~bar'' indication. \\
+        31--33 & PARAMETER\_MAINCOLOR\_[RGB] & UI colour components (\ReplicaNextShort{} only). \\
+        37 & PARAMETER\_RPM\_FILTER & RPM filtering aggressiveness. \\
+        128 & PARAMETER\_READ\_ADDITION & Add 128 to read the current value of a command. \\
+        255 & PARAMETER\_SET\_HOUR & Set clock hours. \\
+        254 & PARAMETER\_SET\_MINUTE & Set clock minutes. \\
+        253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Reset trip odometer. \\
+        252 & PARAMETER\_RESET\_DIGITAL & Factory reset of stored parameters. \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Classic \ReplicaGenOneShort{} Default Values}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Default configuration for the classic \ReplicaGenOne{}.}
+    \label{tbl:replica-defaults}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Parameter} & \textbf{Default} & \textbf{Notes} \\
+        \midrule
+        PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
+        PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\
+        PARAMETER\_COOLANTTHERMISTORB & 4000 &  \\
+        PARAMETER\_OILTHERMISTORB & 4000 &  \\
+        PARAMETER\_AIRTHERMISTORB & 3812 & 3600 on Gen~2. \\
+        PARAMETER\_TANKMINRESISTANCE & 35 & Ohms. \\
+        PARAMETER\_TANKMAXRESISTANCE & 265 & Ohms. \\
+        PARAMETER\_TAU\_COOLANT & 2 &  \\
+        PARAMETER\_TAU\_OIL & 2 &  \\
+        PARAMETER\_TAU\_AIR & 2 &  \\
+        PARAMETER\_TAU\_TANK & 2 &  \\
+        PARAMETER\_MILEAGE & Vehicle-specific & Preserve existing odometer. \\
+        PARAMETER\_DAILY\_MILEAGE & 0 &  \\
+        PARAMETER\_AUTO\_BRIGHTNESS & 1 & Enabled. \\
+        PARAMETER\_BRIGHTNESS\_LEVEL & 7 or 13 & Typical values for Gen~1/1.5. \\
+        PARAMETER\_TANK\_CAPACITY & 63 & Litres. \\
+        PARAMETER\_MFA\_STATE & 0 &  \\
+        PARAMETER\_BUZZER\_OFF & 1 & Buzzer disabled. \\
+        PARAMETER\_MAX\_RPM & 8000 & 7000 on earlier clusters. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & 1000 & \si{\ohm} at \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_OIL & 1000 & \si{\ohm} at \SI{25}{\celsius}. \\
+        PARAMETER\_NORMAL\_RESISTANCE\_AMB & 2991 & \si{\ohm} at \SI{25}{\celsius}. \\
+        PARAMETER\_DOT\_OFF & 0 & Blinking colon. \\
+        PARAMETER\_BACKLIGHT\_ON & 1 & Enabled. \\
+        PARAMETER\_M\_D\_FILTER & 65535 &  \\
+        PARAMETER\_COOLANT\_MAX\_R & 120 & \si{\celsius}. \\
+        PARAMETER\_COOLANT\_MIN\_R & 60 & \si{\celsius}. \\
+        PARAMETER\_MAINCOLOR\_[RGB] & -- & Colour commands not active on classic Replica. \\
+        PARAMETER\_RPM\_FILTER & 70 &  \\
+        PARAMETER\_UPTIME & 0 &  \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
+
+\section{Change Log} \label{app:change-log}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Document change registration sheet.}
+    \label{tbl:change-log}
+    {\scriptsize
+    \begin{tblr}{
+        colspec = {Q[c,0.12\linewidth] Q[l] Q[c,0.2\linewidth]},
+        rowsep = 2pt,
+    }
+        \toprule
+        \textbf{Change} & \textbf{Affected sheets} & \textbf{Date} \\
+        \midrule
+        1 & 04.10.2022 & 04~Oct~2022 \\
+        2 & 31.08.2023 & 31~Aug~2023 \\
+        3 & 05.08.2024 & 05~Aug~2024 \\
+        4 & LaTeX document introduced. & 22.09.2025 \\
+        \bottomrule
+    \end{tblr}}
+\end{table}
