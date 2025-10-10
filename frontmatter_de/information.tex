@@ -1,0 +1,30 @@
+%%% Mandatory information page of the manual
+
+%% NOTE: MFF guidelines can be found at
+%% https://www.mff.cuni.cz/cs/vnitrni-zalezitosti/predpisy/opatreni-dekana/opatreni-dekana-c-27-2023
+%%     -> no special formatting is required, so it should be fine to customize it
+
+\cleardoublepage
+
+% \chapternotnumbered{Information \& Zusammenfassung}
+\MakeLinkTarget{}
+\addcontentsline{toc}{chapter}{Information \& Zusammenfassung}
+\markboth{Information \& Zusammenfassung}{Information \& Zusammenfassung}
+
+\subsection*{Informationen}
+
+{\scriptsize
+\begin{tblr}{
+        colspec = {r X},
+    }
+    \textsf{\textcolor{Gray40}{Titel}}          & \ManualTitle                           \\
+    \textsf{\textcolor{Gray40}{Autor}}          & \ManualAuthor                          \\
+    % \textsf{\textcolor{Gray40}{\DivisionType{}}} & \Division                                \\
+    % \textsf{\textcolor{Gray40}{Maintainer}}     & \Maintainer{} --- \MaintainersDivision \\
+    % \textsf{\textcolor{Gray40}{Abstract}}      & \ManualAbstract                          \\
+    \textsf{\textcolor{Gray40}{Schlüsselwörter}} & \ManualKeywords                          \\
+\end{tblr}}
+
+\subsection*{Zusammenfassung}
+
+\ManualAbstract

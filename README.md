@@ -12,6 +12,8 @@ This repository hosts the LaTeX sources for the official documentation shipped w
 
 The compiled PDF (`DR_DRNext_User_Manual_mk1_mk2.pdf`) is the master document used for customer deliveries.  Each section of the manual lives in the `chapters/` directory, supporting data and macros reside in `preamble/`, while ancillary assets (figures, tables, and scripts) are stored under `figures/` and `anc/`.
 
+Localized builds are published alongside the English edition: French (`_fr`), Russian (`_ru`), Hungarian (`_hu`), and now German (`_de`).
+
 ## 🚗 Hardware overview
 
 Digifiz Replica is a modern replacement for factory VDO clusters in second-generation Volkswagen Group vehicles and now also in classic Audi platforms.  Hundreds of units are already in the field, with active deployments in the USA, Germany, the UK, Italy, Russia, and across the EU.
