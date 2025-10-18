@@ -1,0 +1,46 @@
+\pdfbookmark{Title Page}{titlepage} % add PDF outline entry
+\thispagestyle{empty} % no number on the title page
+\begin{center}
+    \Large
+
+    \vspace{-1.5em}
+
+    {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
+        \MakeUppercase{User Manual} \par}
+
+    \vspace{2.5em}
+
+    {\fontsize{30pt}{36pt}\selectfont \bfseries
+        \ManualTitleFront \par}
+
+    \vspace{1.1em}
+
+    \begin{center}
+        \large
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
+            % Manual Maintainer    & \Maintainer     \\
+            \ifdef{\ProductLine}{%
+            Product Line         & \ProductLine \\
+            }{}
+        \end{tabular}
+    \end{center}
+
+    \vspace{2em}
+
+    \ifFANCY\sffamily\fi
+    Online Release \YearReleased \\
+    \ifdef{\YearRevised}{%
+        \emph{Revised version \YearRevised} \par
+    }{}
+    \ifWIP
+        \small\ttfamily \textcolor{red}{(Draft - \today)} \par
+    \fi
+
+    \vfill
+
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        \ManualAuthorFooter}
+\end{center}
+
+\newpage
