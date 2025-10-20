@@ -1,0 +1,13 @@
+\chapter{Especificaciones técnicas}\label{ch:technical-specs}
+
+El cuadro \ReplicaGenOne{} no consume corriente en reposo cuando está apagado. \ReplicaNextShort{} demanda aproximadamente 13~mA de la alimentación de +12~V con el encendido desconectado, lo que debe tenerse en cuenta cuando el vehículo permanece almacenado durante periodos prolongados. Ambas generaciones funcionan de forma fiable con el sistema eléctrico del vehículo entre 9~V y 16~V~CC.
+
+\section{Capacidades de medición}
+\begin{itemize}
+    \item \textbf{Velocidad del vehículo:} medida mediante el cable de fábrica o un sensor de velocidad electrónico. El error sistemático es de 10~km/h, el error relativo es de 3~km/h y la indicación se satura en 999~km/h (o mph para unidades imperiales).
+    \item \textbf{Régimen del motor:} derivado de la señal de encendido a través de una etapa con optoacoplador con una red RC de 430~nF/1.2~k\ensuremath{\Omega} y un limitador por diodo. Los errores absoluto y relativo se mantienen dentro de 200~rpm.
+    \item \textbf{Nivel de combustible:} leído del aforador resistivo del depósito con una incertidumbre de aproximadamente 10~litros.
+    \item \textbf{Temperatura del refrigerante:} indicada de forma cualitativa utilizando el termistor estándar conectado mediante el mazo del vehículo; no se muestran valores cuantitativos.
+    \item \textbf{Cronometraje:} mantenido con una precisión de un minuto.
+    \item \textbf{Testigos:} intermitentes, luces largas, advertencias de presión de aceite, estado del generador, freno de mano, luneta térmica o precalentamiento diésel y luces antiniebla delanteras y traseras.
+\end{itemize}

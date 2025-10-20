@@ -1,0 +1,23 @@
+\chapter{Situaciones típicas al configurar \ReplicaGenOne{}}\label{ch:replica-scenarios}
+
+Antes de realizar un diagnóstico, confirme que el cuadro corresponde al \ReplicaGenOne{} clásico (\autoref{ch:replica-setup}). Los paneles \ReplicaNextLong{} utilizan un portal Wi-Fi y se describen en \autoref{ch:replica-next-scenarios}.
+
+\begin{description}
+    \item[Módulo Bluetooth no detectado] Empareje con la interfaz Bluetooth Classic del cuadro (normalmente se anuncia como \texttt{Digifiz}). Serial Bluetooth Terminal para Android sigue siendo la herramienta recomendada: configure el carácter de fin de línea como LF y evite los escáneres solo BLE, que no pueden descubrir el módulo.
+    \item[El iPhone o iPad no se conecta] Los cuadros \ReplicaGenOneShort{} utilizan Bluetooth~2.0 y no son compatibles con dispositivos iOS. Use un teléfono Android o un ordenador con una utilidad de puerto serie Bluetooth.
+    \item[Comandos ignorados en firmware 2024 o posterior] Desbloquee el analizador enviando \verb|234 123| y repita la secuencia deseada. Guarde botones de acceso rápido en Serial Bluetooth Terminal para los valores que ajusta con frecuencia.
+    \item[Lectura de velocidad demasiado alta o baja] Conéctese mediante Serial Bluetooth Terminal, conduzca a \SI{100}{\kilo\metre\per\hour} indicados y anote la velocidad GPS. Envíe \verb|1 <gps_value>| (por ejemplo, \verb|1 85|) para que \paramname{PARAMETER\_SPEEDCOEFFICIENT} coincida con la velocidad verificada.
+    \item[Lectura de RPM incorrecta] El firmware anterior a 2024 espera \verb|0 <valor>|, mientras que las versiones actuales usan \verb|22 <valor>|. Los motores Audi suelen requerir \verb|22 3000|; reduzca o duplique el valor (por ejemplo, \verb|22 1500| o \verb|22 6000|) hasta que la pantalla coincida con el cuentarrevoluciones.
+    \item[Incrementar brillo] Desactive el control automático con \verb|13 0| y aumente el nivel manual con \verb|14 <valor>|. Los valores entre 45 y 55 iluminan sensiblemente la pantalla; evite niveles superiores a 60 para preservar la vida de los LED. Reactive el fotodiodo después con \verb|13 1|.
+    \item[Ajuste del reloj] Use Serial Bluetooth Terminal para enviar \verb|255 <hours>| seguido de \verb|254 <minutes>|. Ejemplos: \verb|255 23|, \verb|254 55| establece 23:55; \verb|255 14|, \verb|254 30| establece 14:30; \verb|255 2|, \verb|254 28| establece 02:28.
+    \item[Problemas con el indicador de combustible] Desconecte la batería del vehículo antes de medir.\begin{itemize}
+        \item Si la indicación cae de 60 a 0, mida la resistencia del aforador entre el pin del mazo y la masa; las lecturas válidas suelen estar entre \SIrange{30}{300}{\ohm}. Limpie el conector y confirme que la señal llega a la placa principal.
+        \item Si el indicador queda al máximo, busque un cortocircuito a masa inferior a \SI{5}{\ohm} en la línea del aforador y repárelo.
+        \item Si la lectura no cambia nunca, compare la resistencia del aforador con el depósito lleno y vacío. Sustituya el sensor si se mantiene constante.
+    \end{itemize}
+    \item[Valores de caudal de combustible incorrectos] El canal de caudal es emulado a menos que se instale un sensor de presión del colector de admisión. Considere la lectura como orientativa.
+    \item[Indicador de refrigerante impreciso] Ajuste \paramname{PARAMETER\_COOLANT\_MIN\_R} y \paramname{PARAMETER\_COOLANT\_MAX\_R}. Ejemplo: \verb|27 30| acorta la escala para que la marca de ``1~bar'' se alinee con aproximadamente \SI{30}{\celsius}.
+    \item[Faltan las lecturas de temperatura de aceite o ambiente] Una lectura de \texttt{-999} o un valor fijo indica un problema de sensor. Con la batería desconectada y el motor frío, mida la resistencia del sensor entre el pin del mazo y la masa. Los sensores de aceite deberían marcar alrededor de \SI{2}{\kilo\ohm} \ensuremath{\pm}\SI{0.3}{\kilo\ohm}; los sensores de ambiente, alrededor de \SI{10}{\kilo\ohm} \ensuremath{\pm}\SI{2}{\kilo\ohm}. Ajuste \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} (comando~20) o \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} (comando~21) si necesita afinar la indicación. Las averías persistentes deben documentarse con registros de \verb|adc 0| y escalarse al soporte de PHOL-LABS Kft.
+\end{description}
+
+Si el problema persiste, recopile datos en bruto con \verb|adc 0| y compártalos con los desarrolladores del cuadro para su análisis.
