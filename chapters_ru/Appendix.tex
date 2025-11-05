@@ -11,11 +11,11 @@
     \label{tbl:replica-commands-ru}
     {\scriptsize
     \begin{tblr}{
-        colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
+        colspec = {Q[c,0.12\linewidth,cmd=\seqsplit,font=\ttfamily] Q[l,0.32\linewidth,cmd=\seqsplit] Q[l,0.52\linewidth]},
         rowsep = 2pt,
     }
         \toprule
-        \textbf{Команда} & \textbf{Название} & \textbf{Описание} \\
+        \SetCell{cmd=\relax}\textbf{Команда} & \SetCell{cmd=\relax}\textbf{Название} & \textbf{Описание} \\
         \midrule
         22 (или 0) & PARAMETER\_RPMCOEFFICIENT & Калибровочный коэффициент оборотов. \\
         1  & PARAMETER\_SPEEDCOEFFICIENT & Калибровка скорости. \\
@@ -58,11 +58,11 @@
     \label{tbl:replica-defaults-ru}
     {\scriptsize
     \begin{tblr}{
-        colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
+        colspec = {Q[c,0.22\linewidth,cmd=\seqsplit,font=\ttfamily] Q[c,0.16\linewidth] Q[l,0.46\linewidth]},
         rowsep = 2pt,
     }
         \toprule
-        \textbf{Параметр} & \textbf{Значение} & \textbf{Примечание} \\
+        \SetCell{cmd=\relax}\textbf{Параметр} & \SetCell{cmd=\relax}\textbf{Значение} & \textbf{Примечание} \\
         \midrule
         PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
         PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\

@@ -11,11 +11,11 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
     \label{tbl:replica-commands}
     {\scriptsize
     \begin{tblr}{
-        colspec = {>{\ttfamily}Q[c,0.12\linewidth] Q[l] Q[l]},
+        colspec = {Q[c,0.12\linewidth,cmd=\seqsplit,font=\ttfamily] Q[l,0.32\linewidth,cmd=\seqsplit] Q[l,0.52\linewidth]},
         rowsep = 2pt,
     }
         \toprule
-        \textbf{Command} & \textbf{Name} & \textbf{Description} \\
+        \SetCell{cmd=\relax}\textbf{Command} & \SetCell{cmd=\relax}\textbf{Name} & \textbf{Description} \\
         \midrule
         22 (or 0) & PARAMETER\_RPMCOEFFICIENT & Engine RPM calibration factor. \\
         1  & PARAMETER\_SPEEDCOEFFICIENT & Speed calibration factor. \\
@@ -59,11 +59,11 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
     \label{tbl:replica-defaults}
     {\scriptsize
     \begin{tblr}{
-        colspec = {>{\ttfamily}Q[c,0.22\linewidth] Q[c,0.16\linewidth] Q[l]},
+        colspec = {Q[c,0.22\linewidth,cmd=\seqsplit,font=\ttfamily] Q[c,0.16\linewidth] Q[l,0.46\linewidth]},
         rowsep = 2pt,
     }
         \toprule
-        \textbf{Parameter} & \textbf{Default} & \textbf{Notes} \\
+        \SetCell{cmd=\relax}\textbf{Parameter} & \SetCell{cmd=\relax}\textbf{Default} & \textbf{Notes} \\
         \midrule
         PARAMETER\_RPMCOEFFICIENT & 3000 &  \\
         PARAMETER\_SPEEDCOEFFICIENT & 100 &  \\

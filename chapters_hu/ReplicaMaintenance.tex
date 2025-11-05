@@ -75,46 +75,46 @@ A legfontosabb Bluetooth parancsokat a \autoref{tbl:replica-classic-commands} t�
     caption = {Klasszikus \ReplicaGenOne{} konfigurációs parancsok.},
     label = {tbl:replica-classic-commands},
 ]{
-    colspec = {Q[c,0.14\linewidth] >{\ttfamily}Q[l,0.38\linewidth] Q[l]},
+    colspec = {Q[c,0.14\linewidth] Q[l,0.36\linewidth] Q[l,0.5\linewidth]},
     rowsep = 2pt,
 }
     \toprule
     \textbf{Azonosító} & \textbf{Név} & \textbf{Leírás} \\
     \midrule
-    22 (vagy 0) & PARAMETER\_RPMCOEFFICIENT & Motorfordulatszám-korrekciós tényező. \\
-    1 & PARAMETER\_SPEEDCOEFFICIENT & Sebességkorrekciós tényező. \\
-    2 & PARAMETER\_COOLANTTHERMISTORB & Hűtőfolyadék termisztor béta tényező. \\
-    3 & PARAMETER\_OILTHERMISTORB & Olaj termisztor béta tényező. \\
-    4 & PARAMETER\_AIRTHERMISTORB & Külső levegő termisztor béta tényező. \\
-    5 & PARAMETER\_TANKMINRESISTANCE & Minimális üzemanyagszint-ellenállás (\si{\ohm}). \\
-    6 & PARAMETER\_TANKMAXRESISTANCE & Maximális üzemanyagszint-ellenállás (\si{\ohm}). \\
-    7 & PARAMETER\_TAU\_COOLANT & Hűtőfolyadék hőmérséklet szűrőállandó. \\
-    8 & PARAMETER\_TAU\_OIL & Olajhőmérséklet szűrőállandó. \\
-    9 & PARAMETER\_TAU\_AIR & Külső hőmérséklet szűrőállandó. \\
-    10 & PARAMETER\_TAU\_TANK & Üzemanyagszint szűrőállandó. \\
-    11 & PARAMETER\_MILEAGE & Összesített kilométer-számláló. \\
-    12 & PARAMETER\_DAILY\_MILEAGE & Napi számláló. \\
-    13 & PARAMETER\_AUTO\_BRIGHTNESS & Automatikus fényerő engedélyezése. \\
-    14 & PARAMETER\_BRIGHTNESS\_LEVEL & Kézi fényerő szint (0--15). \\
-    15 & PARAMETER\_TANK\_CAPACITY & Üzemanyagtartály kapacitása (liter). \\
-    16 & PARAMETER\_MFA\_STATE & Aktív MFA oldal. \\
-    17 & PARAMETER\_BUZZER\_OFF & Hangjelző letiltása (1 tilt, 0 engedélyez). \\
-    18 & PARAMETER\_MAX\_RPM & Fordulatszámmérő skála (alap 8000). \\
-    19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Hűtő jeladó ellenállása \SI{25}{\celsius}-on. \\
-    20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Olaj jeladó ellenállása \SI{25}{\celsius}-on. \\
-    21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Külső jeladó ellenállása \SI{25}{\celsius}-on. \\
-    23 & PARAMETER\_DOT\_OFF & Óra kettőspont viselkedése (0 villog, 1 folyamatos). \\
-    24 & PARAMETER\_BACKLIGHT\_ON & Háttérvilágítás bekapcsolása tompított fénnyel. \\
-    25 & PARAMETER\_M\_D\_FILTER & Mediánszűrő állandó (örökölt). \\
-    26 & PARAMETER\_COOLANT\_MAX\_R & Hűtő „teljes skálás” hőmérséklet küszöb. \\
-    27 & PARAMETER\_COOLANT\_MIN\_R & Hűtő „1~bar” hőmérséklet küszöb. \\
-    31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Felhasználói felület színei (csak \ReplicaNextShort{}). \\
-    37 & PARAMETER\_RPM\_FILTER & Fordulatszám-szűrő agresszivitás. \\
-    128 & PARAMETER\_READ\_ADDITION & Hozzáadandó érték paraméter olvasáshoz. \\
-    255 & PARAMETER\_SET\_HOUR & Óra beállítása (24 órás). \\
-    254 & PARAMETER\_SET\_MINUTE & Perc beállítása. \\
-    253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Napi számláló nullázása. \\
-    252 & PARAMETER\_RESET\_DIGITAL & Gyári visszaállítás és memória inicializálás. \\
+    22 (vagy 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Motorfordulatszám-korrekciós tényező. \\
+    1 & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Sebességkorrekciós tényező. \\
+    2 & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Hűtőfolyadék termisztor béta tényező. \\
+    3 & \paramname{PARAMETER\_OILTHERMISTORB} & Olaj termisztor béta tényező. \\
+    4 & \paramname{PARAMETER\_AIRTHERMISTORB} & Külső levegő termisztor béta tényező. \\
+    5 & \paramname{PARAMETER\_TANKMINRESISTANCE} & Minimális üzemanyagszint-ellenállás (\si{\ohm}). \\
+    6 & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Maximális üzemanyagszint-ellenállás (\si{\ohm}). \\
+    7 & \paramname{PARAMETER\_TAU\_COOLANT} & Hűtőfolyadék hőmérséklet szűrőállandó. \\
+    8 & \paramname{PARAMETER\_TAU\_OIL} & Olajhőmérséklet szűrőállandó. \\
+    9 & \paramname{PARAMETER\_TAU\_AIR} & Külső hőmérséklet szűrőállandó. \\
+    10 & \paramname{PARAMETER\_TAU\_TANK} & Üzemanyagszint szűrőállandó. \\
+    11 & \paramname{PARAMETER\_MILEAGE} & Összesített kilométer-számláló. \\
+    12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Napi számláló. \\
+    13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Automatikus fényerő engedélyezése. \\
+    14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Kézi fényerő szint (0--15). \\
+    15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Üzemanyagtartály kapacitása (liter). \\
+    16 & \paramname{PARAMETER\_MFA\_STATE} & Aktív MFA oldal. \\
+    17 & \paramname{PARAMETER\_BUZZER\_OFF} & Hangjelző letiltása (1 tilt, 0 engedélyez). \\
+    18 & \paramname{PARAMETER\_MAX\_RPM} & Fordulatszámmérő skála (alap 8000). \\
+    19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Hűtő jeladó ellenállása \SI{25}{\celsius}-on. \\
+    20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Olaj jeladó ellenállása \SI{25}{\celsius}-on. \\
+    21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Külső jeladó ellenállása \SI{25}{\celsius}-on. \\
+    23 & \paramname{PARAMETER\_DOT\_OFF} & Óra kettőspont viselkedése (0 villog, 1 folyamatos). \\
+    24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Háttérvilágítás bekapcsolása tompított fénnyel. \\
+    25 & \paramname{PARAMETER\_M\_D\_FILTER} & Mediánszűrő állandó (örökölt). \\
+    26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Hűtő „teljes skálás” hőmérséklet küszöb. \\
+    27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Hűtő „1~bar” hőmérséklet küszöb. \\
+    31--33 & \paramname{PARAMETER\_MAINCOLOR\_[RGB]} & Felhasználói felület színei (csak \ReplicaNextShort{}). \\
+    37 & \paramname{PARAMETER\_RPM\_FILTER} & Fordulatszám-szűrő agresszivitás. \\
+    128 & \paramname{PARAMETER\_READ\_ADDITION} & Hozzáadandó érték paraméter olvasáshoz. \\
+    255 & \paramname{PARAMETER\_SET\_HOUR} & Óra beállítása (24 órás). \\
+    254 & \paramname{PARAMETER\_SET\_MINUTE} & Perc beállítása. \\
+    253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Napi számláló nullázása. \\
+    252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Gyári visszaállítás és memória inicializálás. \\
     \bottomrule
 \end{longtblr}}
 
