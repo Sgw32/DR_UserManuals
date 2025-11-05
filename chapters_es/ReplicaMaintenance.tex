@@ -75,46 +75,46 @@ Los comandos Bluetooth principales se enumeran en \autoref{tbl:replica-classic-c
     caption = {Comandos de configuración del \ReplicaGenOne{} clásico.},
     label = {tbl:replica-classic-commands},
 ]{
-    colspec = {Q[c,0.14\linewidth,cmd=\seqsplit] Q[l,0.38\linewidth,cmd=\seqsplit,font=\ttfamily] Q[l,0.48\linewidth]},
+    colspec = {Q[c,0.14\linewidth] Q[l,0.36\linewidth] Q[l,0.5\linewidth]},
     rowsep = 2pt,
 }
     \toprule
     \textbf{ID} & \textbf{Nombre} & \textbf{Descripción} \\
     \midrule
-    22 (o 0) & PARAMETER\_RPMCOEFFICIENT & Factor de calibración de RPM del motor. \\
-    1 & PARAMETER\_SPEEDCOEFFICIENT & Factor de calibración de velocidad. \\
-    2 & PARAMETER\_COOLANTTHERMISTORB & Coeficiente beta del termistor de refrigerante. \\
-    3 & PARAMETER\_OILTHERMISTORB & Coeficiente beta del termistor de aceite. \\
-    4 & PARAMETER\_AIRTHERMISTORB & Coeficiente beta del termistor ambiente. \\
-    5 & PARAMETER\_TANKMINRESISTANCE & Resistencia mínima del aforador (\si{\ohm}). \\
-    6 & PARAMETER\_TANKMAXRESISTANCE & Resistencia máxima del aforador (\si{\ohm}). \\
-    7 & PARAMETER\_TAU\_COOLANT & Constante del filtro de temperatura de refrigerante. \\
-    8 & PARAMETER\_TAU\_OIL & Constante del filtro de temperatura de aceite. \\
-    9 & PARAMETER\_TAU\_AIR & Constante del filtro de temperatura ambiente. \\
-    10 & PARAMETER\_TAU\_TANK & Constante del filtro de nivel de combustible. \\
-    11 & PARAMETER\_MILEAGE & Valor total del odómetro. \\
-    12 & PARAMETER\_DAILY\_MILEAGE & Odómetro parcial. \\
-    13 & PARAMETER\_AUTO\_BRIGHTNESS & Activar ajuste automático de brillo. \\
-    14 & PARAMETER\_BRIGHTNESS\_LEVEL & Nivel de brillo manual (0--15). \\
-    15 & PARAMETER\_TANK\_CAPACITY & Capacidad del depósito (litros). \\
-    16 & PARAMETER\_MFA\_STATE & Página MFA activa. \\
-    17 & PARAMETER\_BUZZER\_OFF & Desactivar el zumbador (1 desactiva, 0 habilita). \\
-    18 & PARAMETER\_MAX\_RPM & Escala del cuentarrevoluciones (8000 por defecto). \\
-    19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Resistencia del sensor de refrigerante a \SI{25}{\celsius}. \\
-    20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Resistencia del sensor de aceite a \SI{25}{\celsius}. \\
-    21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Resistencia del sensor ambiente a \SI{25}{\celsius}. \\
-    23 & PARAMETER\_DOT\_OFF & Comportamiento de los dos puntos del reloj (0 parpadeo, 1 fijo). \\
-    24 & PARAMETER\_BACKLIGHT\_ON & Encender la retroiluminación con las luces de cruce. \\
-    25 & PARAMETER\_M\_D\_FILTER & Constante del filtro mediano (heredado). \\
-    26 & PARAMETER\_COOLANT\_MAX\_R & Umbral de temperatura de refrigerante para escala completa. \\
-    27 & PARAMETER\_COOLANT\_MIN\_R & Umbral de temperatura de refrigerante para ``1~bar''. \\
-    31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Componentes de color de la interfaz (solo \ReplicaNextShort{}). \\
-    37 & PARAMETER\_RPM\_FILTER & Intensidad del filtrado de RPM. \\
-    128 & PARAMETER\_READ\_ADDITION & Sumar para leer cualquier parámetro. \\
-    255 & PARAMETER\_SET\_HOUR & Ajustar horas del reloj (formato 24 h). \\
-    254 & PARAMETER\_SET\_MINUTE & Ajustar minutos del reloj. \\
-    253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Restablecer el odómetro parcial. \\
-    252 & PARAMETER\_RESET\_DIGITAL & Restablecimiento de fábrica e inicialización de memoria. \\
+    22 (o 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Factor de calibración de RPM del motor. \\
+    1 & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Factor de calibración de velocidad. \\
+    2 & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Coeficiente beta del termistor de refrigerante. \\
+    3 & \paramname{PARAMETER\_OILTHERMISTORB} & Coeficiente beta del termistor de aceite. \\
+    4 & \paramname{PARAMETER\_AIRTHERMISTORB} & Coeficiente beta del termistor ambiente. \\
+    5 & \paramname{PARAMETER\_TANKMINRESISTANCE} & Resistencia mínima del aforador (\si{\ohm}). \\
+    6 & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Resistencia máxima del aforador (\si{\ohm}). \\
+    7 & \paramname{PARAMETER\_TAU\_COOLANT} & Constante del filtro de temperatura de refrigerante. \\
+    8 & \paramname{PARAMETER\_TAU\_OIL} & Constante del filtro de temperatura de aceite. \\
+    9 & \paramname{PARAMETER\_TAU\_AIR} & Constante del filtro de temperatura ambiente. \\
+    10 & \paramname{PARAMETER\_TAU\_TANK} & Constante del filtro de nivel de combustible. \\
+    11 & \paramname{PARAMETER\_MILEAGE} & Valor total del odómetro. \\
+    12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Odómetro parcial. \\
+    13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Activar ajuste automático de brillo. \\
+    14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Nivel de brillo manual (0--15). \\
+    15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Capacidad del depósito (litros). \\
+    16 & \paramname{PARAMETER\_MFA\_STATE} & Página MFA activa. \\
+    17 & \paramname{PARAMETER\_BUZZER\_OFF} & Desactivar el zumbador (1 desactiva, 0 habilita). \\
+    18 & \paramname{PARAMETER\_MAX\_RPM} & Escala del cuentarrevoluciones (8000 por defecto). \\
+    19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Resistencia del sensor de refrigerante a \SI{25}{\celsius}. \\
+    20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Resistencia del sensor de aceite a \SI{25}{\celsius}. \\
+    21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Resistencia del sensor ambiente a \SI{25}{\celsius}. \\
+    23 & \paramname{PARAMETER\_DOT\_OFF} & Comportamiento de los dos puntos del reloj (0 parpadeo, 1 fijo). \\
+    24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Encender la retroiluminación con las luces de cruce. \\
+    25 & \paramname{PARAMETER\_M\_D\_FILTER} & Constante del filtro mediano (heredado). \\
+    26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Umbral de temperatura de refrigerante para escala completa. \\
+    27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Umbral de temperatura de refrigerante para ``1~bar''. \\
+    31--33 & \paramname{PARAMETER\_MAINCOLOR\_[RGB]} & Componentes de color de la interfaz (solo \ReplicaNextShort{}). \\
+    37 & \paramname{PARAMETER\_RPM\_FILTER} & Intensidad del filtrado de RPM. \\
+    128 & \paramname{PARAMETER\_READ\_ADDITION} & Sumar para leer cualquier parámetro. \\
+    255 & \paramname{PARAMETER\_SET\_HOUR} & Ajustar horas del reloj (formato 24 h). \\
+    254 & \paramname{PARAMETER\_SET\_MINUTE} & Ajustar minutos del reloj. \\
+    253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Restablecer el odómetro parcial. \\
+    252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Restablecimiento de fábrica e inicialización de memoria. \\
     \bottomrule
 \end{longtblr}}
 

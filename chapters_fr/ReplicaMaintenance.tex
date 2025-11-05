@@ -75,46 +75,46 @@ Les principales commandes Bluetooth figurent dans l'\autoref{tbl:replica-classic
     caption = {Commandes de configuration \ReplicaGenOne{} classique.},
     label = {tbl:replica-classic-commands},
 ]{
-    colspec = {Q[c,0.14\linewidth,cmd=\seqsplit] Q[l,0.38\linewidth,cmd=\seqsplit,font=\ttfamily] Q[l,0.48\linewidth]},
+    colspec = {Q[c,0.14\linewidth] Q[l,0.36\linewidth] Q[l,0.5\linewidth]},
     rowsep = 2pt,
 }
     \toprule
     \textbf{ID} & \textbf{Nom} & \textbf{Description} \\
     \midrule
-    22 (ou 0) & PARAMETER\_RPMCOEFFICIENT & Facteur d'étalonnage du régime moteur. \\
-    1 & PARAMETER\_SPEEDCOEFFICIENT & Facteur d'étalonnage de vitesse. \\
-    2 & PARAMETER\_COOLANTTHERMISTORB & Coefficient bêta de thermistance liquide. \\
-    3 & PARAMETER\_OILTHERMISTORB & Coefficient bêta de thermistance huile. \\
-    4 & PARAMETER\_AIRTHERMISTORB & Coefficient bêta de thermistance ambiante. \\
-    5 & PARAMETER\_TANKMINRESISTANCE & Résistance minimale de jauge (\si{\ohm}). \\
-    6 & PARAMETER\_TANKMAXRESISTANCE & Résistance maximale de jauge (\si{\ohm}). \\
-    7 & PARAMETER\_TAU\_COOLANT & Constante de filtrage température liquide. \\
-    8 & PARAMETER\_TAU\_OIL & Constante de filtrage température huile. \\
-    9 & PARAMETER\_TAU\_AIR & Constante de filtrage température ambiante. \\
-    10 & PARAMETER\_TAU\_TANK & Constante de filtrage niveau carburant. \\
-    11 & PARAMETER\_MILEAGE & Kilométrage total. \\
-    12 & PARAMETER\_DAILY\_MILEAGE & Compteur journalier. \\
-    13 & PARAMETER\_AUTO\_BRIGHTNESS & Activation du réglage automatique de luminosité. \\
-    14 & PARAMETER\_BRIGHTNESS\_LEVEL & Niveau de luminosité manuel (0--15). \\
-    15 & PARAMETER\_TANK\_CAPACITY & Capacité du réservoir (litres). \\
-    16 & PARAMETER\_MFA\_STATE & Page MFA active. \\
-    17 & PARAMETER\_BUZZER\_OFF & Désactivation du buzzer (1 coupe, 0 active). \\
-    18 & PARAMETER\_MAX\_RPM & Échelle du compte-tours (8000 par défaut). \\
-    19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Résistance de sonde liquide à \SI{25}{\celsius}. \\
-    20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Résistance de sonde huile à \SI{25}{\celsius}. \\
-    21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Résistance de sonde ambiante à \SI{25}{\celsius}. \\
-    23 & PARAMETER\_DOT\_OFF & Comportement des deux-points de l'horloge (0 clignote, 1 fixe). \\
-    24 & PARAMETER\_BACKLIGHT\_ON & Allumage du rétroéclairage avec les feux de croisement. \\
-    25 & PARAMETER\_M\_D\_FILTER & Constante de filtre médian (héritage). \\
-    26 & PARAMETER\_COOLANT\_MAX\_R & Seuil pleine échelle de température liquide. \\
-    27 & PARAMETER\_COOLANT\_MIN\_R & Seuil « 1~bar » de température liquide. \\
-    31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Composantes couleur interface (\ReplicaNextShort{} uniquement). \\
-    37 & PARAMETER\_RPM\_FILTER & Agressivité du filtrage régime. \\
-    128 & PARAMETER\_READ\_ADDITION & Addition pour lire un paramètre. \\
-    255 & PARAMETER\_SET\_HOUR & Réglage des heures (24~h). \\
-    254 & PARAMETER\_SET\_MINUTE & Réglage des minutes. \\
-    253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Remise à zéro du compteur journalier. \\
-    252 & PARAMETER\_RESET\_DIGITAL & Réinitialisation usine et initialisation mémoire. \\
+    22 (ou 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Facteur d'étalonnage du régime moteur. \\
+    1 & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Facteur d'étalonnage de vitesse. \\
+    2 & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Coefficient bêta de thermistance liquide. \\
+    3 & \paramname{PARAMETER\_OILTHERMISTORB} & Coefficient bêta de thermistance huile. \\
+    4 & \paramname{PARAMETER\_AIRTHERMISTORB} & Coefficient bêta de thermistance ambiante. \\
+    5 & \paramname{PARAMETER\_TANKMINRESISTANCE} & Résistance minimale de jauge (\si{\ohm}). \\
+    6 & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Résistance maximale de jauge (\si{\ohm}). \\
+    7 & \paramname{PARAMETER\_TAU\_COOLANT} & Constante de filtrage température liquide. \\
+    8 & \paramname{PARAMETER\_TAU\_OIL} & Constante de filtrage température huile. \\
+    9 & \paramname{PARAMETER\_TAU\_AIR} & Constante de filtrage température ambiante. \\
+    10 & \paramname{PARAMETER\_TAU\_TANK} & Constante de filtrage niveau carburant. \\
+    11 & \paramname{PARAMETER\_MILEAGE} & Kilométrage total. \\
+    12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Compteur journalier. \\
+    13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Activation du réglage automatique de luminosité. \\
+    14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Niveau de luminosité manuel (0--15). \\
+    15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Capacité du réservoir (litres). \\
+    16 & \paramname{PARAMETER\_MFA\_STATE} & Page MFA active. \\
+    17 & \paramname{PARAMETER\_BUZZER\_OFF} & Désactivation du buzzer (1 coupe, 0 active). \\
+    18 & \paramname{PARAMETER\_MAX\_RPM} & Échelle du compte-tours (8000 par défaut). \\
+    19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Résistance de sonde liquide à \SI{25}{\celsius}. \\
+    20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Résistance de sonde huile à \SI{25}{\celsius}. \\
+    21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Résistance de sonde ambiante à \SI{25}{\celsius}. \\
+    23 & \paramname{PARAMETER\_DOT\_OFF} & Comportement des deux-points de l'horloge (0 clignote, 1 fixe). \\
+    24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Allumage du rétroéclairage avec les feux de croisement. \\
+    25 & \paramname{PARAMETER\_M\_D\_FILTER} & Constante de filtre médian (héritage). \\
+    26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Seuil pleine échelle de température liquide. \\
+    27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Seuil « 1~bar » de température liquide. \\
+    31--33 & \paramname{PARAMETER\_MAINCOLOR\_[RGB]} & Composantes couleur interface (\ReplicaNextShort{} uniquement). \\
+    37 & \paramname{PARAMETER\_RPM\_FILTER} & Agressivité du filtrage régime. \\
+    128 & \paramname{PARAMETER\_READ\_ADDITION} & Addition pour lire un paramètre. \\
+    255 & \paramname{PARAMETER\_SET\_HOUR} & Réglage des heures (24~h). \\
+    254 & \paramname{PARAMETER\_SET\_MINUTE} & Réglage des minutes. \\
+    253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Remise à zéro du compteur journalier. \\
+    252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Réinitialisation usine et initialisation mémoire. \\
     \bottomrule
 \end{longtblr}}
 

@@ -86,46 +86,46 @@ avrdude -c usbasp -p m2560 -e \
     caption = {Команды конфигурации классической \ReplicaGenOne{}.},
     label = {tbl:replica-classic-commands-ru},
 ]{
-    colspec = {Q[c,0.14\linewidth,cmd=\seqsplit] Q[l,0.38\linewidth,cmd=\seqsplit,font=\ttfamily] Q[l,0.48\linewidth]},
+    colspec = {Q[c,0.14\linewidth] Q[l,0.36\linewidth] Q[l,0.5\linewidth]},
     rowsep = 2pt,
 }
     \toprule
     \textbf{ID} & \textbf{Name} & \textbf{Описание} \\
     \midrule
-    22 (или 0) & PARAMETER\_RPMCOEFFICIENT & Калибровочный коэффициент оборотов. \\
-    1 & PARAMETER\_SPEEDCOEFFICIENT & Калибровка скорости. \\
-    2 & PARAMETER\_COOLANTTHERMISTORB & Бета-коэффициент датчика ОЖ. \\
-    3 & PARAMETER\_OILTHERMISTORB & Бета-коэффициент датчика масла. \\
-    4 & PARAMETER\_AIRTHERMISTORB & Бета-коэффициент датчика наружной температуры. \\
-    5 & PARAMETER\_TANKMINRESISTANCE & Минимальное сопротивление датчика топлива (\si{\ohm}). \\
-    6 & PARAMETER\_TANKMAXRESISTANCE & Максимальное сопротивление датчика топлива (\si{\ohm}). \\
-    7 & PARAMETER\_TAU\_COOLANT & Постоянная фильтра температуры ОЖ. \\
-    8 & PARAMETER\_TAU\_OIL & Постоянная фильтра температуры масла. \\
-    9 & PARAMETER\_TAU\_AIR & Постоянная фильтра наружной температуры. \\
-    10 & PARAMETER\_TAU\_TANK & Постоянная фильтра уровня топлива. \\
-    11 & PARAMETER\_MILEAGE & Общий пробег. \\
-    12 & PARAMETER\_DAILY\_MILEAGE & Суточный пробег. \\
-    13 & PARAMETER\_AUTO\_BRIGHTNESS & Включение автоматической яркости. \\
-    14 & PARAMETER\_BRIGHTNESS\_LEVEL & Ручной уровень яркости (0--15). \\
-    15 & PARAMETER\_TANK\_CAPACITY & Ёмкость бака (литры). \\
-    16 & PARAMETER\_MFA\_STATE & Активная страница MFA. \\
-    17 & PARAMETER\_BUZZER\_OFF & Отключение зуммера (1 — выкл., 0 — вкл.). \\
-    18 & PARAMETER\_MAX\_RPM & Диапазон тахометра (по умолчанию 8000). \\
-    19 & PARAMETER\_NORMAL\_RESISTANCE\_COOLANT & Сопротивление датчика ОЖ при \SI{25}{\celsius}. \\
-    20 & PARAMETER\_NORMAL\_RESISTANCE\_OIL & Сопротивление датчика масла при \SI{25}{\celsius}. \\
-    21 & PARAMETER\_NORMAL\_RESISTANCE\_AMB & Сопротивление датчика наружного воздуха при \SI{25}{\celsius}. \\
-    23 & PARAMETER\_DOT\_OFF & Поведение разделителя часов (0 — мигает, 1 — постоянно). \\
-    24 & PARAMETER\_BACKLIGHT\_ON & Включение подсветки при ближнем свете. \\
-    25 & PARAMETER\_M\_D\_FILTER & Константа медианного фильтра (наследие). \\
-    26 & PARAMETER\_COOLANT\_MAX\_R & Порог полной шкалы температуры ОЖ. \\
-    27 & PARAMETER\_COOLANT\_MIN\_R & Порог «1~bar» температуры ОЖ. \\
-    31--33 & PARAMETER\_MAINCOLOR\_[RGB] & Компоненты цвета интерфейса (только \ReplicaNextShort{}). \\
-    37 & PARAMETER\_RPM\_FILTER & Агрессивность фильтра оборотов. \\
-    128 & PARAMETER\_READ\_ADDITION & Добавьте для чтения параметра. \\
-    255 & PARAMETER\_SET\_HOUR & Установка часов (24-часовой формат). \\
-    254 & PARAMETER\_SET\_MINUTE & Установка минут. \\
-    253 & PARAMETER\_RESET\_DAILY\_MILEAGE & Сброс суточного пробега. \\
-    252 & PARAMETER\_RESET\_DIGITAL & Заводской сброс и инициализация памяти. \\
+    22 (или 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Калибровочный коэффициент оборотов. \\
+    1 & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Калибровка скорости. \\
+    2 & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Бета-коэффициент датчика ОЖ. \\
+    3 & \paramname{PARAMETER\_OILTHERMISTORB} & Бета-коэффициент датчика масла. \\
+    4 & \paramname{PARAMETER\_AIRTHERMISTORB} & Бета-коэффициент датчика наружной температуры. \\
+    5 & \paramname{PARAMETER\_TANKMINRESISTANCE} & Минимальное сопротивление датчика топлива (\si{\ohm}). \\
+    6 & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Максимальное сопротивление датчика топлива (\si{\ohm}). \\
+    7 & \paramname{PARAMETER\_TAU\_COOLANT} & Постоянная фильтра температуры ОЖ. \\
+    8 & \paramname{PARAMETER\_TAU\_OIL} & Постоянная фильтра температуры масла. \\
+    9 & \paramname{PARAMETER\_TAU\_AIR} & Постоянная фильтра наружной температуры. \\
+    10 & \paramname{PARAMETER\_TAU\_TANK} & Постоянная фильтра уровня топлива. \\
+    11 & \paramname{PARAMETER\_MILEAGE} & Общий пробег. \\
+    12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Суточный пробег. \\
+    13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Включение автоматической яркости. \\
+    14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Ручной уровень яркости (0--15). \\
+    15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Ёмкость бака (литры). \\
+    16 & \paramname{PARAMETER\_MFA\_STATE} & Активная страница MFA. \\
+    17 & \paramname{PARAMETER\_BUZZER\_OFF} & Отключение зуммера (1 — выкл., 0 — вкл.). \\
+    18 & \paramname{PARAMETER\_MAX\_RPM} & Диапазон тахометра (по умолчанию 8000). \\
+    19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Сопротивление датчика ОЖ при \SI{25}{\celsius}. \\
+    20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Сопротивление датчика масла при \SI{25}{\celsius}. \\
+    21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Сопротивление датчика наружного воздуха при \SI{25}{\celsius}. \\
+    23 & \paramname{PARAMETER\_DOT\_OFF} & Поведение разделителя часов (0 — мигает, 1 — постоянно). \\
+    24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Включение подсветки при ближнем свете. \\
+    25 & \paramname{PARAMETER\_M\_D\_FILTER} & Константа медианного фильтра (наследие). \\
+    26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Порог полной шкалы температуры ОЖ. \\
+    27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Порог «1~bar» температуры ОЖ. \\
+    31--33 & \paramname{PARAMETER\_MAINCOLOR\_[RGB]} & Компоненты цвета интерфейса (только \ReplicaNextShort{}). \\
+    37 & \paramname{PARAMETER\_RPM\_FILTER} & Агрессивность фильтра оборотов. \\
+    128 & \paramname{PARAMETER\_READ\_ADDITION} & Добавьте для чтения параметра. \\
+    255 & \paramname{PARAMETER\_SET\_HOUR} & Установка часов (24-часовой формат). \\
+    254 & \paramname{PARAMETER\_SET\_MINUTE} & Установка минут. \\
+    253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Сброс суточного пробега. \\
+    252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Заводской сброс и инициализация памяти. \\
     \bottomrule
 \end{longtblr}}
 
