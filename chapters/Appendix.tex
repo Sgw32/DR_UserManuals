@@ -99,6 +99,114 @@ Commands 31--33 (colour control) are only active on \ReplicaNextShort{} units; o
     \end{tblr}}
 \end{table}
 
+\section{\ReplicaNextShort{} Parameter Catalogue}
+
+\begin{longtblr}[
+    caption={\ReplicaNextShort{} firmware parameters available through the \emph{Settings} tab.},
+    label={tbl:next-parameters},
+]{
+    colspec = {Q[l,0.22\linewidth] Q[l,0.32\linewidth] Q[c,0.09\linewidth] Q[c,0.12\linewidth] Q[l,0.23\linewidth]},
+    rowhead = 1,
+    rowsep = 2pt,
+}
+    \toprule
+    \textbf{UI label} & \textbf{Description} & \textbf{Type} & \textbf{Default} & \textbf{Range / notes} \\
+    \midrule
+    \SetCell[c=5]{l}{\textbf{Regional options and diagnostic toggles}} \\
+    MFA Option Enable & Enable MFA steering column switch integration. & \texttt{U8} & 1 & Boolean toggle (0--1). \\
+    Miles option & Display mileage in miles instead of kilometres. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Gallons option & Show fuel consumption in gallons. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Fahrenheit option & Display temperatures in degrees Fahrenheit. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Kelvin option & Display temperatures in degrees Kelvin. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Reserved option & Reserved flag for future units. & \texttt{U8} & 0 & Boolean toggle (0--1); no user-facing function. \\
+    Linear fuel calculation & Calculate fuel level with a linear curve instead of table lookup. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Test mode & Enable firmware test mode. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    \midrule
+    \SetCell[c=5]{l}{\textbf{Tachometer and drivetrain}} \\
+    Redline segments & Number of red warning segments on the tachometer scale. & \texttt{U8} & 8 & 0--31 segments. \\
+    Diesel option & Use diesel-specific tachometer scaling. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    7k option & Switch to a \SI{7000}{rpm} tachometer scale. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    RPM Coefficient & Tachometer calibration coefficient. & \texttt{U16} & 3000 & Typical range 1000--6000. \\
+    Maximum RPM & Maximum displayed RPM. & \texttt{U16} & 8000 & Selectable 6000, 7000, or 8000. \\
+    RPM LPF coeff. & Low-pass filter coefficient applied while RPM increases. & \texttt{U16} & 70 & Higher values respond faster. \\
+    RPM LPF coeff. fall & Low-pass filter coefficient applied while RPM decreases. & \texttt{U16} & 200 & Higher values respond faster. \\
+    Stable RPM input & Optimise RPM input for modern ECUs. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Gear change indicator & Blink the gear indicator on detected shifts. & \texttt{U8} & 1 & Boolean toggle (0--1). \\
+    Rear gear coefficient & Ratio of vehicle speed to reverse gear input frequency. & \texttt{U32} & 9999999 & Sentinel value indicates not configured. \\
+    1-st gear coefficient & Ratio of vehicle speed to first gear input frequency. & \texttt{U32} & 1000 & Increase to lower the detected gear. \\
+    2-nd gear coefficient & Ratio of vehicle speed to second gear input frequency. & \texttt{U32} & 2000 & Increase to lower the detected gear. \\
+    3-rd gear coefficient & Ratio of vehicle speed to third gear input frequency. & \texttt{U32} & 3000 & Increase to lower the detected gear. \\
+    4-th gear coefficient & Ratio of vehicle speed to fourth gear input frequency. & \texttt{U32} & 4000 & Increase to lower the detected gear. \\
+    5-th gear coefficient & Ratio of vehicle speed to fifth gear input frequency. & \texttt{U32} & 5000 & Increase to lower the detected gear. \\
+    6-th gear coefficient & Ratio of vehicle speed to sixth gear input frequency. & \texttt{U32} & 10000 & Default indicates ``no gear''. \\
+    \midrule
+    \SetCell[c=5]{l}{\textbf{Temperature and fuel gauges}} \\
+    Red segments count & Number of red warning segments on the temperature gauge. & \texttt{U8} & 0 & 0--3 segments. \\
+    Indicate temp. sensor & Indicate a connected temperature sensor using one segment. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Lower atten. enable & Enable the lower attenuator for the oil channel. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Temp. alarm function & Flash the temperature gauge when an alarm triggers. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Min. coolant temp. & Minimum coolant temperature shown as a single segment. & \texttt{U16} & 60 & Expressed in \si{\celsius}. \\
+    Max. coolant temp. & Coolant temperature mapped to a full-scale reading. & \texttt{U16} & 120 & Expressed in \si{\celsius}. \\
+    Coolant LPF coeff. & Low-pass filter constant for coolant readings. & \texttt{U16} & 2 & Higher values respond faster. \\
+    Oil LPF coeff. & Low-pass filter constant for oil readings. & \texttt{U16} & 2 & Higher values respond faster. \\
+    Air LPF coeff. & Low-pass filter constant for ambient readings. & \texttt{U16} & 2 & Higher values respond faster. \\
+    Tank LPF coeff. & Low-pass filter constant for fuel level readings. & \texttt{U16} & 2 & Higher values respond faster. \\
+    Fuel tank min. resistance & Minimum resistance of the fuel level sender. & \texttt{U16} & 35 & Expressed in \ohm. \\
+    Fuel tank max. resistance & Maximum resistance of the fuel level sender. & \texttt{U16} & 265 & Expressed in \ohm. \\
+    Fuel tank capacity & Fuel tank capacity. & \texttt{U8} & 63 & Expressed in litres. \\
+    \midrule
+    \SetCell[c=5]{l}{\textbf{Signal processing and measurement}} \\
+    Other blink & Use dedicated left/right indicator inputs instead of the common wire. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Touch sensor option & Enable the wireless touch sensor input. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Invert light signal input & Invert the headlight brightness trigger input. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Consumption sensor option & Enable the external consumption MAF sensor. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Indicator filter cycles & Cycles required to confirm indicator changes. & \texttt{U16} & 0 & 0--65535 cycles. \\
+    Turn signal filter cycles & Cycles required to confirm turn signal changes. & \texttt{U16} & 0 & 0--65535 cycles. \\
+    Speedometer measurement period in ms & Pulse counter integration period. & \texttt{U32} & 1000 & Adjustable 250--2000~ms. \\
+    Speedometer measurement window in ms & Averaging window for the speed pulse counter. & \texttt{U32} & 1000 & Adjustable 250--2000~ms. \\
+    Stable Speed input & Optimise the speed input for electronic vehicle speed sensors. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    Filtered Speed input & Enable software filtering of the speed input. & \texttt{U8} & 1 & Boolean toggle (0--1). \\
+    LPF coefficient for speed calculation & Low-pass filter constant for speed calculations. & \texttt{U16} & -- & Default depends on firmware build. \\
+    Median filter threshold & Legacy display filter threshold. & \texttt{U16} & 65535 & Reserved for diagnostics. \\
+    \midrule
+    \SetCell[c=5]{l}{\textbf{Sensor calibration constants}} \\
+    Speed coefficient & Speedometer calibration factor. & \texttt{U16} & 100 & Increase to raise the indicated speed. \\
+    Coolant thermistor beta & Beta coefficient for the coolant temperature sensor curve. & \texttt{U16} & 4000 & Typical range 3000--4500. \\
+    Oil thermistor beta & Beta coefficient for the oil temperature sensor curve. & \texttt{U16} & 4000 & Typical range 3000--4500. \\
+    Air thermistor beta & Beta coefficient for the ambient temperature sensor curve. & \texttt{U16} & 3812 & Generation~2 panels use \num{3812}. \\
+    Coolant default resistance & Coolant sensor resistance at \SI{25}{\celsius}. & \texttt{U16} & 1000 & Expressed in \ohm. \\
+    Oil default resistance & Oil sensor resistance at \SI{25}{\celsius}. & \texttt{U16} & 1000 & Expressed in \ohm. \\
+    Air default resistance & Ambient sensor resistance at \SI{25}{\celsius}. & \texttt{U16} & 2991 & Expressed in \ohm. \\
+    Coolant pull-up & Pull-up resistor used for the coolant sensor. & \texttt{U16} & 220 & Expressed in \ohm. \\
+    Oil pull-up & Pull-up resistor used for the oil sensor. & \texttt{U16} & 3300 & Expressed in \ohm. \\
+    Amb. air pull-up & Pull-up resistor used for the ambient sensor. & \texttt{U16} & 3300 & Expressed in \ohm. \\
+    \midrule
+    \SetCell[c=5]{l}{\textbf{Display, brightness, and audio}} \\
+    Auto brightness & Enable automatic display brightness control. & \texttt{U8} & 1 & Boolean toggle (0--1). \\
+    Brightness level & Manual brightness level. & \texttt{U8} & 25 & Adjustable 0--70. \\
+    Light signal min & ADC reading that maps to minimum brightness. & \texttt{U16} & 300 & Raw ADC units. \\
+    Light signal max & ADC reading that maps to maximum brightness. & \texttt{U16} & 800 & Raw ADC units. \\
+    Brightness min & Minimum automatic brightness level. & \texttt{U8} & 6 & Display intensity units. \\
+    Brightness max & Maximum automatic brightness level. & \texttt{U8} & 25 & Display intensity units. \\
+    Brightness speed & Percentage applied per adjustment step. & \texttt{U8} & 10 & Adjustable 0--100\%. \\
+    Buzzer option & Enable or disable the integrated buzzer. & \texttt{U8} & 1 & 1 disables, 0 enables. \\
+    Blinking dot & Control the colon animation on the clock. & \texttt{U8} & -- & 0 blinks, 1 holds steady. \\
+    Bkclt power & Enable the backlight power rail. & \texttt{U8} & 1 & Boolean toggle (0--1). \\
+    Main R color & Red component of the main theme. & \texttt{U8} & 180 & RGB value (0--255). \\
+    Main G color & Green component of the main theme. & \texttt{U8} & 240 & RGB value (0--255). \\
+    Main B color & Blue component of the main theme. & \texttt{U8} & 6 & RGB value (0--255). \\
+    Back R color & Red component of the backlight. & \texttt{U8} & 180 & RGB value (0--255). \\
+    Back G color & Green component of the backlight. & \texttt{U8} & 240 & RGB value (0--255). \\
+    Back B color & Blue component of the backlight. & \texttt{U8} & 6 & RGB value (0--255). \\
+    Custom scheme & Enable loading of a custom colour scheme. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    WiFi Auto Off & Automatically disable Wi-Fi after one minute of ignition on. & \texttt{U8} & 0 & Boolean toggle (0--1). \\
+    \midrule
+    \SetCell[c=5]{l}{\textbf{Runtime values}} \\
+    MFA function state & Current MFA page index. & \texttt{U8} & -- & Runtime value (not stored). \\
+    MFA Block ind. & Selected MFA memory block. & \texttt{U8} & -- & Runtime value (not stored). \\
+\bottomrule
+\end{longtblr}
+
 \section{Change Log} \label{app:change-log}
 
 \begin{table}[htbp]
