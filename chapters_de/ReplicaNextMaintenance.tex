@@ -1,56 +1,56 @@
 \chapter{Einrichtung und Wartung der \ReplicaNextLong{}}\label{ch:replica-next-setup}
 
-This section applies to the \ReplicaNextLong{} dashboard shown in \autoref{fig:next-hardware}.
+Dieses Kapitel bezieht sich auf das in \autoref{fig:next-hardware} gezeigte \ReplicaNextLong{}-Kombiinstrument.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{digifiz_manual/image019.png}
-    \caption{\ReplicaNextLong{} dashboard assembly.}
+    \caption{\ReplicaNextLong{}-Kombiinstrument.}
     \label{fig:next-hardware}
 \end{figure}
 
-\section{Panel handling}
+\section{Umgang mit dem Panel}
 \begin{itemize}
-    \item The UV-printed polycarbonate faceplate must be protected from scratches and foreign objects. Significant damage requires replacement parts from PHOL-LABS Kft and is not treated as a warranty case.
-    \item The real-time clock is configured via the Wi-Fi control panel. It resets whenever the permanent supply is disconnected.
+    \item Die UV-bedruckte Polycarbonat-Frontplatte muss vor Kratzern und Fremdkörpern geschützt werden. Größere Beschädigungen gelten nicht als Garantiefall und erfordern Ersatzteile von PHOL-LABS Kft.
+    \item Die Echtzeituhr wird über das Wi-Fi-Bedienfeld konfiguriert. Sie setzt sich zurück, sobald die Dauerplusversorgung getrennt wird.
 \end{itemize}
 
-\section{Wi-Fi control portal}
-Configuration, data collection, and firmware management are performed through the embedded web application.
+\section{Wi-Fi-Steuerportal}
+Konfiguration, Datenerfassung und Firmwarepflege erfolgen über die integrierte Webanwendung.
 \begin{itemize}
-    \item Connect to the dashboard's Wi-Fi access point. Disable mobile data and join \texttt{Digifiz\_AP} (password \texttt{87654321}); some revisions advertise \texttt{PHOL-LABS2} with the same password.
-    \item The default IP address is \texttt{192.168.4.1}. If the dashboard is configured to join another network, scan the subnet for an address ending in \texttt{.32} using an IP tools application.
-    \item The portal contains five tabs: \emph{WiFi}, \emph{Control}, \emph{Settings}, \emph{Colors}, and \emph{About} (\autoref{fig:next-control-tabs}). The Wi-Fi tab configures network settings and handles firmware uploads; the Control tab adjusts dashboard parameters; the Settings tab provides a structured editor for all firmware parameters; the Colors tab manages multi-segment colour schemes; the About tab lists author information.
+    \item Verbinden Sie sich mit dem WLAN-Zugangspunkt des Kombiinstruments. Deaktivieren Sie mobile Daten und stellen Sie eine Verbindung zu \texttt{Digifiz\_AP} (Passwort \texttt{87654321}) her; einige Revisionen senden als \texttt{PHOL-LABS2} mit demselben Passwort.
+    \item Die Standard-IP-Adresse lautet \texttt{192.168.4.1}. Ist das Kombiinstrument in ein anderes Netzwerk eingebunden, scannen Sie das Subnetz mit einem IP-Tool nach einer Adresse, die auf \texttt{.32} endet.
+    \item Das Portal umfasst die Reiter \emph{WiFi}, \emph{Control}, \emph{Settings}, \emph{Colors} und \emph{About} (\autoref{fig:next-control-tabs}). Im WiFi-Reiter werden Netzwerke konfiguriert und Firmwaredateien hochgeladen; der Control-Reiter passt Betriebsparameter an; Settings stellt einen strukturierten Editor für sämtliche Firmwareparameter bereit; Colors verwaltet mehrsegmentige Farbschemata; About führt Autoren- und Versionsinformationen auf.
 \end{itemize}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\linewidth]{digifiz_manual/image020.png}
-        \caption{Control tab overview.}
+        \caption{Übersicht des Control-Reiters.}
     \end{subfigure}\hfill
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\linewidth]{digifiz_manual/image021.png}
-        \caption{Numbered controls and command entry fields.}
+        \caption{Nummerierte Bedienelemente und Eingabefelder.}
     \end{subfigure}
-    \caption{\ReplicaNextShort{} Wi-Fi control interface.}
+    \caption{Wi-Fi-Steueroberfläche der \ReplicaNextShort{}.}
     \label{fig:next-control-tabs}
 \end{figure}
 
-\section{Command entry}
-The \emph{Control} tab provides a command input line (1), a \emph{Process} button (2), a result window (3), quick controls (4), a \emph{Save} button (5), and a \emph{Reset} button (6). Enter commands as space-separated pairs \verb|<number> <value>| using integers only; punctuation and quotation marks are not required. \autoref{fig:next-command-example} illustrates the interface while toggling automatic brightness.
+\section{Befehle eingeben}
+Der Reiter \emph{Control} stellt eine Befehlszeile (1), die Schaltfläche \emph{Process} (2), ein Ergebnisfenster (3), Schnellbedienfelder (4) sowie die Schaltflächen \emph{Save} (5) und \emph{Reset} (6) bereit. Geben Sie Befehle als Leerzeichen-getrennte Paare \verb|<Nummer> <Wert>| ein und verwenden Sie ausschließlich ganze Zahlen; Satzzeichen oder Anführungszeichen sind nicht nötig. \autoref{fig:next-command-example} zeigt das Interface beim Umschalten der automatischen Helligkeit.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.55\textwidth]{digifiz_manual/image022.png}
-    \caption{Example command sequence disabling automatic brightness.}
+    \caption{Beispielsequenz zum Deaktivieren der automatischen Helligkeit.}
     \label{fig:next-command-example}
 \end{figure}
 
-\section{Command reference}
+\section{Befehlsreferenz}
 \begin{table}[htbp]
     \centering
-    \caption{Primary \ReplicaNextShort{} configuration commands.}
+    \caption{Wichtigste Konfigurationsbefehle der \ReplicaNextShort{}.}
     \label{tbl:next-commands}
     {\scriptsize
     \begin{tblr}{
@@ -58,52 +58,52 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
         rowsep = 2pt,
     }
         \toprule
-        \textbf{Command} & \textbf{Name} & \textbf{Description} \\
+        \textbf{Befehl} & \textbf{Name} & \textbf{Beschreibung} \\
         \midrule
-        22 (or 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Engine RPM calibration factor (100--10000). \\
-        1  & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Speed calibration factor (10--255). \\
-        2  & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Coolant thermistor beta coefficient (2000--5000). \\
-        3  & \paramname{PARAMETER\_OILTHERMISTORB} & Oil thermistor beta coefficient (2000--5000). \\
-        4  & \paramname{PARAMETER\_AIRTHERMISTORB} & Ambient thermistor beta coefficient (2000--5000). \\
-        5  & \paramname{PARAMETER\_TANKMINRESISTANCE} & Minimum fuel sender resistance (0--1000~\ohm). \\
-        6  & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Maximum fuel sender resistance (100--1000~\ohm). \\
-        7  & \paramname{PARAMETER\_TAU\_COOLANT} & Coolant temperature filter constant (1--50, higher is more responsive). \\
-        8  & \paramname{PARAMETER\_TAU\_OIL} & Oil temperature filter constant (1--50). \\
-        9  & \paramname{PARAMETER\_TAU\_AIR} & Ambient temperature filter constant (1--50). \\
-        10 & \paramname{PARAMETER\_TAU\_TANK} & Fuel level filter constant (1--50). \\
-        11 & \paramname{PARAMETER\_MILEAGE} & Total odometer value (0--999999). \\
-        12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Trip odometer (0--9999). \\
-        13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Automatic brightness enable (1=on, 0=off). \\
-        14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Manual brightness level (0--60\%; values above 60 reduce LED life). \\
-        15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Fuel tank capacity in litres (0--99; 55~L typical for Golf~2). \\
-        16 & \paramname{PARAMETER\_MFA\_STATE} & Active MFA mode (normally controlled via hardware input). \\
-        17 & \paramname{PARAMETER\_BUZZER\_OFF} & Disable buzzer (1 disables, 0 enables; \ReplicaNextShort{} lacks a buzzer). \\
-        18 & \paramname{PARAMETER\_MAX\_RPM} & Tachometer scaling (typical 8000, range 4000--16000). \\
-        19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Coolant sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
-        20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Oil sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
-        21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Ambient sensor resistance at \SI{25}{\celsius} (1000--10000~\ohm). \\
-        23 & \paramname{PARAMETER\_DOT\_OFF} & Clock colon behaviour (0=blink, 1=solid). \\
-        24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Enable backlight on low beam (not used on \ReplicaNextShort{}). \\
-        25 & \paramname{PARAMETER\_M\_D\_FILTER} & Median filter constant (legacy, normally unused). \\
-        26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Coolant sensor threshold for full-scale indication (\SI{100}{\celsius}--\SI{150}{\celsius}). \\
-        27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Coolant sensor threshold for ``1~bar'' indication (\SI{0}{\celsius}--\SI{80}{\celsius}). \\
-        31 & \paramname{PARAMETER\_MAINCOLOR\_R} & Red component of the UI colour (0--255). \\
-        32 & \paramname{PARAMETER\_MAINCOLOR\_G} & Green component of the UI colour (0--255). \\
-        33 & \paramname{PARAMETER\_MAINCOLOR\_B} & Blue component of the UI colour (0--255). \\
-        37 & \paramname{PARAMETER\_RPM\_FILTER} & RPM filter aggressiveness (10--200, higher reacts faster). \\
-        128 & \paramname{PARAMETER\_READ\_ADDITION} & Add 128 to read the current value of any command. \\
-        255 & \paramname{PARAMETER\_SET\_HOUR} & Set clock hours (24-hour format). \\
-        254 & \paramname{PARAMETER\_SET\_MINUTE} & Set clock minutes. \\
-        253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Reset the trip odometer. \\
-        252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Factory reset of stored parameters. \\
+        22 (oder 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Kalibrierfaktor der Motordrehzahl (100--10000). \\
+        1  & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Kalibrierfaktor für die Geschwindigkeit (10--255). \\
+        2  & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Beta-Koeffizient des Kühlmittelthermistors (2000--5000). \\
+        3  & \paramname{PARAMETER\_OILTHERMISTORB} & Beta-Koeffizient des Ölthermistors (2000--5000). \\
+        4  & \paramname{PARAMETER\_AIRTHERMISTORB} & Beta-Koeffizient des Außentemperaturthermistors (2000--5000). \\
+        5  & \paramname{PARAMETER\_TANKMINRESISTANCE} & Minimaler Tankgeberwiderstand (0--1000~\ohm). \\
+        6  & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Maximaler Tankgeberwiderstand (100--1000~\ohm). \\
+        7  & \paramname{PARAMETER\_TAU\_COOLANT} & Filterkonstante der Kühlmittelanzeige (1--50; höhere Werte reagieren schneller). \\
+        8  & \paramname{PARAMETER\_TAU\_OIL} & Filterkonstante der Öltemperaturanzeige (1--50). \\
+        9  & \paramname{PARAMETER\_TAU\_AIR} & Filterkonstante der Außentemperaturanzeige (1--50). \\
+        10 & \paramname{PARAMETER\_TAU\_TANK} & Filterkonstante der Tankanzeige (1--50). \\
+        11 & \paramname{PARAMETER\_MILEAGE} & Gesamtkilometerstand (0--999999). \\
+        12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Tageskilometerzähler (0--9999). \\
+        13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Automatische Helligkeit aktivieren (1 = an, 0 = aus). \\
+        14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Manuelle Helligkeit (0--60\%; Werte über 60 verkürzen die LED-Lebensdauer). \\
+        15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Tankvolumen in Litern (0--99; 55~L typisch für Golf~II). \\
+        16 & \paramname{PARAMETER\_MFA\_STATE} & Aktiver MFA-Modus (normalerweise über Hardware-Eingang gesteuert). \\
+        17 & \paramname{PARAMETER\_BUZZER\_OFF} & Summer deaktivieren (1 deaktiviert, 0 aktiviert; \ReplicaNextShort{} besitzt keinen Summer). \\
+        18 & \paramname{PARAMETER\_MAX\_RPM} & Drehzahlmesserskala (typisch 8000, Bereich 4000--16000). \\
+        19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Sensorwiderstand bei \SI{25}{\celsius} (1000--10000~\ohm). \\
+        20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Öltemperatursensor bei \SI{25}{\celsius} (1000--10000~\ohm). \\
+        21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Außentemperatursensor bei \SI{25}{\celsius} (1000--10000~\ohm). \\
+        23 & \paramname{PARAMETER\_DOT\_OFF} & Verhalten des Uhr-Doppelpunkts (0 = blinkend, 1 = dauerhaft). \\
+        24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Hintergrundbeleuchtung mit Abblendlicht aktivieren (bei \ReplicaNextShort{} ungenutzt). \\
+        25 & \paramname{PARAMETER\_M\_D\_FILTER} & Medianfilter-Konstante (Legacy, normalerweise ungenutzt). \\
+        26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Schwelle für die Kühlmittel-Vollskala (\SI{100}{\celsius}--\SI{150}{\celsius}). \\
+        27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Schwelle für die „1~bar“-Markierung (\SI{0}{\celsius}--\SI{80}{\celsius}). \\
+        31 & \paramname{PARAMETER\_MAINCOLOR\_R} & Rotanteil der UI-Farbe (0--255). \\
+        32 & \paramname{PARAMETER\_MAINCOLOR\_G} & Grünanteil der UI-Farbe (0--255). \\
+        33 & \paramname{PARAMETER\_MAINCOLOR\_B} & Blauanteil der UI-Farbe (0--255). \\
+        37 & \paramname{PARAMETER\_RPM\_FILTER} & Reaktionsgeschwindigkeit des Drehzahlfilters (10--200, höhere Werte reagieren schneller). \\
+        128 & \paramname{PARAMETER\_READ\_ADDITION} & Zum Befehl addieren, um den aktuellen Wert auszulesen. \\
+        255 & \paramname{PARAMETER\_SET\_HOUR} & Uhrstunden setzen (24-Stunden-Format). \\
+        254 & \paramname{PARAMETER\_SET\_MINUTE} & Uhrminuten setzen. \\
+        253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Tageskilometerzähler zurücksetzen. \\
+        252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Gespeicherte Parameter auf Werkseinstellungen setzen. \\
         \bottomrule
     \end{tblr}}
 \end{table}
 
-\section{Default values}
+\section{Standardwerte}
 \begin{table}[htbp]
     \centering
-    \caption{\ReplicaNextShort{} default settings.}
+    \caption{Voreinstellungen der \ReplicaNextShort{}.}
     \label{tbl:next-defaults}
     {\scriptsize
     \begin{tblr}{
@@ -111,74 +111,74 @@ The \emph{Control} tab provides a command input line (1), a \emph{Process} butto
         rowsep = 2pt,
     }
         \toprule
-        \textbf{Parameter} & \textbf{Default} & \textbf{Notes} \\
+        \textbf{Parameter} & \textbf{Standard} & \textbf{Hinweise} \\
         \midrule
-        \paramname{PARAMETER\_RPMCOEFFICIENT} & 3000 & Typical for Audi tachometer inputs. \\
-        \paramname{PARAMETER\_SPEEDCOEFFICIENT} & 100 & Calibrated for 100~km/h. \\
+        \paramname{PARAMETER\_RPMCOEFFICIENT} & 3000 & Typisch für Audi-Drehzahlsignale. \\
+        \paramname{PARAMETER\_SPEEDCOEFFICIENT} & 100 & Auf \SI{100}{\kilo\metre\per\hour} kalibriert. \\
         \paramname{PARAMETER\_COOLANTTHERMISTORB} & 4000 &  \\
         \paramname{PARAMETER\_OILTHERMISTORB} & 4000 &  \\
-        \paramname{PARAMETER\_AIRTHERMISTORB} & 3812 & 3600 for Generation~2 panels. \\
+        \paramname{PARAMETER\_AIRTHERMISTORB} & 3812 & Generation~2 nutzt 3600. \\
         \paramname{PARAMETER\_TANKMINRESISTANCE} & 35 & \ohm. \\
         \paramname{PARAMETER\_TANKMAXRESISTANCE} & 265 & \ohm. \\
-        \paramname{PARAMETER\_TAU\_COOLANT} & 2 & Filter constant. \\
-        \paramname{PARAMETER\_TAU\_OIL} & 2 & Filter constant. \\
-        \paramname{PARAMETER\_TAU\_AIR} & 2 & Filter constant. \\
-        \paramname{PARAMETER\_TAU\_TANK} & 2 & Filter constant. \\
-        \paramname{PARAMETER\_MILEAGE} & Vehicle-specific & Retains stored odometer. \\
+        \paramname{PARAMETER\_TAU\_COOLANT} & 2 & Filterkonstante. \\
+        \paramname{PARAMETER\_TAU\_OIL} & 2 & Filterkonstante. \\
+        \paramname{PARAMETER\_TAU\_AIR} & 2 & Filterkonstante. \\
+        \paramname{PARAMETER\_TAU\_TANK} & 2 & Filterkonstante. \\
+        \paramname{PARAMETER\_MILEAGE} & Fahrzeugspezifisch & Beibehaltung des gespeicherten Kilometerstands. \\
         \paramname{PARAMETER\_DAILY\_MILEAGE} & 0 &  \\
-        \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & 1 & Enabled. \\
-        \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & 25 & Generation~2 default; Generation~1/1.5 use 7 or 13. \\
-        \paramname{PARAMETER\_TANK\_CAPACITY} & 63 & Litres. \\
-        \paramname{PARAMETER\_MFA\_STATE} & 0 & Default MFA page. \\
-        \paramname{PARAMETER\_BUZZER\_OFF} & 1 & Buzzer disabled. \\
-        \paramname{PARAMETER\_MAX\_RPM} & 8000 & Tachometer scale. \\
-        \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & 1000 & \ohm{} at \SI{25}{\celsius}. \\
-        \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & 1000 & \ohm{} at \SI{25}{\celsius}. \\
-        \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & 2991 & 500~\ohm{} for Generation~2 sensors. \\
-        \paramname{PARAMETER\_DOT\_OFF} & 0 & Blinking clock colon. \\
-        \paramname{PARAMETER\_BACKLIGHT\_ON} & 1 & Backlight enabled with low beam. \\
-        \paramname{PARAMETER\_M\_D\_FILTER} & 65535 & Legacy median filter constant. \\
+        \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & 1 & Aktiviert. \\
+        \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & 25 & Standard für Generation~2; Generation~1/1.5 verwenden 7 bzw. 13. \\
+        \paramname{PARAMETER\_TANK\_CAPACITY} & 63 & Liter. \\
+        \paramname{PARAMETER\_MFA\_STATE} & 0 & Standard-MFA-Seite. \\
+        \paramname{PARAMETER\_BUZZER\_OFF} & 1 & Summer deaktiviert. \\
+        \paramname{PARAMETER\_MAX\_RPM} & 8000 & Drehzahlmesserskala. \\
+        \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & 1000 & \ohm{} bei \SI{25}{\celsius}. \\
+        \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & 1000 & \ohm{} bei \SI{25}{\celsius}. \\
+        \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & 2991 & 500~\ohm{} bei Sensoren der Generation~2. \\
+        \paramname{PARAMETER\_DOT\_OFF} & 0 & Blinkender Uhr-Doppelpunkt. \\
+        \paramname{PARAMETER\_BACKLIGHT\_ON} & 1 & Hintergrundbeleuchtung mit Abblendlicht aktiv. \\
+        \paramname{PARAMETER\_M\_D\_FILTER} & 65535 & Legacy-Medianfilter. \\
         \paramname{PARAMETER\_COOLANT\_MAX\_R} & 120 & \si{\celsius}. \\
         \paramname{PARAMETER\_COOLANT\_MIN\_R} & 60 & \si{\celsius}. \\
-        \paramname{PARAMETER\_MAINCOLOR\_R} & 180 & Yellow-green default. \\
-        \paramname{PARAMETER\_MAINCOLOR\_G} & 240 & Yellow-green default. \\
-        \paramname{PARAMETER\_MAINCOLOR\_B} & 6 & Yellow-green default. \\
-        \paramname{PARAMETER\_RPM\_FILTER} & 70 & Filter response. \\
-        \paramname{PARAMETER\_UPTIME} & 0 & Runtime counter. \\
+        \paramname{PARAMETER\_MAINCOLOR\_R} & 180 & Standardton Gelbgrün. \\
+        \paramname{PARAMETER\_MAINCOLOR\_G} & 240 & Standardton Gelbgrün. \\
+        \paramname{PARAMETER\_MAINCOLOR\_B} & 6 & Standardton Gelbgrün. \\
+        \paramname{PARAMETER\_RPM\_FILTER} & 70 & Filterreaktion. \\
+        \paramname{PARAMETER\_UPTIME} & 0 & Laufzeitzähler. \\
         \bottomrule
     \end{tblr}}
 \end{table}
 
-\section{Reading parameters and examples}
-To read a parameter, add 128 to the command number (for example, \verb|129 0| reports the speed coefficient). Typical commands include disabling automatic brightness (\verb|13 0|), enabling it again (\verb|13 1|), adjusting the speed coefficient (\verb|1 110| increases the displayed speed by 10\%), and setting the odometer (\verb|11 123456|). Clock values are set with \verb|255 <hours>| followed by \verb|254 <minutes>|. Commands 31--33 set the RGB components of the user interface colour.
+\section{Parameter auslesen und Beispiele}
+Zum Auslesen eines Parameters addieren Sie 128 zur Befehlsnummer (z.~B. meldet \verb|129 0| den Geschwindigkeitsfaktor). Typische Befehle sind das Deaktivieren der automatischen Helligkeit (\verb|13 0|), das erneute Aktivieren (\verb|13 1|), die Anpassung des Geschwindigkeitsfaktors (\verb|1 110| erhöht die Anzeige um 10~\%) und das Setzen des Kilometerstands (\verb|11 123456|). Die Uhr stellen Sie mit \verb|255 <hours>| und anschließend \verb|254 <minutes>| ein. Die Befehle~31--33 setzen die RGB-Komponenten der Benutzeroberfläche.
 
-\section{Service commands}
-Recent firmware revisions accept human-readable parameter names, for example \verb|PARAMETER_RPMCOEFFICIENT 3000|. The diagnostic command \verb|adc 0| prints raw ADC readings for sensor troubleshooting. Firmware updates add visual colour controls, so update regularly through the \emph{WiFi} tab to access the latest features.
+\section{Servicebefehle}
+Aktuelle Firmwareversionen akzeptieren auch Klartextnamen, etwa \verb|PARAMETER_RPMCOEFFICIENT 3000|. Der Diagnosebefehl \verb|adc 0| gibt Rohwerte der Sensor-ADCs aus und unterstützt die Fehlersuche. Neue Firmwarestände bringen zusätzliche Farbeditoren mit sich, daher sollten Updates regelmäßig über den Reiter \emph{WiFi} eingespielt werden.
 
-\section{Settings tab parameter editor}
-The \emph{Settings} tab mirrors the parameter list in \autoref{tbl:next-commands} and \autoref{tbl:next-defaults} while adding metadata about ranges, descriptions, and data types.
-Use it whenever you prefer a graphical workflow instead of typing command numbers.
-
-\begin{enumerate}
-    \item Press \emph{Load Parameters} to fetch the live values from the dashboard. The browser displays each item with its name, current value, tooltip, and type.
-    \item For numeric entries, type the desired value inside the \emph{New Value} column. The interface enforces the permissible range shown in the \emph{Min} and \emph{Max} columns. Boolean parameters appear as checkboxes.
-    \item Click \emph{Set} to submit the change instantly. The table refreshes to confirm the updated value.
-    \item Repeat the process for every parameter you want to adjust. When finished, return to the \emph{Control} tab and press \emph{Save parameters} to write the configuration to non-volatile memory.
-\end{enumerate}
-
-The colour workflow requires that you enable the firmware flag responsible for custom palettes before moving to the \emph{Colors} tab.
-Locate the boolean entry labelled ``Custom colour scheme'' (published as \verb|PARAMETER_CUSTOM_COLORSCHEME_ENABLE| in the parameter list), tick the checkbox, and press \emph{Set}. The dashboard will reject bespoke segment edits until this flag is turned on.
-
-\section{Custom colour schemes}
-The \emph{Colors} tab introduces a segment-based editor for the WS2812 LED backlight. Each row describes a range end point, the functional area it corresponds to, and the colour or base colour inheritance.
+\section{Parametereditor im Reiter Settings}
+Der Reiter \emph{Settings} spiegelt die Parameterlisten aus \autoref{tbl:next-commands} und \autoref{tbl:next-defaults} und ergänzt Metadaten zu Bereich, Beschreibung und Datentyp.
+Nutzen Sie ihn, wenn Sie statt Befehlsnummern eine grafische Arbeitsweise bevorzugen.
 
 \begin{enumerate}
-    \item Press \emph{Load Scheme} to read the active mapping. Use \emph{Add Segment}, or the inline ``+\textuparrow{}'' and ``+\textdownarrow{}'' controls, to insert new ranges. The drop-down menus select the instrument function, and the base-colour selector lets you reuse the main or back colours instead of specifying a fixed RGB value.
-    \item Click the colour picker to fine-tune the RGB tone for segments that are set to ``Custom''. The editor reports component values in real time.
-    \item Use the reorder arrows to match the physical LED sequence (segments must remain in ascending order). Delete redundant rows with the ``\texttimes{}'' button.
-    \item When the table reflects the desired layout, press \emph{Set Scheme}. The browser iterates through the rows and pushes each segment to the dashboard.
-    \item Immediately switch to the \emph{Control} tab and press \emph{Save parameters}. This step is mandatory---the firmware caches the uploaded segments in RAM and discards them after a reboot if they are not saved.
-    \item Optionally export the JSON representation via \emph{Export to File} for backups, or import a previously saved file with \emph{Import from File}. The \emph{Reset Scheme} button restores the factory layout after confirmation.
+    \item Klicken Sie auf \emph{Load Parameters}, um die aktuellen Werte aus dem Kombiinstrument zu laden. Der Browser zeigt jeden Eintrag mit Name, aktuellem Wert, Tooltip und Typ an.
+    \item Geben Sie bei numerischen Parametern den gewünschten Wert in der Spalte \emph{New Value} ein. Das Interface erzwingt die zulässigen Bereiche aus den Spalten \emph{Min} und \emph{Max}. Boolean-Werte erscheinen als Kontrollkästchen.
+    \item Drücken Sie \emph{Set}, um die Änderung sofort zu übertragen. Die Tabelle aktualisiert sich zur Bestätigung.
+    \item Wiederholen Sie den Vorgang für alle gewünschten Parameter. Kehren Sie anschließend zum Reiter \emph{Control} zurück und klicken Sie auf \emph{Save parameters}, um die Konfiguration dauerhaft zu speichern.
 \end{enumerate}
 
-If you later disable the custom colour scheme flag in the \emph{Settings} tab, the dashboard falls back to the classic single-colour mode driven by \verb|PARAMETER_MAINCOLOR_R/G/B|.
+Für den Farbeditor müssen Sie zunächst die Firmware-Option für benutzerdefinierte Paletten aktivieren, bevor Sie zum Reiter \emph{Colors} wechseln.
+Suchen Sie den booleschen Eintrag „Custom colour scheme“ (im Parameterfeld als \verb|PARAMETER_CUSTOM_COLORSCHEME_ENABLE| veröffentlicht), setzen Sie das Häkchen und bestätigen Sie mit \emph{Set}. Eigene Segmentfarben werden vom Kombiinstrument abgelehnt, solange diese Option deaktiviert ist.
+
+\section{Benutzerdefinierte Farbschemata}
+Der Reiter \emph{Colors} stellt einen segmentbasierten Editor für die WS2812-Hintergrundbeleuchtung bereit. Jede Zeile beschreibt ein Bereichsende, den zugehörigen Funktionsblock sowie die Farbe bzw. die Herkunft einer Basisfarbe.
+
+\begin{enumerate}
+    \item Laden Sie zunächst das aktive Mapping mit \emph{Load Scheme}. Über \emph{Add Segment} oder die Inline-Schaltflächen „+\textuparrow{}“ und „+\textdownarrow{}“ fügen Sie neue Bereiche ein. Die Dropdown-Menüs wählen die Instrumentenfunktion; mit der Basisfarb-Auswahl können Sie Haupt- oder Hintergrundfarben wiederverwenden, statt feste RGB-Werte zu setzen.
+    \item Öffnen Sie den Farbwahldialog, um RGB-Töne für Segmente mit der Einstellung „Custom“ präzise zu definieren. Die Editoransicht zeigt die Komponentenwerte in Echtzeit an.
+    \item Nutzen Sie die Pfeile zum Umordnen, um die physische LED-Reihenfolge abzubilden (die Segmente müssen aufsteigend sortiert bleiben). Entfernen Sie überflüssige Zeilen mit „\texttimes{}“.
+    \item Sobald die Tabelle das gewünschte Layout widerspiegelt, klicken Sie auf \emph{Set Scheme}. Der Browser überträgt anschließend jedes Segment an das Kombiinstrument.
+    \item Wechseln Sie unmittelbar zum Reiter \emph{Control} und drücken Sie \emph{Save parameters}. Dieser Schritt ist zwingend erforderlich\textemdash{}die Firmware hält die Segmente nur im RAM und verwirft sie nach einem Neustart, wenn sie nicht gespeichert werden.
+    \item Optional können Sie die JSON-Beschreibung über \emph{Export to File} sichern oder mit \emph{Import from File} eine gespeicherte Datei wieder einspielen. \emph{Reset Scheme} stellt nach Bestätigung das Werkslayout wieder her.
+\end{enumerate}
+
+Deaktivieren Sie die Option für benutzerdefinierte Farbschemata später wieder im Reiter \emph{Settings}, fällt das Kombiinstrument automatisch in den klassischen Einfarbenmodus zurück, der von \verb|PARAMETER_MAINCOLOR_R/G/B| gesteuert wird.

@@ -1,43 +1,43 @@
 \chapter{Einrichtung und Wartung der \ReplicaGenOne{}}\label{ch:replica-setup}
 
-This chapter applies to the classic \ReplicaGenOne{} instrument panel shown in \autoref{fig:replica-classic}. If your dashboard matches the \ReplicaNextLong{} layout, refer to the previous chapter.
+Dieses Kapitel bezieht sich auf das klassische \ReplicaGenOne{}-Kombiinstrument in \autoref{fig:replica-classic}. Entspricht Ihr Armaturenbrett dem \ReplicaNextLong{}-Layout, lesen Sie das vorherige Kapitel.
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.46\textwidth}
         \includegraphics[width=\linewidth]{digifiz_manual/image046.png}
-        \caption{Classic \ReplicaGenOne{} with square bezel.}
+        \caption{Klassische \ReplicaGenOne{} mit kantigem Rahmen.}
     \end{subfigure}\hfill
     \begin{subfigure}{0.46\textwidth}
         \includegraphics[width=\linewidth]{digifiz_manual/image047.png}
-        \caption{Round-edge fascia used on later kits.}
+        \caption{Späterer Bausatz mit abgerundeter Front.}
     \end{subfigure}
-    \caption{Appearance of the \ReplicaGenOne{} dashboard.}
+    \caption{Erscheinungsbild des \ReplicaGenOne{}-Kombiinstruments.}
     \label{fig:replica-classic}
 \end{figure}
 
-\section{Handling and screen care}
+\section{Handhabung und Pflege der Anzeige}
 \begin{itemize}
-    \item The plexiglass front with UV printing is easily marred. Avoid contact with sharp or abrasive objects.
-    \item Surface damage is cosmetic and not covered by warranty. Request replacement parts from PHOL-LABS Kft if the screen pattern is deformed.
+    \item Die Frontscheibe aus Plexiglas mit UV-Druck verkratzt leicht. Vermeiden Sie Kontakt mit scharfen oder scheuernden Gegenständen.
+    \item Oberflächenschäden sind kosmetisch und nicht von der Garantie abgedeckt. Fordern Sie Ersatzteile bei PHOL-LABS Kft an, falls das Druckbild der Anzeige beschädigt ist.
 \end{itemize}
 
-\section{Real-time clock battery}
-The dashboard contains a DS3231 real-time clock with a CR2032 cell. The battery typically lasts about four years. When it is depleted the clock resets at every power-up. Remove the front and/or rear cover, keep the wiring harnesses connected, and replace the coin cell. Dispose of the spent battery according to local regulations.
+\section{Batterie der Echtzeituhr}
+Im Kombiinstrument arbeitet eine DS3231-Echtzeituhr mit einer CR2032-Knopfzelle. Die Batterie hält typischerweise etwa vier Jahre. Ist sie entladen, setzt sich die Uhr bei jedem Einschalten zurück. Entfernen Sie die vordere und/oder hintere Abdeckung, lassen Sie die Kabelbäume angeschlossen und tauschen Sie die Knopfzelle aus. Entsorgen Sie die verbrauchte Batterie gemäß den lokalen Vorschriften.
 
-\section{Firmware maintenance with USBasp}
-Each kit ships with a USBasp programmer lead already connected inside the housing (\autoref{fig:usbasp-cable}). Install a suitable USBasp driver before flashing. For example, download it from the following address:
+\section{Firmwarepflege mit USBasp}
+Jeder Bausatz enthält einen bereits im Gehäuse angeschlossenen USBasp-Programmieradapter (\autoref{fig:usbasp-cable}). Installieren Sie vor dem Flashen einen passenden USBasp-Treiber, z.~B. von folgender Adresse:
 \displayurl{https://myrobot.ru/downloads/driver-usbasp-v-2.0-usb-isp-windows-7-8-10-xp.php}
-The programmer powers the dashboard when it is connected to a computer, allowing bench checks.
+Der Programmer versorgt das Kombiinstrument mit Strom, sobald er mit dem Computer verbunden ist, sodass Prüfungen auf der Werkbank möglich sind.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.32\textwidth]{digifiz_manual/image048.png}
-    \caption{USBasp harness orientation inside the \ReplicaGenOne{}.}
+    \caption{Lage des USBasp-Kabels innerhalb der \ReplicaGenOne{}.}
     \label{fig:usbasp-cable}
 \end{figure}
 
-Flash firmware with \texttt{avrdude} using the command below (replace the firmware filename if required):
+Die Firmware wird mit \texttt{avrdude} per folgendem Befehl übertragen (ersetzen Sie den Dateinamen bei Bedarf):
 
 \begin{verbatim}
 avrdude -c usbasp -p m2560 -e \
@@ -45,77 +45,77 @@ avrdude -c usbasp -p m2560 -e \
     -U flash:w:Digifiz.ino.mega.hex
 \end{verbatim}
 
-After a successful upload press the front touch button four to five times to initialise the memory blocks. If the blocks remain empty, repeat the flashing procedure or issue the Bluetooth command \verb|252 0| to trigger a factory reset. Ready-to-use firmware images are published at:
+Drücken Sie nach erfolgreichem Flashen die vordere Touchfläche vier- bis fünfmal, um die Speicherblöcke zu initialisieren. Bleiben sie leer, wiederholen Sie den Flashvorgang oder senden Sie per Bluetooth den Befehl \verb|252 0| für einen Werksreset. Einsatzbereite Firmware-Images sind unter folgendem Link verfügbar:
 \displayurl{https://github.com/Sgw32/DigifizReplica}
 
-\section{Bluetooth configuration}
-Most parameters are adjusted over Bluetooth using an Android phone and the Serial Bluetooth Terminal application. Download it from the following link before pairing with the dashboard:
+\section{Bluetooth-Konfiguration}
+Die meisten Parameter werden per Bluetooth über ein Android-Smartphone und die App Serial Bluetooth Terminal eingestellt. Laden Sie die Anwendung vor dem Koppeln über folgenden Link herunter:
 \displayurl{https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=en&gl=US}
-iOS devices cannot connect to the classic Bluetooth 2.0 module.
+Geräte mit iOS können sich nicht mit dem klassischen Bluetooth-2.0-Modul verbinden.
 
 \begin{itemize}
-    \item Ensure you pair with the dashboard's Bluetooth Classic interface rather than BLE-only devices.
-    \item In Serial Bluetooth Terminal set the end-of-line character to LF. Disable CR+LF before sending commands.
+    \item Koppeln Sie sich mit der Bluetooth-Classic-Schnittstelle des Kombiinstruments und nicht mit reinen BLE-Geräten.
+    \item Stellen Sie in Serial Bluetooth Terminal das Zeilenende auf LF und deaktivieren Sie CR+LF, bevor Sie Befehle senden.
 \end{itemize}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.32\textwidth]{digifiz_manual/image049.png}
-    \caption{Recommended Serial Bluetooth Terminal configuration.}
+    \caption{Empfohlene Einstellungen in Serial Bluetooth Terminal.}
     \label{fig:sbt-settings}
 \end{figure}
 
-Enter commands as space-separated pairs \verb|<number> <value>|. For example, to store an odometer value of 123\,456~km send \verb|11 123456|. Add 128 to a command number to read its current value (\verb|129 0| reports the speed coefficient). The diagnostic command \verb|adc 0| prints raw sensor readings that help the developers analyse faults.
+Geben Sie Befehle als Leerzeichen-getrennte Paare \verb|<Nummer> <Wert>| ein. Um beispielsweise einen Kilometerstand von 123\,456~km zu speichern, senden Sie \verb|11 123456|. Addieren Sie 128 zur Befehlsnummer, um den aktuellen Wert abzurufen (\verb|129 0| gibt den Geschwindigkeitsfaktor zurück). Der Diagnosebefehl \verb|adc 0| liefert Rohwerte der Sensoren und unterstützt die Entwickler bei der Fehlersuche.
 
-\section{Configuration parameters}
-The primary Bluetooth commands are listed in \autoref{tbl:replica-classic-commands}. Default settings for Generation~1/1.5 and Generation~2 dashboards are summarised in \autoref{tbl:replica-defaults}. Use commands~31--33 only on \ReplicaNextShort{} units; they have no effect on the classic \ReplicaGenOneShort{}.
+\section{Konfigurationsparameter}
+Die wichtigsten Bluetooth-Befehle sind in \autoref{tbl:replica-classic-commands} aufgeführt. Standardwerte für Kombiinstrumente der Generationen~1/1.5 und~2 fasst \autoref{tbl:replica-defaults} zusammen. Die Befehle~31--33 wirken ausschließlich auf \ReplicaNextShort{}-Geräte; bei der klassischen \ReplicaGenOneShort{} haben sie keine Funktion.
 
 {\scriptsize
 \begin{longtblr}[
-    caption = {Classic \ReplicaGenOne{} configuration commands.},
+    caption = {Konfigurationsbefehle der klassischen \ReplicaGenOne{}.},
     label = {tbl:replica-classic-commands},
 ]{
     colspec = {Q[c,0.14\linewidth] Q[l,0.36\linewidth] Q[l,0.5\linewidth]},
     rowsep = 2pt,
 }
     \toprule
-    \textbf{ID} & \textbf{Name} & \textbf{Description} \\
+    \textbf{ID} & \textbf{Name} & \textbf{Beschreibung} \\
     \midrule
-    22 (or 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Engine RPM calibration factor. \\
-    1 & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Speed calibration factor. \\
-    2 & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Coolant thermistor beta coefficient. \\
-    3 & \paramname{PARAMETER\_OILTHERMISTORB} & Oil thermistor beta coefficient. \\
-    4 & \paramname{PARAMETER\_AIRTHERMISTORB} & Ambient thermistor beta coefficient. \\
-    5 & \paramname{PARAMETER\_TANKMINRESISTANCE} & Minimum fuel sender resistance (\si{\ohm}). \\
-    6 & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Maximum fuel sender resistance (\si{\ohm}). \\
-    7 & \paramname{PARAMETER\_TAU\_COOLANT} & Coolant temperature filter constant. \\
-    8 & \paramname{PARAMETER\_TAU\_OIL} & Oil temperature filter constant. \\
-    9 & \paramname{PARAMETER\_TAU\_AIR} & Ambient temperature filter constant. \\
-    10 & \paramname{PARAMETER\_TAU\_TANK} & Fuel level filter constant. \\
-    11 & \paramname{PARAMETER\_MILEAGE} & Total odometer value. \\
-    12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Trip odometer. \\
-    13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Enable automatic brightness adjustment. \\
-    14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Manual brightness level (0--15). \\
-    15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Fuel tank capacity (litres). \\
-    16 & \paramname{PARAMETER\_MFA\_STATE} & Active MFA page. \\
-    17 & \paramname{PARAMETER\_BUZZER\_OFF} & Disable the buzzer (1 disables, 0 enables). \\
-    18 & \paramname{PARAMETER\_MAX\_RPM} & Tachometer scale (default 8000). \\
-    19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Coolant sensor resistance at \SI{25}{\celsius}. \\
-    20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Oil sensor resistance at \SI{25}{\celsius}. \\
-    21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Ambient sensor resistance at \SI{25}{\celsius}. \\
-    23 & \paramname{PARAMETER\_DOT\_OFF} & Clock colon behaviour (0 blink, 1 solid). \\
-    24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Switch on backlight with low beam. \\
-    25 & \paramname{PARAMETER\_M\_D\_FILTER} & Median filter constant (legacy). \\
-    26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Coolant ``full-scale'' temperature threshold. \\
-    27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Coolant ``1~bar'' temperature threshold. \\
-    31--33 & \paramname{PARAMETER\_MAINCOLOR\_[RGB]} & Interface colour components (\ReplicaNextShort{} only). \\
-    37 & \paramname{PARAMETER\_RPM\_FILTER} & RPM filtering aggressiveness. \\
-    128 & \paramname{PARAMETER\_READ\_ADDITION} & Add to read any parameter. \\
-    255 & \paramname{PARAMETER\_SET\_HOUR} & Set clock hours (24-hour). \\
-    254 & \paramname{PARAMETER\_SET\_MINUTE} & Set clock minutes. \\
-    253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Reset the trip odometer. \\
-    252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Factory reset and memory initialisation. \\
+    22 (oder 0) & \paramname{PARAMETER\_RPMCOEFFICIENT} & Kalibrierfaktor der Motordrehzahl. \\
+    1 & \paramname{PARAMETER\_SPEEDCOEFFICIENT} & Kalibrierfaktor für die Geschwindigkeit. \\
+    2 & \paramname{PARAMETER\_COOLANTTHERMISTORB} & Beta-Koeffizient des Kühlmittelthermistors. \\
+    3 & \paramname{PARAMETER\_OILTHERMISTORB} & Beta-Koeffizient des Ölthermistors. \\
+    4 & \paramname{PARAMETER\_AIRTHERMISTORB} & Beta-Koeffizient des Außentemperaturthermistors. \\
+    5 & \paramname{PARAMETER\_TANKMINRESISTANCE} & Minimaler Widerstand des Tankgebers (\si{\ohm}). \\
+    6 & \paramname{PARAMETER\_TANKMAXRESISTANCE} & Maximaler Widerstand des Tankgebers (\si{\ohm}). \\
+    7 & \paramname{PARAMETER\_TAU\_COOLANT} & Zeitkonstante der Kühlmittelanzeige. \\
+    8 & \paramname{PARAMETER\_TAU\_OIL} & Zeitkonstante der Öltemperaturanzeige. \\
+    9 & \paramname{PARAMETER\_TAU\_AIR} & Zeitkonstante der Außentemperaturanzeige. \\
+    10 & \paramname{PARAMETER\_TAU\_TANK} & Zeitkonstante der Tankanzeige. \\
+    11 & \paramname{PARAMETER\_MILEAGE} & Gesamtkilometerstand. \\
+    12 & \paramname{PARAMETER\_DAILY\_MILEAGE} & Tageskilometerzähler. \\
+    13 & \paramname{PARAMETER\_AUTO\_BRIGHTNESS} & Automatische Helligkeitsregelung aktivieren. \\
+    14 & \paramname{PARAMETER\_BRIGHTNESS\_LEVEL} & Manueller Helligkeitswert (0--15). \\
+    15 & \paramname{PARAMETER\_TANK\_CAPACITY} & Tankinhalt (Liter). \\
+    16 & \paramname{PARAMETER\_MFA\_STATE} & Aktive MFA-Seite. \\
+    17 & \paramname{PARAMETER\_BUZZER\_OFF} & Summer deaktivieren (1 = aus, 0 = an). \\
+    18 & \paramname{PARAMETER\_MAX\_RPM} & Drehzahlmesserbereich (Standard 8000). \\
+    19 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_COOLANT} & Widerstand des Kühlmittelsensors bei \SI{25}{\celsius}. \\
+    20 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_OIL} & Widerstand des Ölsensors bei \SI{25}{\celsius}. \\
+    21 & \paramname{PARAMETER\_NORMAL\_RESISTANCE\_AMB} & Widerstand des Außensensors bei \SI{25}{\celsius}. \\
+    23 & \paramname{PARAMETER\_DOT\_OFF} & Verhalten der Uhr-Doppelpunktanzeige (0 blinkt, 1 dauerhaft). \\
+    24 & \paramname{PARAMETER\_BACKLIGHT\_ON} & Hintergrundbeleuchtung mit Abblendlicht einschalten. \\
+    25 & \paramname{PARAMETER\_M\_D\_FILTER} & Medianfilter-Konstante (Legacy). \\
+    26 & \paramname{PARAMETER\_COOLANT\_MAX\_R} & Schwellenwert für die Kühlmittel-Vollskala. \\
+    27 & \paramname{PARAMETER\_COOLANT\_MIN\_R} & Schwellenwert für den „1~bar“-Punkt der Kühlmittelanzeige. \\
+    31--33 & \paramname{PARAMETER\_MAINCOLOR\_[RGB]} & Farbkanäle der Anzeige (nur \ReplicaNextShort{}). \\
+    37 & \paramname{PARAMETER\_RPM\_FILTER} & Stärke der Drehzahlfilterung. \\
+    128 & \paramname{PARAMETER\_READ\_ADDITION} & Zur Befehlsnummer addieren, um einen Wert auszulesen. \\
+    255 & \paramname{PARAMETER\_SET\_HOUR} & Uhrstunden setzen (24-Stunden-Format). \\
+    254 & \paramname{PARAMETER\_SET\_MINUTE} & Uhrminuten setzen. \\
+    253 & \paramname{PARAMETER\_RESET\_DAILY\_MILEAGE} & Tageskilometerzähler zurücksetzen. \\
+    252 & \paramname{PARAMETER\_RESET\_DIGITAL} & Werksreset und Speicherinitialisierung. \\
     \bottomrule
 \end{longtblr}}
 
-The Serial Bluetooth Terminal quick buttons are convenient for routine actions such as toggling automatic brightness (\verb|13 0| and \verb|13 1|) or writing colour values. Keep values above \SI{60}{\percent} brightness only for short tests to preserve LED life.
+Die Schnellwahltasten in Serial Bluetooth Terminal erleichtern Routineaktionen wie das Umschalten der automatischen Helligkeit (\verb|13 0| bzw. \verb|13 1|) oder das Schreiben von Farbwerten. Werte über \SI{60}{\percent} Helligkeit sollten Sie nur kurzzeitig nutzen, um die Lebensdauer der LEDs zu erhalten.
