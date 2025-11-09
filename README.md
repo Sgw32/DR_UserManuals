@@ -1,11 +1,11 @@
 # Digifiz Replica User Manuals
 
-[![CI](https://github.com/Sgw32/DR_UserManuals/actions/workflows/main.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/main.yml)
-[![CI (French)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/french.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/french.yml)
-[![CI (German)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/german.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/german.yml)
-[![CI (Hungarian)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/hungarian.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/hungarian.yml)
-[![CI (Russian)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/russian.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/russian.yml)
-[![CI (Spanish)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/spanish.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/spanish.yml)
+[![CI](https://github.com/PHOL-LABS/DR_UserManuals/actions/workflows/main.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/main.yml)
+[![CI (French)](https://github.com/PHOL-LABS/DR_UserManuals/actions/workflows/french.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/french.yml)
+[![CI (German)](https://github.com/PHOL-LABS/DR_UserManuals/actions/workflows/german.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/german.yml)
+[![CI (Hungarian)](https://github.com/PHOL-LABS/DR_UserManuals/actions/workflows/hungarian.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/hungarian.yml)
+[![CI (Russian)](https://github.com/PHOL-LABS/DR_UserManuals/actions/workflows/russian.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/russian.yml)
+[![CI (Spanish)](https://github.com/PHOL-LABS/DR_UserManuals/actions/workflows/spanish.yml/badge.svg)](https://github.com/Sgw32/DR_UserManuals/actions/workflows/spanish.yml)
 
 This repository hosts the LaTeX sources for the official documentation shipped with every Digifiz Replica dashboard.  The manuals cover both hardware generations—the classic Arduino Mega (ATmega2560) cluster and the Digifiz Next ESP32-based units—and are kept in sync with the production firmware and wiring harnesses.
 
