@@ -57,7 +57,7 @@ If you prefer cloud editing, you can upload the project to Overleaf.  Select the
 
 - Russian-speaking community: [vk.com/digifiz](https://vk.com/digifiz)
 - News and discussions (RU): [t.me/digifiz](https://t.me/digifiz)
-- International channels are in preparation; watch the Telegram mirror for updates.
+- Facebook page: [http://facebook.com/digifiz](http://facebook.com/digifiz)
 
 For hardware sales, installation services, or manual feedback, reach out through the community channels or the official store listings.
 
