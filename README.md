@@ -27,8 +27,10 @@ Digifiz Replica is a modern replacement for factory VDO clusters in second-gener
 
 - **Volkswagen Jetta Mk2 (1984–1992)** — CE1 and CE2 fuse panels
 - **Volkswagen Golf Mk2 (1983–1992)** — CE1 and CE2 fuse panels
+- **Volkswagen Golf Mk3 (1991–1998)** — CE2 fuse panels shared with Vento clusters
 - **Volkswagen Passat B2 (1984–1992)** — expected compatibility, pending customer confirmation
 - **Volkswagen Scirocco 2 (1984–1992)** — requires a contact adapter
+- **Volkswagen Vento (1991–1998)** — CE2 fuse panels, wiring matches Golf Mk3 guidance
 - **Audi 80 B2 (1978–1986)** — red and green Digifiz variants
 - **Audi 80 Coupé B2 (1980–1988)** — red and green Digifiz variants
 
