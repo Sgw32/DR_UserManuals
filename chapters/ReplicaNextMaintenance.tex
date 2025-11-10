@@ -156,8 +156,8 @@ To read a parameter, add 128 to the command number (for example, \verb|129 0| re
 Recent firmware revisions accept human-readable parameter names, for example \verb|PARAMETER_RPMCOEFFICIENT 3000|. The diagnostic command \verb|adc 0| prints raw ADC readings for sensor troubleshooting. Firmware updates add visual colour controls, so update regularly through the \emph{WiFi} tab to access the latest features.
 
 \section{Settings tab parameter editor}
-The \emph{Settings} tab mirrors the parameter list in \autoref{tbl:next-commands} and \autoref{tbl:next-defaults} while adding metadata about ranges, descriptions, and data types.
-Use it whenever you prefer a graphical workflow instead of typing command numbers.
+The \emph{Settings} tab mirrors the parameter list in \autoref{tbl:next-commands} and \autoref{tbl:next-defaults} while adding metadata about ranges, descriptions, and data types.\@{}\autoref{tbl:next-parameters} summarises every firmware parameter.
+Use the Settings tab whenever you prefer a graphical workflow instead of typing command numbers; it exposes the same catalogue, including range validation, so you can adjust values quickly without memorising numeric IDs.
 
 \begin{enumerate}
     \item Press \emph{Load Parameters} to fetch the live values from the dashboard. The browser displays each item with its name, current value, tooltip, and type.
