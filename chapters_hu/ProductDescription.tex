@@ -178,6 +178,57 @@ A Volkswagen Mk1 járművek az alábbi hozzárendeléseket használják:
     \caption{Kábelkorbács bekötési rajz Mk1-es beépítéshez.}
 \end{figure}
 
+\subsection{Mk3-as \ReplicaNextShort{} kiosztás}
+A \ReplicaNextShort{} műszerekhez adott Mk3-as adapterköteg egyetlen 28 pólusú csatlakozóban végződik. A lábkiosztás a
+gyári Volkswagen Digifiz Mk3 rajzát követi, így közvetlenül a biztosítéktáblába vagy a jármű adaptereibe csatlakoztatható
+(\autoref{tab:mk3-pinout-hu}).
+
+\begin{table}[htbp]
+    \centering
+    {\scriptsize
+    \begin{tblr}{
+        colspec={Q[c,0.09\linewidth] Q[l,0.81\linewidth]},
+        hlines,
+        row{1} = {font=\bfseries},
+    }
+    Láb & Funkció \\
+    1 & Külső levegőhőmérséklet-érzékelő~\mbox{-G17-}, test (GND)\textsuperscript{$\dagger$}. \\
+    2 & Hűtőfolyadék-szint érzékelő~\mbox{-G32-}. \\
+    3 & 31-es kapocs, járműtest. \\
+    4 & \textsc{MFA} memória gomb~\mbox{-E109-}, reset-ág\textsuperscript{$\dagger$}. \\
+    5 & 31-es kapocs, járműtest. \\
+    6 & \textsc{MFA} memória gomb~\mbox{-E109-}, memória-ág\textsuperscript{$\dagger$}. \\
+    7 & Járműsebesség-érzékelő (VSS) kimenet. \\
+    8 & Olajnyomás-kapcsoló~\mbox{-F1-}, \SI{1.8}{bar}. \\
+    9 & Olajnyomás-kapcsoló~\mbox{-F22-}, \SI{0.3}{bar}. \\
+    10 & 1-es / W kapocs, fordulatszám bemenet. \\
+    11 & 30-as kapocs, akkumulátor-táp (B+). \\
+    12 & 58b kapocs, világítás. \\
+    13 & 15-ös kapocs, gyújtásról kapcsolt B+. \\
+    14 & Nincs bekötve. \\
+    15 & \textsc{MFA} módválasztó kapcsoló~\mbox{-E86-}. \\
+    16 & Generátor visszajelző~\mbox{-K2-}, 61-es kapocs. \\
+    17 & Motorolaj-hőmérő érzékelő~\mbox{-G8-}\textsuperscript{$\dagger$}. \\
+    18 & Fék- és rögzítőfék-visszajelző~\mbox{-K7-}. \\
+    19 & Külső hőmérséklet-érzékelő~\mbox{-G17-}, jel\textsuperscript{$\dagger$}. \\
+    20 & Motorhiba visszajelző~\mbox{-K83-} vagy dízel izzítás visszajelző~\mbox{-K29-}. \\
+    21 & Üzemanyagszint-mérő~\mbox{-G1-}. \\
+    22 & Bal irányjelző visszajelző~\mbox{-K65-}. \\
+    23 & Hűtőfolyadék-hőmérő~\mbox{-G3-}. \\
+    24 & Jobb irányjelző visszajelző~\mbox{-K94-}. \\
+    25 & Távolsági fényszóró visszajelző~\mbox{-K1-}. \\
+    26 & Fogyasztásjel bemenet\textsuperscript{$\dagger$}. \\
+    27 & Sebességjel a kilométeróra VSS érzékelőjétől~\mbox{-G22-}. \\
+    28 & Automata váltó fokozatkijelző (AG4). \\
+    \end{tblr}}
+    \caption{Az Mk3-as \ReplicaNextShort{} kábelkorbács kiosztása.}
+    \label{tab:mk3-pinout-hu}
+\end{table}
+
+Az \textsuperscript{$\dagger$} jellel jelölt ágak a 28 pólusú házból a készlethez adott JST elosztókon lépnek ki. Ezek sodort
+párokat biztosítanak a külső és olajhőmérséklet érzékelőkhöz, valamint közvetlen hozzáférést az \textsc{MFA} gombokhoz és a
+fogyasztásjelhez.
+
 \subsection{Nyomtatott áramköri lap szervizcsatlakozója}
 Az áramköri lapon található harmadik csatlakozó tükrözi a műszerfal csatlakozóit; a lábak számozása \ReplicaGenOneShort{} és \ReplicaNextShort{} egységeken jobbról balra halad. Szerviz interfészt biztosít a \autoref{tab:service-connector} táblázat szerinti kiosztással.
 
