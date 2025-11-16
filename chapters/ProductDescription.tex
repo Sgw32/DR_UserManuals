@@ -183,6 +183,57 @@ Volkswagen Mk1 vehicles use the following assignments:
     \caption{Harness connection diagram for Mk1 installations.}
 \end{figure}
 
+\subsection{Mk3 \ReplicaNextShort{} pinout}
+The dedicated Mk3 harness supplied with \ReplicaNextShort{} dashboards terminates in a single 28-pin connector. The assignments
+follow the Volkswagen Digifiz Mk3 layout shown in \autoref{tab:mk3-pinout}, allowing the harness to plug directly into the
+factory fuse panel or adapter blocks.
+
+\begin{table}[htbp]
+    \centering
+    {\scriptsize
+    \begin{tblr}{
+        colspec={Q[c,0.09\linewidth] Q[l,0.81\linewidth]},
+        hlines,
+        row{1} = {font=\bfseries},
+    }
+    Pin & Assignment \\
+    1 & Outside air temperature sensor~\mbox{-G17-} ground (GND)\textsuperscript{$\dagger$}. \\
+    2 & Engine Coolant Level (ECL) sensor~\mbox{-G32-}. \\
+    3 & Terminal~31 chassis ground. \\
+    4 & Multi-function indicator memory switch~\mbox{-E109-} reset lead\textsuperscript{$\dagger$}. \\
+    5 & Terminal~31 chassis ground. \\
+    6 & Multi-function indicator memory switch~\mbox{-E109-} memory lead\textsuperscript{$\dagger$}. \\
+    7 & Vehicle speed sensor (VSS) output. \\
+    8 & Oil-pressure switch~\mbox{-F1-}, \SI{1.8}{bar}. \\
+    9 & Oil-pressure switch~\mbox{-F22-}, \SI{0.3}{bar}. \\
+    10 & Terminal~1 / terminal~W tachometer input. \\
+    11 & Terminal~30 battery supply (B+). \\
+    12 & Terminal~58b illumination feed. \\
+    13 & Terminal~15 ignition-switched B+. \\
+    14 & Not connected. \\
+    15 & Multi-function indicator mode-select switch~\mbox{-E86-}. \\
+    16 & Generator warning lamp~\mbox{-K2-}, terminal~61. \\
+    17 & Engine-oil temperature sensor~\mbox{-G8-}\textsuperscript{$\dagger$}. \\
+    18 & Brake / parking-brake warning lamp~\mbox{-K7-}. \\
+    19 & Outside air temperature sensor~\mbox{-G17-} signal\textsuperscript{$\dagger$}. \\
+    20 & Malfunction indicator lamp~\mbox{-K83-} or diesel glow-plug lamp~\mbox{-K29-}. \\
+    21 & Fuel gauge~\mbox{-G1-}. \\
+    22 & Left turn-signal indicator lamp~\mbox{-K65-}. \\
+    23 & Engine coolant temperature gauge~\mbox{-G3-}. \\
+    24 & Right turn-signal indicator lamp~\mbox{-K94-}. \\
+    25 & High-beam indicator lamp~\mbox{-K1-}. \\
+    26 & Fuel-consumption input signal\textsuperscript{$\dagger$}. \\
+    27 & Vehicle speed signal from the speedometer VSS~\mbox{-G22-}. \\
+    28 & Transmission-range (AG4) selector display. \\
+    \end{tblr}}
+    \caption{Pin assignments for the Mk3 \ReplicaNextShort{} harness.}
+    \label{tab:mk3-pinout}
+\end{table}
+
+Pins marked with \textsuperscript{$\dagger$} leave the 28-pin shell through the auxiliary JST breakouts bundled with the
+Mk3 kit. They provide twisted pairs for the ambient and oil thermistors plus direct access to the \textsc{MFA} buttons and fuel
+consumption signal.
+
 \subsection{Printed-circuit-board service connector}
 The third connector on the circuit board mirrors the dashboard connectors, with pins numbered right-to-left on \ReplicaGenOneShort{} and \ReplicaNextShort{} units. It provides a service interface with the assignments listed in \autoref{tab:service-connector}.
 

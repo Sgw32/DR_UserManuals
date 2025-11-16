@@ -183,6 +183,57 @@ Les véhicules Volkswagen Mk1 utilisent les affectations suivantes~:
     \caption{Schéma de connexion du faisceau pour les installations Mk1.}
 \end{figure}
 
+\subsection{Affectation Mk3 pour \ReplicaNextShort{}}
+Le faisceau dédié au Mk3 livré avec les tableaux \ReplicaNextShort{} se termine par un connecteur unique à 28~broches. Ses
+affectations respectent le schéma d'origine du Digifiz Mk3 de Volkswagen, ce qui permet de le raccorder directement au boîtier
+de fusibles ou aux adaptateurs du véhicule (voir \autoref{tab:mk3-pinout-fr}).
+
+\begin{table}[htbp]
+    \centering
+    {\scriptsize
+    \begin{tblr}{
+        colspec={Q[c,0.09\linewidth] Q[l,0.81\linewidth]},
+        hlines,
+        row{1} = {font=\bfseries},
+    }
+    Broche & Affectation \\
+    1 & Sonde de température extérieure~\mbox{-G17-}, masse (GND)\textsuperscript{$\dagger$}. \\
+    2 & Capteur de niveau de liquide de refroidissement~\mbox{-G32-}. \\
+    3 & Borne~31, masse châssis. \\
+    4 & Bouton mémoire MFA~\mbox{-E109-}, ligne de remise à zéro\textsuperscript{$\dagger$}. \\
+    5 & Borne~31, masse châssis. \\
+    6 & Bouton mémoire MFA~\mbox{-E109-}, ligne mémoire\textsuperscript{$\dagger$}. \\
+    7 & Sortie du capteur de vitesse véhicule (VSS). \\
+    8 & Contact de pression d'huile~\mbox{-F1-}, \SI{1.8}{bar}. \\
+    9 & Contact de pression d'huile~\mbox{-F22-}, \SI{0.3}{bar}. \\
+    10 & Borne~1 / borne~W, entrée compte-tours. \\
+    11 & Borne~30, alimentation batterie (B+). \\
+    12 & Borne~58b, éclairage. \\
+    13 & Borne~15, B+ commuté par l'allumage. \\
+    14 & Non connecté. \\
+    15 & Sélecteur de mode MFA~\mbox{-E86-}. \\
+    16 & Témoin d'alternateur~\mbox{-K2-}, borne~61. \\
+    17 & Sonde de température d'huile moteur~\mbox{-G8-}\textsuperscript{$\dagger$}. \\
+    18 & Témoin de frein et frein de stationnement~\mbox{-K7-}. \\
+    19 & Sonde de température extérieure~\mbox{-G17-}, signal\textsuperscript{$\dagger$}. \\
+    20 & Voyant de dysfonctionnement~\mbox{-K83-} ou témoin de préchauffage diesel~\mbox{-K29-}. \\
+    21 & Jauge de carburant~\mbox{-G1-}. \\
+    22 & Témoin de clignotant gauche~\mbox{-K65-}. \\
+    23 & Jauge de température de liquide de refroidissement~\mbox{-G3-}. \\
+    24 & Témoin de clignotant droit~\mbox{-K94-}. \\
+    25 & Témoin de plein phare~\mbox{-K1-}. \\
+    26 & Entrée de signal de consommation de carburant\textsuperscript{$\dagger$}. \\
+    27 & Signal de vitesse provenant du capteur de compteur VSS~\mbox{-G22-}. \\
+    28 & Affichage de position de sélecteur (AG4). \\
+    \end{tblr}}
+    \caption{Affectations du faisceau Mk3 pour \ReplicaNextShort{}.}
+    \label{tab:mk3-pinout-fr}
+\end{table}
+
+Les conducteurs marqués d'un \textsuperscript{$\dagger$} quittent le connecteur 28~broches via les dérivations JST
+auxiliaires fournies avec le kit Mk3. Ils offrent des paires torsadées pour les thermistances d'air extérieur et d'huile ainsi
+qu'un accès direct aux boutons \textsc{MFA} et au signal de consommation.
+
 \subsection{Connecteur de service sur la carte}
 Le troisième connecteur sur la carte reproduit les connecteurs du tableau, avec des broches numérotées de droite à gauche sur les unités \ReplicaGenOneShort{} et \ReplicaNextShort{}.
 Il fournit une interface de service avec les affectations listées dans l'\autoref{tab:service-connector}.

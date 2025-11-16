@@ -182,6 +182,57 @@ Volkswagen-Fahrzeuge der ersten Generation verwenden folgende Anschlüsse:
     \caption{Anschlussplan des Kabelbaums für Mk1-Installationen.}
 \end{figure}
 
+\subsection{Pinbelegung für \ReplicaNextShort{} im Golf~Mk3}
+Der speziell für den Golf~Mk3 vorgesehene \ReplicaNextShort{}-Kabelbaum endet in einem 28-poligen Stecker. Seine Zuordnungen
+folgen dem originalen Volkswagen-Digifiz-Mk3-Schaltplan, sodass der Kabelbaum direkt an die Fahrzeugverkabelung oder passende
+Adapter angeschlossen werden kann (siehe \autoref{tab:mk3-pinout-de}).
+
+\begin{table}[htbp]
+    \centering
+    {\scriptsize
+    \begin{tblr}{
+        colspec={Q[c,0.09\linewidth] Q[l,0.81\linewidth]},
+        hlines,
+        row{1} = {font=\bfseries},
+    }
+    Pin & Belegung \\
+    1 & Außentemperaturfühler~\mbox{-G17-}, Masse (GND)\textsuperscript{$\dagger$}. \\
+    2 & Kühlmittelmangelgeber~\mbox{-G32-}. \\
+    3 & Klemme~31, Masse. \\
+    4 & MFA-Speichertaste~\mbox{-E109-}, Reset-Leitung\textsuperscript{$\dagger$}. \\
+    5 & Klemme~31, Masse. \\
+    6 & MFA-Speichertaste~\mbox{-E109-}, Memory-Leitung\textsuperscript{$\dagger$}. \\
+    7 & Geschwindigkeitssensor-Ausgang (VSS). \\
+    8 & Öldruckschalter~\mbox{-F1-}, \SI{1.8}{bar}. \\
+    9 & Öldruckschalter~\mbox{-F22-}, \SI{0.3}{bar}. \\
+    10 & Klemme~1 / Klemme~W, Drehzahlsignal. \\
+    11 & Klemme~30, Batteriespannung (B+). \\
+    12 & Klemme~58b, Beleuchtung. \\
+    13 & Klemme~15, geschaltetes B+. \\
+    14 & Ohne Kontakt. \\
+    15 & MFA-Moduswahltaste~\mbox{-E86-}. \\
+    16 & Generator-Kontrollleuchte~\mbox{-K2-}, Klemme~61. \\
+    17 & Motoröltemperaturfühler~\mbox{-G8-}\textsuperscript{$\dagger$}. \\
+    18 & Brems- und Handbremskontrollleuchte~\mbox{-K7-}. \\
+    19 & Außentemperaturfühler~\mbox{-G17-}, Signal\textsuperscript{$\dagger$}. \\
+    20 & Motorkontrollleuchte~\mbox{-K83-} oder Diesel-Glühwendelanzeige~\mbox{-K29-}. \\
+    21 & Tankgeber / Kraftstoffanzeige~\mbox{-G1-}. \\
+    22 & Linke Blinker-Kontrollleuchte~\mbox{-K65-}. \\
+    23 & Kühlmitteltemperaturanzeige~\mbox{-G3-}. \\
+    24 & Rechte Blinker-Kontrollleuchte~\mbox{-K94-}. \\
+    25 & Fernlichtkontrollleuchte~\mbox{-K1-}. \\
+    26 & Verbrauchssignal-Eingang\textsuperscript{$\dagger$}. \\
+    27 & Fahrgeschwindigkeitssignal vom Tachosensor~\mbox{-G22-}. \\
+    28 & Automatikgetriebe-Anzeige (AG4) für die Wählhebelstellung. \\
+    \end{tblr}}
+    \caption{Pinbelegung des Mk3-\ReplicaNextShort{}-Kabelbaums.}
+    \label{tab:mk3-pinout-de}
+\end{table}
+
+Mit \textsuperscript{$\dagger$} markierte Leitungen verlassen den 28-poligen Stecker über die mitgelieferten JST-Abgriffe. Sie
+führen verdrillte Paare für die Außen- und Öltemperatursensoren sowie direkte Anschlüsse an die \textsc{MFA}-Tasten und das
+Verbrauchssignal.
+
 \subsection{Service-Steckverbinder auf der Leiterplatte}
 Der dritte Steckverbinder auf der Leiterplatte spiegelt die Armaturenstecker wider; die Pins sind bei \ReplicaGenOneShort{}- und \ReplicaNextShort{}-Geräten von rechts nach links nummeriert. Er dient als Service-Schnittstelle mit den in \autoref{tab:service-connector} aufgeführten Belegungen.
 

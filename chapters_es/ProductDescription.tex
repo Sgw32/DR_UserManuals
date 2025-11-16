@@ -178,6 +178,57 @@ Los vehículos Volkswagen Mk1 utilizan las siguientes asignaciones:
     \caption{Diagrama de conexión del mazo para instalaciones Mk1.}
 \end{figure}
 
+\subsection{Asignación del arnés Mk3 para \ReplicaNextShort{}}
+El arnés específico del Mk3 suministrado con los tableros \ReplicaNextShort{} termina en un conector único de 28 pines. Sus
+asignaciones siguen el esquema original del Digifiz Mk3 de Volkswagen, lo que permite enchufarlo directamente al panel de
+fusibles o a los adaptadores del vehículo (\autoref{tab:mk3-pinout-es}).
+
+\begin{table}[htbp]
+    \centering
+    {\scriptsize
+    \begin{tblr}{
+        colspec={Q[c,0.09\linewidth] Q[l,0.81\linewidth]},
+        hlines,
+        row{1} = {font=\bfseries},
+    }
+    Pin & Asignación \\
+    1 & Sensor de temperatura exterior~\mbox{-G17-}, masa (GND)\textsuperscript{$\dagger$}. \\
+    2 & Sensor de nivel de refrigerante~\mbox{-G32-}. \\
+    3 & Terminal~31, masa de chasis. \\
+    4 & Pulsador de memoria de la MFA~\mbox{-E109-}, línea de reinicio\textsuperscript{$\dagger$}. \\
+    5 & Terminal~31, masa de chasis. \\
+    6 & Pulsador de memoria de la MFA~\mbox{-E109-}, línea de memoria\textsuperscript{$\dagger$}. \\
+    7 & Salida del sensor de velocidad del vehículo (VSS). \\
+    8 & Interruptor de presión de aceite~\mbox{-F1-}, \SI{1.8}{bar}. \\
+    9 & Interruptor de presión de aceite~\mbox{-F22-}, \SI{0.3}{bar}. \\
+    10 & Terminal~1 / terminal~W, señal de cuentarrevoluciones. \\
+    11 & Terminal~30, alimentación de batería (B+). \\
+    12 & Terminal~58b, iluminación. \\
+    13 & Terminal~15, B+ con el encendido activado. \\
+    14 & Sin conexión. \\
+    15 & Selector de modo de la MFA~\mbox{-E86-}. \\
+    16 & Indicador del generador~\mbox{-K2-}, terminal~61. \\
+    17 & Sensor de temperatura de aceite del motor~\mbox{-G8-}\textsuperscript{$\dagger$}. \\
+    18 & Indicador de freno y freno de estacionamiento~\mbox{-K7-}. \\
+    19 & Sensor de temperatura exterior~\mbox{-G17-}, señal\textsuperscript{$\dagger$}. \\
+    20 & Testigo de avería~\mbox{-K83-} o testigo de precalentamiento diésel~\mbox{-K29-}. \\
+    21 & Indicador de combustible~\mbox{-G1-}. \\
+    22 & Indicador de intermitente izquierdo~\mbox{-K65-}. \\
+    23 & Indicador de temperatura del refrigerante~\mbox{-G3-}. \\
+    24 & Indicador de intermitente derecho~\mbox{-K94-}. \\
+    25 & Indicador de luces largas~\mbox{-K1-}. \\
+    26 & Entrada de señal de consumo de combustible\textsuperscript{$\dagger$}. \\
+    27 & Señal de velocidad del velocímetro VSS~\mbox{-G22-}. \\
+    28 & Indicador de posición del selector (AG4). \\
+    \end{tblr}}
+    \caption{Asignaciones del arnés Mk3 para \ReplicaNextShort{}.}
+    \label{tab:mk3-pinout-es}
+\end{table}
+
+Los conductores marcados con \textsuperscript{$\dagger$} salen del conector de 28 pines mediante los conectores JST auxiliares
+incluidos en el kit Mk3. Proporcionan pares trenzados para los termistores de aire exterior y aceite, además del acceso directo
+a los pulsadores de la \textsc{MFA} y a la señal de consumo.
+
 \subsection{Conector de servicio de la placa de circuito impreso}
 El tercer conector de la placa replica los conectores del cuadro, con pines numerados de derecha a izquierda en las unidades \ReplicaGenOneShort{} y \ReplicaNextShort{}. Proporciona una interfaz de servicio con las asignaciones listadas en \autoref{tab:service-connector}.
 
