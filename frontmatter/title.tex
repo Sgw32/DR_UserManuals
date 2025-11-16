@@ -1,9 +1,15 @@
 \pdfbookmark{Title Page}{titlepage} % add PDF outline entry
 \thispagestyle{empty} % no number on the title page
-\begin{center}
-    \Large
 
-    \vspace{-1.5em}
+\begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.center) {\includegraphics[width=30mm,height=30mm,keepaspectratio]{"figures/digifiz_manual/tr_logo_big copy.png"}};
+\end{tikzpicture}
+
+\vspace*{2cm}
+
+\begin{center}
+
+    \Large
 
     {\ifFANCY\sffamily\Huge\else\bfseries\LARGE\fi
         \MakeUppercase{User Manual} \par}
@@ -13,29 +19,18 @@
     {\fontsize{30pt}{36pt}\selectfont \bfseries
         \ManualTitleFront \par}
 
-    \vspace{1.1em}
+    \vspace{1.5em}
 
-    \begin{center}
-        \large
-        \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{>{\sffamily\color{Gray40}}r @{\hspace{1.0em}} l}
-            % Manual Maintainer    & \Maintainer     \\
-            \ifdef{\ProductLine}{%
-            Product Line         & \ProductLine \\
-            }{}
-        \end{tabular}
-    \end{center}
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        Product Line \ProductLine \par}
 
-    \vspace{2em}
+    \vspace{1em}
 
-    \ifFANCY\sffamily\fi
-    Online Release \YearReleased \\
-    \ifdef{\YearRevised}{%
-        \emph{Revised version \YearRevised} \par
-    }{}
-    \ifWIP
-        \small\ttfamily \textcolor{red}{(Draft - \today)} \par
-    \fi
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        Online Release 2025 \par}
+
+    {\ifFANCY\sffamily\Large\else\Large\fi
+        (Draft- October 5, 2025) \par}
 
     \vfill
 
